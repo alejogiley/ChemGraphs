@@ -16,7 +16,7 @@ install:
 
   - conda create -q -c rdkit -n test-environment python=$TRAVIS_PYTHON_VERSION rdkit
   - conda activate test-environment
-  - python -m pip install .
+  - python -m pip install pytest
+  - python -m pip install -e ".[develop]"
 
-script:
-  # Your test script goes here
+script: pytest
