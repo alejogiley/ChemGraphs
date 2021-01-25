@@ -16,7 +16,8 @@ install:
 
   - conda create -q -c rdkit -n test-environment python=$TRAVIS_PYTHON_VERSION rdkit
   - conda activate test-environment
-  - python -m pip install pytest
+  - conda install jupyter
   - python -m pip install -e ".[develop]"
 
-script: pytest
+script: 
+  - nosetests --with-coverage

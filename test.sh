@@ -3,7 +3,7 @@
 set -ex
 
 if [[ -z $VIRTUAL_ENV ]]; then
-	source /Applications/Anaconda/anaconda3/etc/profile.d/conda.sh
+	source /Applications/Anaconda/anaconda3/bin/activate
 	conda activate env
 fi
 
