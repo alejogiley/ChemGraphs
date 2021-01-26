@@ -2,32 +2,11 @@ import os
 
 import numpy as np
 import scipy.sparse as sp
-
 from rdkit import Chem
 from rdkit.Chem import AllChem
 from spektral.data import Dataset, Graph
 
-
-def str_is_float(s):
-    """Check whether string 
-    can be converted to a float
-    """
-    try:
-        float(s)
-        return True
-    
-    except ValueError:
-        pass
- 
-    try:
-        import unicodedata
-        unicodedata.numeric(s)
-        return True
-    
-    except (TypeError, ValueError):
-        pass
- 
-    return False
+from gcnn.utils.misc import str_is_float, symmetrize
 
 
 def get_nodes(mol):
@@ -48,12 +27,16 @@ def get_nodes(mol):
 
 
 def get_edges(mol):
-    """Compute edge features: 
-    bond type
-
-    """
-    return np.array([
-        bond.GetBondTypeAsDouble() for bond in mol.GetBonds()])
+    
+    natms = mol.GetNumAtoms()
+    edges = np.zeros((natms, natms))
+    
+    for bond in mol.GetBonds():
+        i = bond.GetBeginAtomIdx()
+        j = bond.GetEndAtomIdx()
+        edges[i, j] = bond.GetBondTypeAsDouble()
+    
+    return symmetrize(edges)[:, :, None]
 
 
 def get_labels(mol, key='IC50 (nM)'):
@@ -131,6 +114,24 @@ def data_features(data_path):
     return (x, a, e, y)
 
 
+def split_dataset(dataset, ratio=0.9):
+    """Partition Dataset into Train and Tests sets
+    """
+    # randomize indexes
+    indxs = np.random.permutation(len(dataset))
+
+    # split 90%/10%
+    split = int(0.9 * len(dataset))
+
+    # Train/test indexes
+    trnxs, tesxs = np.split(indxs, [split])
+
+    # Dataset partition
+    train, tests = dataset[trnxs], dataset[tesxs]
+
+    return train, tests
+
+
 class EstrogenDB(Dataset):
     
     def __init__(self, n_samples, nodes, edges, adjcs, feats, dpath, **kwargs):
@@ -145,20 +146,24 @@ class EstrogenDB(Dataset):
         super().__init__(**kwargs)
         
     def read(self):
-        # create Graph objects
+         # create Graph objects
         data = np.load(os.path.join(
             self.dpath, f'EstrogenDB.npz'), 
                        allow_pickle=True)
         
-        return [
+        output = [
             self.make_graph(
                 node=data['x'][i],
                 adjc=data['a'][i], 
                 edge=data['e'][i],
                 feat=data['y'][i])
             for i in range(self.n_samples)
-            if data['y'][i][1] > 0
+            if data['y'][i][1] != 0
         ]
+        
+        self.n_samples = len(output)
+        
+        return output
     
     def download(self):
         # save graph arrays into directory
