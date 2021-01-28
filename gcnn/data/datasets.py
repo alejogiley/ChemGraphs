@@ -131,22 +131,33 @@ def split_dataset(dataset, ratio=0.9):
 
     return train, tests
 
-
 class EstrogenDB(Dataset):
-    
-    def __init__(self, n_samples, nodes, edges, adjcs, feats, dpath, **kwargs):
+    """Dataset from BindingDB
+    """
+    def __init__(self, 
+                 n_samples,
+                 dpath=None, 
+                 nodes=None, 
+                 edges=None, 
+                 adjcs=None, 
+                 feats=None,
+                 **kwargs):
         self.n_samples = n_samples
         self.nodes = nodes
         self.edges = edges
         self.adjcs = adjcs
         self.feats = feats
-        # dataset directory
+        # dataset to load
         self.dpath = dpath
         
         super().__init__(**kwargs)
         
+    @Dataset.path.getter
+    def path(self):
+        return self.dpath
+        
     def read(self):
-         # create Graph objects
+        # create Graph objects
         data = np.load(os.path.join(
             self.dpath, f'EstrogenDB.npz'), 
                        allow_pickle=True)
@@ -186,13 +197,16 @@ class EstrogenDB(Dataset):
         a = adjc.astype(int)
         a = sp.csr_matrix(a)
         # check shape (n_nodes, n_nodes)
-        assert len(node) == a.shape[0]
-        assert len(node) == a.shape[1]
+        assert a.shape[0] == len(node)
+        assert a.shape[1] == len(node)
         
         # The labels
         y = feat.astype(float)
         
         # The edge features 
         e = edge.astype(float)
+        # check shape (n_nodes, n_nodes, ..)
+        assert e.shape[0] == len(node)
+        assert e.shape[1] == len(node)
         
         return Graph(x=x, a=a, e=e, y=y)
