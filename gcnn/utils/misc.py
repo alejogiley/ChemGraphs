@@ -1,5 +1,7 @@
 import numpy as np
 
+from keras.utils import to_categorical
+
 
 def str_is_float(s):
     """Check whether string 
@@ -24,4 +26,11 @@ def str_is_float(s):
 
 
 def symmetrize(matrix):
-    return matrix + matrix.T - np.diag(matrix.diagonal())
+    return matrix \
+        + np.transpose(matrix, (1, 0, 2)) \
+        - np.diag(matrix.diagonal())
+
+
+def onehotenc(x, keys):
+    maps = dict([(k, v) for k, v in zip(keys, range(len(keys)))])
+    return to_categorical(maps[x], num_classes=len(keys))
