@@ -1,5 +1,8 @@
+import numpy as np
 import tensorflow as tf
 
+from tensorflow.keras.models import Model
+from tensorflow_probability.optimizers import LazyAdam
 from tensorflow.keras.layers import (
     BatchNormalization,
     Dense,
@@ -10,12 +13,11 @@ from tensorflow.keras.layers import (
     LeakyReLU,
     TimeDistributed,
 )
-from tensorflow.keras.models import Model
-from tensorflow_probability.optimizers import LazyAdam
+
 from spektral.data import BatchLoader
 from spektral.layers import ECCConv, GlobalAttnSumPool
 
-from gcnn.metrics import rsquared
+from gcnn.metrics import pearson, rsquared
 from gcnn.utils import sigma
 
 
@@ -44,9 +46,10 @@ def train_model(
 
     """
 
-    # Parameters
-    size_nodes = dataset.n_node_features  # Dimension of node features
-    size_feats = dataset.n_edge_features  # Dimension of edge features
+    # Dimension of node features
+    size_nodes = dataset.n_node_features
+    # Dimension of edge features
+    size_feats = dataset.n_edge_features
 
     # Create GCN model
     model = GCNN(
@@ -58,12 +61,16 @@ def train_model(
 
     # Compile GCN
     model.compile(
+        # Adam optimizer that handles sparse 
+        # updates more efficiently
         optimizer=LazyAdam(learning_rate),
+        # List of metrics to monitor
         metrics=[rsquared, sigma],
+        # Objective function 
         loss=tf_loss,
     )
 
-    # Print network summary
+    # Summary
     model.summary()
 
     # Loader returns batches of graphs
@@ -73,14 +80,18 @@ def train_model(
     # Trains the model
     history = model.fit(
         loader.load(),
+        # Show training info
+        verbose=1,
+        # training cycles
         epochs=number_epochs,
+        # len(dataset) // batch_size
         steps_per_epoch=loader.steps_per_epoch,
     )
 
     return model, history
 
 
-def evaluate_model(model, test_set):
+def evaluate_model(model, tests_set):
 
     # Loader returns batches of graphs
     # with zero-padding done batch-wise
@@ -143,7 +154,7 @@ def evaluate_model(model, test_set):
 
     # estimate FRACTION of censored values
     # predicted higher than true boundaries
-    lefts_outliers = tf.∏nn.relu(
+    lefts_outliers = tf.nn.relu(
         pred_values[(lefts_indexes > 0)] - true_values[(lefts_indexes > 0)]
     )
     right_outliers = tf.nn.relu(

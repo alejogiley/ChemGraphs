@@ -88,6 +88,7 @@ def parse_arguments():
     parser.add_argument(
         "--data_path", required=True, help="Path to dataset directory"
     )
+    "--out-file"
 
     args = parse.parse_args()
 
