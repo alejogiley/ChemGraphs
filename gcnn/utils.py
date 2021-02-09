@@ -1,4 +1,5 @@
 import numpy as np
+import tensorflow as tf
 
 from keras.utils import to_categorical
 
@@ -31,6 +32,11 @@ def symmetrize(matrix):
         - np.diag(matrix.diagonal())
 
 
-def onehotenc(x, keys):
+def onehot_encoding(x, keys):
     maps = dict([(k, v) for k, v in zip(keys, range(len(keys)))])
     return to_categorical(maps[x], num_classes=len(keys))
+
+
+def sigma(y_true, y_pred):
+    """Returns variance of error distribution"""
+    return tf.abs(y_pred[-1])
