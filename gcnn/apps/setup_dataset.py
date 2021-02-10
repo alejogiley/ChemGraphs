@@ -1,8 +1,8 @@
 import os
 import argparse
+import joblib
 
-from gcnn.data.datasets import (
-    EstrogenDB, data_features)
+from gcnn.data.datasets import EstrogenDB, data_features
 
 
 def main(args):
@@ -16,20 +16,18 @@ def main(args):
 
     # create Graph dataset
     dataset = EstrogenDB(
-        n_samples=len(nodes),
         nodes=nodes,
         edges=edges,
         adjcs=adjcs,
         feats=labels,
-        dpath=args.data_path)
+        dpath=args.data_path,
+    )
 
     # dataset name is hardcoded
-    path = os.path.join(
-        args.data_path, f'EstrogenGraphs.gz')
-    
+    path = os.path.join(args.data_path, "EstrogenGraphs.gz")
+
     # save Graph dataset
-    joblib.dump(
-        dataset, path, compress=('gzip', 6))
+    joblib.dump(dataset, path, compress=("gzip", 6))
 
     return 0
 
@@ -40,17 +38,12 @@ def parse_arguments():
     # Parse input arguments
     ##########################################################################
 
-    parser = argparse.ArgumentParser(
-        description="Epitope prediction app")
+    parser = argparse.ArgumentParser(description="Epitope prediction app")
 
-    # Set the default for the dataset argument
-    parser.add_argument(
-        "--bindingdb", required=True, help="BindingDB SDF file")
-    parser.add_argument(
-        "--data_path", required=True, help="Path to dataset directory")
+    parser.add_argument("--bindingdb", required=True, help="BindingDB SDF file path")
+    parser.add_argument("--data_path", required=True, help="Output directory path")
 
-    args = parse.parse_args()
-
+    args = parser.parse_args()
     return args
 
 

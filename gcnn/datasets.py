@@ -1,17 +1,11 @@
 import os
-import joblib
 import itertools
 
 import numpy as np
 import scipy.sparse as sp
 
-# Generic Tuple, supports indexing.
 from typing import Tuple
-
-# Graph NN library
 from spektral.data import Dataset, Graph
-
-# General machine learning library
 from sklearn.preprocessing import QuantileTransformer
 
 
@@ -80,7 +74,6 @@ class EstrogenDB(Dataset):
 
     def __init__(
         self,
-        n_samples,
         dpath=None,
         nodes=None,
         edges=None,
@@ -88,7 +81,6 @@ class EstrogenDB(Dataset):
         feats=None,
         **kwargs,
     ):
-        self.n_samples = n_samples
         self.nodes = nodes
         self.edges = edges
         self.adjcs = adjcs
@@ -100,18 +92,15 @@ class EstrogenDB(Dataset):
 
     @Dataset.path.getter
     def path(self):
-        path = os.path.join(self.dpath, f"EstrogenDB.npz")
+        path = os.path.join(self.dpath, "EstrogenDB.npz")
         return "" if not os.path.exists(path) else path
 
     def read(self):
         # load Graph objects
         data = np.load(
-            os.path.join(self.dpath, f"EstrogenDB.npz"), allow_pickle=True
+            os.path.join(self.dpath, "EstrogenDB.npz"),
+            allow_pickle=True
         )
-
-        # check input number of samples
-        if self_n_samples > len(data["y"]):
-            self_n_samples = len(data["y"])
 
         # graphs
         output = [
@@ -121,20 +110,21 @@ class EstrogenDB(Dataset):
                 edge=data["e"][i],
                 feat=data["y"][i],
             )
-            for i in range(self.n_samples)
+            for i in range(len(data["y"]))
             if data["y"][i][-1] > 0.0
         ]
-
-        # update number of samples
-        self.n_samples = len(output)
 
         return output
 
     def download(self):
         # save graph arrays into directory
-        filename = os.path.join(self.dpath, f"EstrogenDB")
+        filename = os.path.join(self.dpath, "EstrogenDB")
         np.savez_compressed(
-            filename, x=self.nodes, a=self.adjcs, e=self.edges, y=self.feats
+            filename,
+            x=self.nodes,
+            a=self.adjcs,
+            e=self.edges,
+            y=self.feats
         )
 
     @staticmethod

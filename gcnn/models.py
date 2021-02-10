@@ -61,12 +61,12 @@ def train_model(
 
     # Compile GCN
     model.compile(
-        # Adam optimizer that handles sparse 
+        # Adam optimizer that handles sparse
         # updates more efficiently
         optimizer=LazyAdam(learning_rate),
         # List of metrics to monitor
         metrics=[rsquared, sigma],
-        # Objective function 
+        # Objective function
         loss=tf_loss,
     )
 

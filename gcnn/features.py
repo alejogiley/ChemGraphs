@@ -1,9 +1,6 @@
 import numpy as np
 
-# Generic List, supports indexing.
 from typing import Tuple
-
-# Cheminformatics package
 from rdkit import Chem
 from rdkit.Chem import AllChem
 

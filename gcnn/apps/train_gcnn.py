@@ -1,10 +1,11 @@
 import argparse
 import joblib
 
-from spektral.data import BatchLoader
 from spektral.layers import ECCConv
 from spektral.transforms import LayerPreprocess
 
+from gcnn.io import save_history, save_model
+from gcnn.models import train_model, evaluate_model
 from gcnn.datasets import split_dataset, transform_datasets
 from gcnn.losses import (
     mse_loss,
@@ -12,7 +13,6 @@ from gcnn.losses import (
     maxlike_cse_loss,
     maxlike_tobit_loss,
 )
-from gcnn.models import train_model
 
 
 def main(args):
@@ -22,7 +22,7 @@ def main(args):
     ##########################################################################
 
     # Load dataset
-    dataset = joblib.load(args.dataset)
+    dataset = joblib.load(args.data_path)
 
     # Transform the adjacency matrix
     # according to ECCConv
@@ -38,9 +38,16 @@ def main(args):
     # Training GCNN
     ##########################################################################
 
+    loss_types = {
+        "mse_loss": mse_loss,
+        "maxlike_mse_loss": maxlike_mse_loss,
+        "maxlike_cse_loss": maxlike_cse_loss,
+        "maxlike_tobit_loss": maxlike_tobit_loss
+    }
+
     model, history = train_model(
         dataset=train_set,
-        tf_loss=args.loss,
+        tf_loss=loss_types[args.loss_type],
         n_layers=args.n_layers,
         channels=args.channels,
         batch_size=args.batch_size,
@@ -52,18 +59,23 @@ def main(args):
     # Testing GCNN
     ##########################################################################
 
-    metrics = evaluate_model(model, test_set)
+    metrics = evaluate_model(model, tests_set)
 
     ##########################################################################
     # Performance report
     ##########################################################################
 
-    template = "MAE{0:<10} MSE{0:<10} rho{0:<10} r^2{0:<10} \%lefts{0:<10} \%right{0:<10}"
-    print(template.format(metrics.values()), file=args.outfile)
+    template = "MAE{0:<10} MSE{0:<10} rho{0:<10} r^2{0:<10} %%lefts{0:<10} %%right{0:<10}"
+
+    with open(args.metrics_path) as file:
+        file.write(template.format(metrics.values()))
 
     ##########################################################################
     # Save GCNN
     ##########################################################################
+
+    save_history(history, args.record_path)
+    save_model(model, args.model_path)
 
     return 0
 
@@ -74,23 +86,89 @@ def parse_arguments():
     # Parse input arguments
     ##########################################################################
 
-    parser = argparse.ArgumentParser(description="Epitope prediction app")
-
-    epochs = 100  # Number of training epochs
-    batch_size = 32  # MiniBatch sizes
-    learning_rate = 1e-2  # Optimizer learning rate
-
-    n_layers = 2  # number of ECCConv layers
-    channels = [64, 16]  # number of Hidden units
+    parser = argparse.ArgumentParser(
+        prog="train_gcnn",
+        description="Train GCNN model for affinity prediction",
+        usage="%(prog)s [options]",
+    )
 
     # Set the default for the dataset argument
-    parser.add_argument("--bindingdb", required=True, help="BindingDB SDF file")
     parser.add_argument(
-        "--data_path", required=True, help="Path to dataset directory"
+        "-data_path", type=str, required=True, help="Dataset file path"
     )
-    "--out-file"
+    parser.add_argument(
+        "-record_path",
+        type=str,
+        required=True,
+        help="Training history output path",
+    )
+    parser.add_argument(
+        "-model_path",
+        type=str,
+        required=True,
+        help="Trained model output path",
+    )
+    parser.add_argument(
+        "-metrics_path",
+        type=str,
+        required=True,
+        help="Model performance output path",
+    )
+    parser.add_argument(
+        "loss_type",
+        type="str",
+        metavar="loss",
+        choices=[
+            "mse_loss",
+            "maxlike_mse_loss",
+            "maxlike_cse_loss",
+            "maxlike_tobit_loss",
+        ],
+        help="Loss function for regression",
+    )
+    parser.add_argument(
+        "--epochs",
+        type=int,
+        default=20,
+        required=False,
+        help="Number of training epochs",
+    )
+    parser.add_argument(
+        "--batch_size",
+        type=int,
+        default=32,
+        required=False,
+        help="mini-batch size",
+    )
+    parser.add_argument(
+        "--learning_rate",
+        type=float,
+        default=1e-2,
+        required=False,
+        help="Optimizer learning rate",
+    )
+    parser.add_argument(
+        "--n_layers",
+        type=int,
+        default=2,
+        required=False,
+        help="Number of GCN hidden layers",
+    )
+    parser.add_argument(
+        "--channels",
+        nargs="*",
+        type=int,
+        default=[64, 32],
+        help="List of channels per GCN layer",
+    )
 
-    args = parse.parse_args()
+    group = parser.add_argument_group(title="Loss function for regression")
+    group.add_argument("mse_loss", help="Mean-squared error for NOT-censored data")
+    group.add_argument("maxlike_mse_loss", help="Mean-squared maximum-likelihood error for NOT-censored data")
+    group.add_argument("maxlike_cse_loss", help="Mean-squared maximum-likelihood error for CENSORED data")
+    group.add_argument("maxlike_tobit_loss", help="Tobit loss or CENSORED data")
+
+    args = parser.parse_args()
 
     return args
 
