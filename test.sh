@@ -3,8 +3,8 @@
 set -ex
 
 if [[ -z $VIRTUAL_ENV ]]; then
-	virtual env
-	source venv/bin/activate
+	python -m venv env
+	source env/bin/activate
 fi
 
 . develop.sh
