@@ -3,11 +3,12 @@
 set -ex
 
 if [[ -z $VIRTUAL_ENV ]]; then
-	source /Applications/Anaconda/anaconda3/bin/activate
-	conda activate env
+	virtual env
+	source venv/bin/activate
 fi
 
-python -m pip install -e .[develop]
+. develop.sh
+
 python setup.py nosetests --no-skip || error=1
 
 if [[ $error -ne 1 ]]; then
