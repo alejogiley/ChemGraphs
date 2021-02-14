@@ -94,7 +94,10 @@ def parse_arguments():
 
     # Set the default for the dataset argument
     parser.add_argument(
-        "-data_path", type=str, required=True, help="Dataset file path"
+        "-data_path",
+        type=str,
+        required=True,
+        help="Dataset file path"
     )
     parser.add_argument(
         "-record_path",
@@ -113,18 +116,6 @@ def parse_arguments():
         type=str,
         required=True,
         help="Model performance output path",
-    )
-    parser.add_argument(
-        "loss_type",
-        type="str",
-        metavar="loss",
-        choices=[
-            "mse_loss",
-            "maxlike_mse_loss",
-            "maxlike_cse_loss",
-            "maxlike_tobit_loss",
-        ],
-        help="Loss function for regression",
     )
     parser.add_argument(
         "--epochs",
@@ -160,6 +151,18 @@ def parse_arguments():
         type=int,
         default=[64, 32],
         help="List of channels per GCN layer",
+    )
+    parser.add_argument(
+        "loss_type",
+        type="str",
+        metavar="loss",
+        choices=[
+            "mse_loss",
+            "maxlike_mse_loss",
+            "maxlike_cse_loss",
+            "maxlike_tobit_loss",
+        ],
+        help="Loss function for regression",
     )
 
     group = parser.add_argument_group(title="Loss function for regression")
