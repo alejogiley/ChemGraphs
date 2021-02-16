@@ -2,7 +2,7 @@ import numpy as np
 import tensorflow as tf
 
 from tensorflow.keras.models import Model
-from tensorflow_probability.optimizers import LazyAdam
+from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.layers import (
     BatchNormalization,
     Dense,
@@ -63,7 +63,7 @@ def train_model(
     model.compile(
         # Adam optimizer that handles sparse
         # updates more efficiently
-        optimizer=LazyAdam(learning_rate),
+        optimizer=Adam(learning_rate),
         # List of metrics to monitor
         metrics=[rsquared, sigma],
         # Objective function

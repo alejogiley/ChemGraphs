@@ -2,7 +2,8 @@ import os
 import argparse
 import joblib
 
-from gcnn.data.datasets import EstrogenDB, data_features
+from gcnn.datasets import EstrogenDB
+from gcnn.features import data_features
 
 
 def main(args):

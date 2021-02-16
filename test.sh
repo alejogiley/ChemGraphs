@@ -3,7 +3,7 @@
 set -ex
 
 if [[ -z $VIRTUAL_ENV ]]; then
-	python -m venv env
+	python3.6 -m venv env
 	source env/bin/activate
 fi
 
