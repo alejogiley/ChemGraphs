@@ -1,0 +1,19 @@
+name: chemgraph
+channels:
+  - conda-forge
+  - rdkit
+dependencies:
+  - python>=3.6, <3.9
+  - numpy>=1.19
+  - scipy>=1.6
+  - pandas>=1.1
+  - networkx
+  - nose>=1.0
+  - flake8
+  - rdkit
+  - pip:
+    - keras>=2.4.0
+    - spektral==1.0.4
+    - tensorflow
+    - tensorflow-addons
+    - tensorflow_probability

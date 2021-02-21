@@ -18,41 +18,45 @@ from spektral.data import BatchLoader
 from spektral.layers import ECCConv, GlobalAttnSumPool
 
 from gcnn.metrics import pearson, rsquared
-from gcnn.utils import sigma
 
 
 def train_model(
     dataset,
     tf_loss,
+    metrics,
     n_layers=1,
     channels=[32],
     batch_size=32,
     number_epochs=40,
     learning_rate=0.001,
+    summary=False,
+    verbose=False,
 ):
     """Comment
 
     Args:
         dataset: EstrogenDB instance
         tf_loss: tensorflow-type loss function
+        metrics: list of metric functions
         n_layers: number of ECCConv layers in model
         channels: number of convolutional channels per layer
         batch_size: size of mini-batches
         number_epochs: number of epochs
         learning_rate: optimizer learning rate
+        summary (bool): print model summary
+        verbose (bool): print training data
 
     Returns:
         trained model and training history
 
     """
-
     # Dimension of node features
     size_nodes = dataset.n_node_features
     # Dimension of edge features
     size_feats = dataset.n_edge_features
 
     # Create GCN model
-    model = GCNN(
+    model = create_gcnn(
         nodes_shape=size_nodes,
         edges_shape=size_feats,
         channels=channels,
@@ -65,13 +69,17 @@ def train_model(
         # updates more efficiently
         optimizer=Adam(learning_rate),
         # List of metrics to monitor
-        metrics=[rsquared, sigma],
+        metrics=metrics,
         # Objective function
         loss=tf_loss,
     )
 
+    # Run model in Eager mode
+    model.run_eagerly = True
+
     # Summary
-    model.summary()
+    if summary:
+        model.summary()
 
     # Loader returns batches of graphs
     # with zero-padding done batch-wise
@@ -81,7 +89,7 @@ def train_model(
     history = model.fit(
         loader.load(),
         # Show training info
-        verbose=1,
+        verbose=verbose,
         # training cycles
         epochs=number_epochs,
         # len(dataset) // batch_size
@@ -102,11 +110,11 @@ def evaluate_model(model, tests_set):
 
     # discarding sigma
     pred_values = prediction[::2]
+
     # experimental affinity values
     true_values = np.array(
         [tests_set[i]["y"][2] for i in range(tests_set.n_graphs)]
     )
-
     # censured data indexes
     lefts_indexes = np.array(
         [tests_set[i]["y"][0] for i in range(tests_set.n_graphs)]
@@ -114,6 +122,7 @@ def evaluate_model(model, tests_set):
     right_indexes = np.array(
         [tests_set[i]["y"][1] for i in range(tests_set.n_graphs)]
     )
+
     # non-censored data indexes
     inner_indexes = (1 - right_indexes) * (1 - lefts_indexes)
 
@@ -171,6 +180,31 @@ def evaluate_model(model, tests_set):
     return metrics
 
 
+def create_gcnn(nodes_shape, edges_shape, channels, n_layers):
+
+    X = Input(shape=(None, nodes_shape))
+    A = Input(shape=(None, None))
+    E = Input(shape=(None, None, edges_shape))
+
+    x = Lambda(lambda x: tf.cast(x, tf.float32))(X)
+    a = Lambda(lambda x: tf.cast(x, tf.float32))(A)
+    e = Lambda(lambda x: tf.cast(x, tf.float32))(E)
+
+    f = TimeDistributed(Dense(8, use_bias=False))(e)
+
+    for i in range(n_layers):
+        x = ECCConv(channels[i], activation="tanh")([x, a, f])
+        x = BatchNormalization()(x)
+
+    x = GlobalAttnSumPool()(x)
+    x = Dense(1024, LeakyReLU(alpha=0.01))(x)
+    x = Dropout(0.25)(x)
+    x = BatchNormalization()(x)
+
+    output = MLEDense(1)(x)
+    return Model(inputs=[X, A, E], outputs=output)
+
+
 class MLEDense(Layer):
     def __init__(self, units=1):
         super(MLEDense, self).__init__()
@@ -199,70 +233,3 @@ class MLEDense(Layer):
     def call(self, inputs):
         y = tf.matmul(inputs, self.w) + self.b
         return tf.concat([y, self.sigma], axis=0)
-
-
-class GCNN(Model):
-    def __init__(self, nodes_shape, edges_shape, channels, n_layers, **kwargs):
-        super(GCNN, self).__init__()
-
-        # initialize operations
-        self.dropout = Dropout(0.25)
-        self.pooling = GlobalAttnSumPool()
-        self.batchnm = BatchNormalization()
-
-        self.convs = []
-        self.batch = []
-        # initialize convolutional
-        # and batchnorm layers
-        for i in range(n_layers):
-
-            self.batch.append(BatchNormalization())
-
-            self.convs.append(ECCConv(channels[i], activation="tanh"))
-
-        # embedding for (ohc) edges features
-        self.embedding = TimeDistributed(Dense(8, use_bias=False))
-
-        # initialize dense layers
-        self.dense = Dense(1024, LeakyReLU(alpha=0.01))
-        # last layer linear model: y = ax + b
-        self.linear = MLEDense(1)
-
-        # format layers
-        self.format = Lambda(lambda x: tf.cast(x, tf.float32))
-
-        # Parameters of the model
-        self.X = Input(shape=(None, nodes_shape))
-        self.A = Input(shape=(None, None))
-        self.E = Input(shape=(None, None, edges_shape))
-
-        self.inp = [self.X, self.A, self.E]
-        self.out = self.call(self.inp)
-        super(GCNN, self).__init__(inputs=self.inp, outputs=self.out, **kwargs)
-
-    def build(self):
-
-        self._is_graph_network = True
-        self._init_graph_network(inputs=self.inp, outputs=self.out)
-
-    def call(self, input, **kwargs):
-
-        x, a, e = input
-        x = self.format(x)
-        a = self.format(a)
-        e = self.format(e)
-        e = self.embedding(e)
-
-        for conv, batch in zip(self.convs, self.batch):
-            x = batch(conv([x, a, e]))
-
-        # polling nodes
-        x = self.pooling(x)
-
-        # MLP block
-        x = self.dense(x)
-        x = self.dropout(x)
-        x = self.batchnm(x)
-
-        # prediction + error
-        return self.linear(x)

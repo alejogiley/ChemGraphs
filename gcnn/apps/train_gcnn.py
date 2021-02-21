@@ -7,6 +7,8 @@ from spektral.transforms import LayerPreprocess
 from gcnn.io import save_history, save_model
 from gcnn.models import train_model, evaluate_model
 from gcnn.datasets import split_dataset, transform_datasets
+from gcnn.metrics import rsquared
+from gcnn.utils import sigma
 from gcnn.losses import (
     mse_loss,
     maxlike_mse_loss,
@@ -16,6 +18,9 @@ from gcnn.losses import (
 
 
 def main(args):
+
+    # if not tf.executing_eagerly():
+    #     tf.enable_eager_execution()
 
     ##########################################################################
     # Prepare Graph Dataset
@@ -48,6 +53,7 @@ def main(args):
     model, history = train_model(
         dataset=train_set,
         tf_loss=loss_types[args.loss_type],
+        metrics=[rsquared, sigma],
         n_layers=args.n_layers,
         channels=args.channels,
         batch_size=args.batch_size,
@@ -88,6 +94,7 @@ def parse_arguments():
 
     parser = argparse.ArgumentParser(
         prog="train_gcnn",
+        formatter_class=lambda prog: argparse.HelpFormatter(prog, width=120, max_help_position=40),
         description="Train GCNN model for affinity prediction",
         usage="%(prog)s [options]",
     )
@@ -118,35 +125,35 @@ def parse_arguments():
         help="Model performance output path",
     )
     parser.add_argument(
-        "--epochs",
+        "-epochs",
         type=int,
         default=20,
         required=False,
         help="Number of training epochs",
     )
     parser.add_argument(
-        "--batch_size",
+        "-batch_size",
         type=int,
         default=32,
         required=False,
         help="mini-batch size",
     )
     parser.add_argument(
-        "--learning_rate",
+        "-learning_rate",
         type=float,
         default=1e-2,
         required=False,
         help="Optimizer learning rate",
     )
     parser.add_argument(
-        "--n_layers",
+        "-n_layers",
         type=int,
         default=2,
         required=False,
         help="Number of GCN hidden layers",
     )
     parser.add_argument(
-        "--channels",
+        "-channels",
         nargs="*",
         type=int,
         default=[64, 32],
@@ -154,8 +161,7 @@ def parse_arguments():
     )
     parser.add_argument(
         "loss_type",
-        type="str",
-        metavar="loss",
+        metavar="loss_function",
         choices=[
             "mse_loss",
             "maxlike_mse_loss",
@@ -166,9 +172,9 @@ def parse_arguments():
     )
 
     group = parser.add_argument_group(title="Loss function for regression")
-    group.add_argument("mse_loss", help="Mean-squared error for NOT-censored data")
-    group.add_argument("maxlike_mse_loss", help="Mean-squared maximum-likelihood error for NOT-censored data")
-    group.add_argument("maxlike_cse_loss", help="Mean-squared maximum-likelihood error for CENSORED data")
+    group.add_argument("mse_loss", help="Mean squared error for NOT-censored data")
+    group.add_argument("maxlike_mse_loss", help="Mean squared maximum-likelihood error for NOT-censored data")
+    group.add_argument("maxlike_cse_loss", help="Mean squared maximum-likelihood error for CENSORED data")
     group.add_argument("maxlike_tobit_loss", help="Tobit loss or CENSORED data")
 
     args = parser.parse_args()
