@@ -17,4 +17,5 @@ dependencies:
     - tensorflow
     - tensorflow-addons
     - tensorflow_probability
-    - python-coveralls
+    - coverage
+    - coveralls

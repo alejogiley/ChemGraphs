@@ -23,5 +23,6 @@ install:
 
 script: 
   - nosetests --with-coverage
+  - coverage run --source=gcnn setup.py test
 after_success:
   - coveralls
