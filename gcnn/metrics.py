@@ -1,12 +1,19 @@
 import tensorflow as tf
 
 
-def rsquared(y_true, y_pred):
-    """Metric of degree of any linear correlation
+def r_squared(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
+    """Estimate R-square metric
 
-    R_square is the proportion of the variance in the dependent variable
-    that is predictable from the independent variable(s). Details here
+    R_square explains to what extent the variance of he predicted 
+    variable explains the variance of the target variable. Details here
     https://en.wikipedia.org/wiki/Coefficient_of_determination
+
+    Args:
+        y_true: target values
+        y_pred: predicted values
+
+    Returns:
+        correlation metric
 
     """
     # Estimators∏
@@ -33,13 +40,19 @@ def rsquared(y_true, y_pred):
     return tf.subtract(1.0, tf.math.divide_no_nan(sres, stot))
 
 
-def pearson(y_true, y_pred):
-    """Measure of linear correlation
+def pearson(y_true: tf.Tensor, y_pred: tf.Tensor) ->: tf.Tensor:
+    """Estimate Pearson cefficient
 
-    It is the covariance of two variables, divided by
-    the product of their standard deviations. The result
-    always has a value between -1 and 1. Details here
+    The Pearson metric indicates the linear relationship between
+    the predicted and target sets of data. Details here
     https://en.wikipedia.org/wiki/Pearson_correlation_coefficient
+
+    Args:
+        y_true: target values
+        y_pred: predicted values
+
+    Returns:
+        relationship metric
 
     """
     # Estimators

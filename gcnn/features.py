@@ -1,14 +1,29 @@
 import numpy as np
 
-from typing import Tuple
 from rdkit import Chem
 from rdkit.Chem import AllChem
+from rdkit.Chem.rdchem import Mol
+from typing import Tuple, Literal
 
 from gcnn.utils import onehot_encoding, str_is_float, symmetrize
 
 
-def get_nodes(mol: object) -> np.ndarray:
-    """Compute node features: vdw radius, charge, degree"""
+AFFINITY = Literal["Ki(nM)", "IC50 (nM)", "Kd (nM)", "EC50 (nM)"]
+
+
+def get_nodes(mol: Mol) -> np.ndarray:
+    """Compute node features
+
+    Node (atom) features are the van der waals radius, the atomic charge
+    and the number of directly-bonded neighbors in each molecule.
+
+    Args:
+        mol: rdkit Mol object
+
+    Returns:
+        array of node feaures
+
+    """
     AllChem.ComputeGasteigerCharges(mol)
 
     nodes = np.array(
@@ -25,12 +40,18 @@ def get_nodes(mol: object) -> np.ndarray:
     return nodes
 
 
-def get_edges(mol: object) -> np.ndarray:
-    """
-    the bond types here are
-    {'AROMATIC', 'DOUBLE', 'SINGLE', 'TRIPLE'}
-    but the number of classes in rdkit is larger
-    *temporary solution
+def get_edges(mol: Mol) -> np.ndarray:
+    """Compute edge features
+
+    Eged (bond) features are categorical, a one-hot encoded vector
+    is used to represent one of these types: aromatic, "double", "single", or "triple".
+    although these are not all the classes available in rdkit.
+
+    Args:
+        mol: rdkit Mol object
+
+    Returns:
+        array of edge feaures
 
     """
     keys = ["AROMATIC", "DOUBLE", "SINGLE", "TRIPLE"]
@@ -47,15 +68,26 @@ def get_edges(mol: object) -> np.ndarray:
     return symmetrize(edges)
 
 
-def get_labels(mol: object, key="IC50 (nM)") -> np.ndarray:
-    """Generate label data for each molecule
+def get_labels(mol: Mol, key="IC50 (nM)": AFFINITY) -> np.ndarray:
+    """Compute target variables
 
-    indicators of right-censored ">" or lef-censored "<"
-    which are reported for concentrations beyond detection limits.
+    The target variables are the binding affinities of the molecules.
+    Experimental values are sometimes right and left censored, for ligands 
+    whose binding concentrations range is beyond detection limits.
+    Those values are indicated by the symbols ">" and "<" for right and
+    left censored respecively.
 
-    For reported concentrations, angle brackets are removed and
-    boundary values are saved. When concentration value is 0,
-    it means metric was not reported.
+    Target variable is reported as a vector of 3 dimensions, the first 2 indicate 
+    whether the metric is censored and the last dimension reports the experimental
+    binding affinity, or the censored boundary. When the input metric type, e.g. IC50
+    are not reported for a molecule the target metric is assigned 0.
+
+    Args:
+        mol: rdkit Mol object
+        key: type of affinity metric
+
+    Returns:
+        array of target variables
 
     """
     # read potency metric
@@ -98,21 +130,21 @@ def get_labels(mol: object, key="IC50 (nM)") -> np.ndarray:
     return np.array([lefts, right, metrics])
 
 
-def data_features(data_path: str) -> Tuple[np.ndarray]:
-    """Calculate graph objects features
+def data_features(path: str) -> Tuple[np.ndarray]:
+    """Calculate graph features from BindingDB Dataset
 
     Args:
-        data_path (str): path to Dataset from BindingDB
+        path (str): path to dataset
 
     Returns:
-        x (ndarray): node features
-        a (ndarray): adjacency matrices
-        e (ndarray): edges features
-        y (ndarray): labels features
+        x: node features
+        a: adjacency matrices
+        e: edges features
+        y: labels features
 
     """
     # create instance of sdf reader
-    suppl = Chem.SDMolSupplier(data_path, sanitize=True, strictParsing=True)
+    suppl = Chem.SDMolSupplier(path, sanitize=True, strictParsing=True)
 
     # read all molecules besides ones with errors into a list
     molecules = [mol for mol in suppl if mol is not None]

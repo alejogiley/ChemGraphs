@@ -9,9 +9,17 @@ from spektral.data import Dataset, Graph
 from sklearn.preprocessing import QuantileTransformer
 
 
-def split_dataset(dataset: object, ratio=0.9) -> Tuple:
-    """Partition Dataset into Train and Tests sets"""
-
+def split_dataset(dataset: EstrogenDB, ratio=0.9) -> Tuple[EstrogenDB]:
+    """Split Dataset into Train and Tests sets
+    
+    Args:
+        dataset: graph dataset
+        ratio: split ratio of train / tests
+    
+    Returns:
+        train and tests subsets
+    
+    """
     # randomize indexes
     indexes = np.random.permutation(len(dataset))
 
@@ -28,13 +36,35 @@ def split_dataset(dataset: object, ratio=0.9) -> Tuple:
     return train, tests
 
 
-def apply_transformation(train, data):
-    # Quantile transformation (gaussian pdf)
+def apply_transformation(reference: np.ndarray, dataset: np.ndarray) -> np.ndarray:
+    """Feature transformation
+
+    Transform features to follow a uniform or a normal distribution
+    see: https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.QuantileTransformer.html
+
+    Args:
+        reference: feature set to fit transformation
+        dataset: feature set to apply transformation
+
+    Returns:
+         np.ndarray: transformed feature set
+
+    """
     scaler = QuantileTransformer(output_distribution="normal")
-    return scaler.fit(train).transform(data)
+    return scaler.fit(reference).transform(dataset)
 
 
-def transform_datasets(train_set, tests_set):
+def transform_datasets(train_set: EstrogenDB, tests_set: EstrogenDB) -> Tuple[EstrogenDB]:
+    """Preprocessing of node features in Graph dataset
+
+    Args:
+        train_set: subset of graph dataset used for training
+        tests_set: subset of graph dataset used for testing
+
+    Returns:
+        datasets with transformed node features
+
+    """
     new_train_set = train_set
     new_tests_set = tests_set
 

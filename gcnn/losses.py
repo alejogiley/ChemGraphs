@@ -3,11 +3,26 @@ import tensorflow as tf
 import tensorflow_probability as tfp
 
 
-def mse_loss(y_true, y_pred):
+def mse_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
+    """Mean Squared Error (MSE) for censored data
 
-    # Estimators
-    true = y_true[:, 2]
-    pred = y_pred[:-1, 0]
+    In this implementation although the input predictions contain the
+    estimated target affinities and the estimated errors variance,
+    the predicted variance is ignored. This is a standard MSE where
+    censored values are ignored.
+
+    Details in https://en.wikipedia.org/wiki/Mean_squared_error
+
+    Args:
+        y_true: censored target
+        y_pred: predictions & variance
+
+    Returns:
+        mean squared error
+    
+    """
+    # Predictions
+    pred = y_pred[:-1, 0] 
 
     # Variance of error distribution
     sigma = tf.square(y_pred[-1:])
@@ -18,6 +33,9 @@ def mse_loss(y_true, y_pred):
     ##################################
     # Censored values
     ##################################
+
+    # Target affinities
+    true = y_true[:, 2]
 
     # Get indicators censoring
     lefts_indexes = y_true[:, 0]
@@ -38,10 +56,25 @@ def mse_loss(y_true, y_pred):
     return loss
 
 
-def maxlike_mse_loss(y_true, y_pred):
+def maxlike_mse_loss((y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
+    """Maximum-likelihood MSE for censored data
 
-    # Estimators
-    true = y_true[:, 2]
+    In this case a maximum likelihood estimate of MSE is used which takes
+    into account the predicted variance of the errors distribution. When the
+    variance is 1 the final result is equivalent to the standard MSE. Censored
+    values are ignored.
+
+    Details here https://en.wikipedia.org/wiki/Maximum_likelihood_estimation
+
+    Args:
+        y_true: censored target
+        y_pred: predictions & variance
+
+    Returns:
+        mean squared error
+
+    """
+    # Predictions
     pred = y_pred[:-1, 0]
 
     # Variance of error distribution
@@ -53,6 +86,9 @@ def maxlike_mse_loss(y_true, y_pred):
     ##################################
     # Censored values
     ##################################
+
+    # Target affinities
+    true = y_true[:, 2]
 
     # Get indicators censoring
     lefts_indexes = y_true[:, 0]
@@ -70,20 +106,34 @@ def maxlike_mse_loss(y_true, y_pred):
     # calculate loss
     loss = tf.reduce_sum(
         tf.math.log(2 * sigma * np.pi)
-        + tf.square(true - pred) / sigma * inner_indexes
+        + tf.square(true - pred) / sigma
+        * inner_indexes
     )
 
     return loss
 
 
-def maxlike_cse_loss(y_true, y_pred):
+def maxlike_cse_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
+    """Censored maximum-likelihood MSE for censored data
+
+    For lef-censored values a MSE error is computed only when predictions
+    are larger than the target value, equivalently for right-censored 
+    values when predictions are smaller than targets. 
+
+    Args:
+        y_true: censored target
+        y_pred: predictions & variance
+
+    Returns:
+        mean squared error
+
+    """
 
     ##################################
     # Split predictions
     ##################################
 
-    # Estimators
-    true = y_true[:, 2]
+    # Predictions
     pred = y_pred[:-1, 0]
 
     # Variance of error distribution
@@ -96,6 +146,9 @@ def maxlike_cse_loss(y_true, y_pred):
     ##################################
     # Censored values
     ##################################
+
+    # Target affinities
+    true = y_true[:, 2]
 
     # Get indicators censoring
     lefts_indexes = y_true[:, 0]
@@ -126,14 +179,25 @@ def maxlike_cse_loss(y_true, y_pred):
     return loss
 
 
-def maxlike_tobit_loss(y_true, y_pred):
+def maxlike_tobit_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
+    """Maximum-likelihood error for a Tobit model
+
+    Details here https://en.wikipedia.org/wiki/Tobit_model
+
+    Args:
+        y_true: censored target
+        y_pred: predictions & variance
+
+    Returns:
+        mean squared error
+
+    """
 
     ##################################
     # Split predictions
     ##################################
 
-    # Estimators
-    true = y_true[:, 2]
+    # Predictions
     pred = y_pred[:-1, 0]
 
     # Variance of error distribution
@@ -146,6 +210,9 @@ def maxlike_tobit_loss(y_true, y_pred):
     ##################################
     # Censored values
     ##################################
+
+    # Target affinities
+    true = y_true[:, 2]
 
     # Get indicators censoring
     lefts_indexes = y_true[:, 0]
