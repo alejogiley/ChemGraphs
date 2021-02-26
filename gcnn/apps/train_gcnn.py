@@ -7,7 +7,7 @@ from spektral.transforms import LayerPreprocess
 from gcnn.io import save_history, save_model
 from gcnn.models import train_model, evaluate_model
 from gcnn.datasets import split_dataset, transform_datasets
-from gcnn.metrics import rsquared
+from gcnn.metrics import r_squared
 from gcnn.utils import sigma
 from gcnn.losses import (
     mse_loss,
@@ -53,7 +53,7 @@ def main(args):
     model, history = train_model(
         dataset=train_set,
         tf_loss=loss_types[args.loss_type],
-        metrics=[rsquared, sigma],
+        metrics=[r_squared, sigma],
         n_layers=args.n_layers,
         channels=args.channels,
         batch_size=args.batch_size,

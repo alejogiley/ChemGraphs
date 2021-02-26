@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import numpy as np
 
 from rdkit import Chem
@@ -68,7 +70,7 @@ def get_edges(mol: Mol) -> np.ndarray:
     return symmetrize(edges)
 
 
-def get_labels(mol: Mol, key="IC50 (nM)": AFFINITY) -> np.ndarray:
+def get_labels(mol: Mol, key: AFFINITY = "IC50 (nM)") -> np.ndarray:
     """Compute target variables
 
     The target variables are the binding affinities of the molecules.
