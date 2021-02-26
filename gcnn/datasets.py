@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import os
 import itertools
 
@@ -140,7 +142,7 @@ class EstrogenDB(Dataset):
                 edge=data["e"][i],
                 feat=data["y"][i],
             )
-            for i enumerate(data["y"])
+            for i in enumerate(data["y"])
             if data["y"][i][-1] > 0.0
         ]
 

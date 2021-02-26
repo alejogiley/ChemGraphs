@@ -17,15 +17,15 @@ from tensorflow.keras.layers import (
 from spektral.data import BatchLoader
 from spektral.layers import ECCConv, GlobalAttnSumPool
 
-from gcnn.metrics import pearson, rsquared
+from gcnn.metrics import pearson, r_squared
 
 
 def train_model(
     dataset,
     tf_loss,
     metrics,
+    channels,
     n_layers=1,
-    channels=[32],
     batch_size=32,
     number_epochs=40,
     learning_rate=0.001,
@@ -157,7 +157,7 @@ def evaluate_model(model, tests_set):
     )
 
     # estimate R^2 CORRELATION
-    metrics["rsquared"] = rsquared(
+    metrics["rsquared"] = r_squared(
         true_values[(inner_indexes > 0)], pred_values[(inner_indexes > 0)]
     )
 
