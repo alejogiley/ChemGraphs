@@ -56,7 +56,7 @@ def mse_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     return loss
 
 
-def maxlike_mse_loss((y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
+def maxlike_mse_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     """Maximum-likelihood MSE for censored data
 
     In this case a maximum likelihood estimate of MSE is used which takes

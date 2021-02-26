@@ -78,7 +78,7 @@ def transform_datasets(train_set: EstrogenDB, tests_set: EstrogenDB) -> Tuple[Es
         train = list(itertools.chain(*train))
         train = np.array(train).reshape(-1, 1)
 
-        for k in range(len(train_set)):
+        for k in enumerate(train_set):
             # reshape node data for sklearn
             data = train_set[k]["x"][:, index]
             data = data.reshape(-1, 1)
@@ -87,7 +87,7 @@ def transform_datasets(train_set: EstrogenDB, tests_set: EstrogenDB) -> Tuple[Es
             # replace node features in array
             new_train_set[k]["x"][:, index] = scaled_data
 
-        for k in range(len(tests_set)):
+        for k in enumerate(tests_set):
             # reshape node data for sklearn
             data = tests_set[k]["x"][:, index]
             data = data.reshape(-1, 1)

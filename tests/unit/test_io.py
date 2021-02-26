@@ -19,7 +19,7 @@ from gcnn.io import save_model, save_history
 
 class TestSaveHistory(tf.test.TestCase):
     """Check save_history routine"""
-    
+
     def setUp(self):
         super(TestSaveHistory, self).setUp()
         tf.random.set_seed(1)
@@ -28,7 +28,7 @@ class TestSaveHistory(tf.test.TestCase):
         self.tmpdir = tempfile.mkdtemp()
         # temporary file
         self.tmpdat = os.path.join(self.tmpdir, "history.dat")
-        
+
         # simple dataset
         class TestDataset(Dataset):
             def read(self):
@@ -40,11 +40,11 @@ class TestSaveHistory(tf.test.TestCase):
                         y=np.array([1.0]),
                     )
                 ]
-        
+
         # initialize
         loader = BatchLoader(
             TestDataset(), batch_size=1, epochs=1, shuffle=False)
-        
+
         # dummy model
         nodes = Input(shape=(None, 1))
         adjcs = Input(shape=(None, None))
@@ -52,24 +52,24 @@ class TestSaveHistory(tf.test.TestCase):
         messg = ECCConv(2)([nodes, adjcs, edges])
         messg = GlobalSumPool()(messg)
         final = Dense(1, "tanh")(messg)
-        
+
         # compile model
         model = Model(inputs=[nodes, adjcs, edges], outputs=final)
         model.compile(optimizer=Adam(lr=0.1), loss="mse")
-        
+
         # train model
         self.history = model.fit(
             loader.load(), verbose=0, steps_per_epoch=1)
-        
+
     def tearDown(self):
         # delete temp directory
         shutil.rmtree(self.tmpdir)
-        
+
     def test_good_file_path(self):
         """check history is saved properly"""
         save_history(self.history, self.tmpdat)
         self.assertTrue(pl.Path(self.tmpdat).is_file())
-        
+
     def test_wrong_file_path(self):
         """check error wrong output path"""
         with self.assertRaises(IOError):
@@ -93,11 +93,11 @@ class TestSaveModel(tf.test.TestCase):
         self.tmpdir = tempfile.mkdtemp()
         # SavedModel model path
         self.tmpdat = os.path.join(self.tmpdir, "model")
-        
+ 
     def tearDown(self):
         # delete temp directory
         shutil.rmtree(self.tmpdir)
-        
+
     def test_good_model(self):
         """check model is saved properly"""
         # dummy model
@@ -112,13 +112,13 @@ class TestSaveModel(tf.test.TestCase):
         
         save_model(model, self.tmpdat)
         self.assertTrue(pl.Path(self.tmpdat).is_dir())
-        
+
     def test_wrong_model(self):
         """check error for empty model"""
         model = Model()
         with self.assertRaises(ValueError):
             save_model(model, self.tmpdat)
-			
+	
 
 if __name__ == '__main__':
 	tf.test.main()

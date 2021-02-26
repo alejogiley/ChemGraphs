@@ -10,7 +10,7 @@ if [[ -z $CONDA_DEFAULT_ENV ]]; then
 	ENVS=$(conda env list 2>&1)
 
 	export PATH="$CONDA_BASE/bin:$PATH"
-	source $CONDA_BASE/etc/profile.d/conda.sh
+	source "$CONDA_BASE/etc/profile.d/conda.sh"
 
 	if [[ $ENVS == *$NAME* ]]; then
 		source activate $NAME

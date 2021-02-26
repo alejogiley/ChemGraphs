@@ -40,7 +40,7 @@ def r_squared(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     return tf.subtract(1.0, tf.math.divide_no_nan(sres, stot))
 
 
-def pearson(y_true: tf.Tensor, y_pred: tf.Tensor) ->: tf.Tensor:
+def pearson(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     """Estimate Pearson cefficient
 
     The Pearson metric indicates the linear relationship between
