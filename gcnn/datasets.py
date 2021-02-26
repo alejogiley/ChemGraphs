@@ -6,12 +6,12 @@ import itertools
 import numpy as np
 import scipy.sparse as sp
 
-from typing import Tuple
+from typing import Tuple, Type
 from spektral.data import Dataset, Graph
 from sklearn.preprocessing import QuantileTransformer
 
 
-def split_dataset(dataset: EstrogenDB, ratio=0.9) -> Tuple[EstrogenDB]:
+def split_dataset(dataset: Type[EstrogenDB], ratio=0.9) -> Tuple:
     """Split Dataset into Train and Tests sets
     
     Args:
@@ -56,7 +56,7 @@ def apply_transformation(reference: np.ndarray, dataset: np.ndarray) -> np.ndarr
     return scaler.fit(reference).transform(dataset)
 
 
-def transform_datasets(train_set: EstrogenDB, tests_set: EstrogenDB) -> Tuple[EstrogenDB]:
+def transform_datasets(train_set: Type[EstrogenDB], tests_set: EstrogenDB) -> Tuple:
     """Preprocessing of node features in Graph dataset
 
     Args:
