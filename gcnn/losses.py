@@ -19,10 +19,10 @@ def mse_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
 
     Returns:
         mean squared error
-    
+
     """
     # Predictions
-    pred = y_pred[:-1, 0] 
+    pred = y_pred[:-1, 0]
 
     # Variance of error distribution
     sigma = tf.square(y_pred[-1:])
@@ -117,8 +117,8 @@ def maxlike_cse_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     """Censored maximum-likelihood MSE for censored data
 
     For lef-censored values a MSE error is computed only when predictions
-    are larger than the target value, equivalently for right-censored 
-    values when predictions are smaller than targets. 
+    are larger than the target value, equivalently for right-censored
+    values when predictions are smaller than targets.
 
     Args:
         y_true: censored target

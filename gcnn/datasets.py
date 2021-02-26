@@ -15,10 +15,10 @@ def split_dataset(dataset: EstrogenDB, ratio=0.9) -> Tuple[EstrogenDB]:
     Args:
         dataset: graph dataset
         ratio: split ratio of train / tests
-    
+
     Returns:
         train and tests subsets
-    
+
     """
     # randomize indexes
     indexes = np.random.permutation(len(dataset))
@@ -74,7 +74,7 @@ def transform_datasets(train_set: EstrogenDB, tests_set: EstrogenDB) -> Tuple[Es
     for index in range(n_features):
         # get train data for each feature
         # to fit transformation on
-        train = [train_set[i]["x"][:, index] for i in range(len(train_set))]
+        train = [train_set[i]["x"][:, index] for i in enumerate(train_set)]
         train = list(itertools.chain(*train))
         train = np.array(train).reshape(-1, 1)
 
@@ -140,7 +140,7 @@ class EstrogenDB(Dataset):
                 edge=data["e"][i],
                 feat=data["y"][i],
             )
-            for i in range(len(data["y"]))
+            for i enumerate(data["y"])
             if data["y"][i][-1] > 0.0
         ]
 

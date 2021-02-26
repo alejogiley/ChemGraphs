@@ -4,7 +4,7 @@ import tensorflow as tf
 def r_squared(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     """Estimate R-square metric
 
-    R_square explains to what extent the variance of he predicted 
+    R_square explains to what extent the variance of he predicted
     variable explains the variance of the target variable. Details here
     https://en.wikipedia.org/wiki/Coefficient_of_determination
 

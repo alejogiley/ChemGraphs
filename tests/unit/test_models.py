@@ -6,9 +6,7 @@ from spektral.data.dataset import Dataset
 from spektral.data.graph import Graph
 
 from gcnn.models import (
-    train_model,
-    MLEDense,
-    create_gcnn
+    train_model
 )
 
 
@@ -32,7 +30,7 @@ class TestTrainModel(tf.test.TestCase):
                     )
                 ]
 
-        # initialize        
+        # initialize
         dataset = TestDataset()
 
         # train model

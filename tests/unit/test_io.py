@@ -23,7 +23,7 @@ class TestSaveHistory(tf.test.TestCase):
     def setUp(self):
         super(TestSaveHistory, self).setUp()
         tf.random.set_seed(1)
-        
+
         # temporary directory
         self.tmpdir = tempfile.mkdtemp()
         # temporary file
