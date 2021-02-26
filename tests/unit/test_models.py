@@ -1,20 +1,15 @@
-import os
 import shutil
 import tempfile
 
 import numpy as np
-import pathlib as pl
 import tensorflow as tf
 
-from tensorflow.python.framework import test_util
 from tensorflow.python.keras.engine import training
-from spektral.data import BatchLoader
 from spektral.data.dataset import Dataset
 from spektral.data.graph import Graph
 
 from gcnn.models import (
     train_model,
-    evaluate_model,
     MLEDense,
     create_gcnn
 )
@@ -30,7 +25,7 @@ class TestTrainModel(tf.test.TestCase):
         # simple dataset
         class TestDataset(Dataset):
             
-            def read(self):
+            def read():
                 return [
                     Graph(
                         x=np.ones((2, 1)),
