@@ -110,9 +110,9 @@ Loss function for regression:
 
     # optional arguments
     parser.add_argument(
-        "--data_path", 
-        type=str, 
-        required=True, 
+        "--data_path",
+        type=str,
+        required=True,
         help="Input graph dataset file path"
     )
     parser.add_argument(

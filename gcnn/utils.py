@@ -3,7 +3,6 @@ import numpy as np
 import tensorflow as tf
 
 from keras.utils import to_categorical
-from typing import List
 
 
 def str_is_float(s: str) -> bool:

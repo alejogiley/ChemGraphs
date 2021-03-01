@@ -1,12 +1,8 @@
 import codecs
-import nose
 import os
 import re
 
-from setuptools import setup, find_packages
-from setuptools.command.install import install
-from setuptools.command.develop import develop
-
+from setuptools import setup
 
 PROJECT_ROOT = os.path.dirname(os.path.realpath(__file__))
 README_FILE = os.path.join(PROJECT_ROOT, "README.md")

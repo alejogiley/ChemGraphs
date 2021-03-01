@@ -22,7 +22,7 @@ from spektral.data import BatchLoader
 from spektral.layers import ECCConv, GlobalAttnSumPool
 
 from gcnn.datasets import GraphDB
-from gcnn.metrics import pearson, r_squared
+from gcnn.metrics import r_squared
 
 
 def train_model(
@@ -115,7 +115,7 @@ def evaluate_model(model, tests_set):
 
     # discarding sigma
     pred_values = prediction[::2]
-    
+
     # experimental affinity values &
     # censured data indexes
     true_values = np.array([
@@ -209,8 +209,8 @@ class MLEDense(Layer):
         )
 
         self.b = self.add_weight(
-            shape=(self.units,), 
-            initializer="random_normal", 
+            shape=(self.units,),
+            initializer="random_normal",
             name='final_bias',
             trainable=True)
 
@@ -219,8 +219,8 @@ class MLEDense(Layer):
 
         # variance of error distribution
         self.sigma = tf.Variable(
-            init(shape=(self.units, self.units)), 
-            name='sigma', 
+            init(shape=(self.units, self.units)),
+            name='sigma',
             trainable=True)
 
     def call(self, inputs):

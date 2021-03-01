@@ -35,7 +35,7 @@ def save_gcnn(model, out_path: str):
                    save_traces=True)
     except Exception as err:
         raise IOError("Unable to save model: {}".format(str(err)))
-    
+
 
 def save_metrics(metrics: Dict, out_path: str):
     """Save model performance"""
