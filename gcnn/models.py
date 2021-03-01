@@ -22,7 +22,6 @@ from spektral.data import BatchLoader
 from spektral.layers import ECCConv, GlobalAttnSumPool
 
 from gcnn.datasets import GraphDB
-from gcnn.metrics import r_squared
 
 
 def train_model(
@@ -142,7 +141,7 @@ def evaluate_model(model, tests_set):
 
     true = true_values[(inner_indexes > 0)].flatten()
     pred = pred_values[(inner_indexes > 0)].flatten()
-    
+
     # estimate MEAN ABSOLUTE ERROR
     mae = tf.keras.losses.MeanAbsoluteError()
     metrics["mae"] = mae(true, pred).numpy()

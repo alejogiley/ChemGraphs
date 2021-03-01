@@ -64,7 +64,7 @@ def pearson(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     ##################################
     # Censored values
     ##################################
-    
+
     # Target affinities
     print(y_true)
     true = y_true[:, 2]
