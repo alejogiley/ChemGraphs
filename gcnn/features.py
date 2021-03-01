@@ -5,12 +5,12 @@ import numpy as np
 from rdkit import Chem
 from rdkit.Chem import AllChem
 from rdkit.Chem.rdchem import Mol
-from typing import Tuple, Literal
+from typing import Tuple, Literal, List, Any
 
 from gcnn.utils import onehot_encoding, str_is_float, symmetrize
 
 
-AFFINITY = Literal["Ki(nM)", "IC50 (nM)", "Kd (nM)", "EC50 (nM)"]
+METRICS = Literal["Ki (nM)", "IC50 (nM)", "Kd (nM)", "EC50 (nM)"]
 
 
 def get_nodes(mol: Mol) -> np.ndarray:
@@ -64,36 +64,35 @@ def get_edges(mol: Mol) -> np.ndarray:
     for bond in mol.GetBonds():
         i = bond.GetBeginAtomIdx()
         j = bond.GetEndAtomIdx()
-
-        edges[i, j] = onehot_encoding(str(bond.GetBondType()), keys)
+        edges[i, j] = onehot_encoding(keys.index(str(bond.GetBondType())), len(keys))
 
     return symmetrize(edges)
 
 
-def get_labels(mol: Mol, key: AFFINITY = "IC50 (nM)") -> np.ndarray:
+def get_labels(mol: Mol, metric: METRICS = "IC50 (nM)") -> np.ndarray:
     """Compute target variables
 
     The target variables are the binding affinities of the molecules.
-    Experimental values are sometimes right and left censored, for ligands 
+    Experimental values are sometimes right and left censored, for ligands
     whose binding concentrations range is beyond detection limits.
     Those values are indicated by the symbols ">" and "<" for right and
     left censored respecively.
 
-    Target variable is reported as a vector of 3 dimensions, the first 2 indicate 
+    Target variable is reported as a vector of 3 dimensions, the first 2 indicate
     whether the metric is censored and the last dimension reports the experimental
     binding affinity, or the censored boundary. When the input metric type, e.g. IC50
     are not reported for a molecule the target metric is assigned 0.
 
     Args:
         mol: rdkit Mol object
-        key: type of affinity metric
+        metric: type of affinity metric
 
     Returns:
         array of target variables
 
     """
     # read potency metric
-    sample = mol.GetPropsAsDict()[key]
+    sample = mol.GetPropsAsDict()[metric]
     # remove leading and trailing whitespaces
     sample = sample.strip()
 
@@ -132,11 +131,15 @@ def get_labels(mol: Mol, key: AFFINITY = "IC50 (nM)") -> np.ndarray:
     return np.array([lefts, right, metrics])
 
 
-def data_features(path: str) -> Tuple[np.ndarray]:
+def data_features(
+    path: str,
+    affinity: str = "IC50",
+) -> Tuple[List[Any], List[Any], List[Any], List[Any]]:
     """Calculate graph features from BindingDB Dataset
 
     Args:
-        path (str): path to dataset
+        path: path to dataset
+        affinity: target metric type
 
     Returns:
         x: node features
@@ -164,6 +167,6 @@ def data_features(path: str) -> Tuple[np.ndarray]:
     # this metric is less reliable than e.g. Kd as
     # it depends on the of the substrates used in
     # the essay and it is cell type dependent.
-    y = [get_labels(mol) for mol in molecules]
+    y = [get_labels(mol, metric=affinity + " (nM)") for mol in molecules]
 
     return x, a, e, y

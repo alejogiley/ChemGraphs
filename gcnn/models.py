@@ -1,8 +1,12 @@
 import numpy as np
 import tensorflow as tf
 
+from scipy.stats import pearsonr
+from typing import Tuple, List, Callable
+
 from tensorflow.keras.models import Model
 from tensorflow.keras.optimizers import Adam
+from tensorflow.math import count_nonzero
 from tensorflow.keras.layers import (
     BatchNormalization,
     Dense,
@@ -17,25 +21,26 @@ from tensorflow.keras.layers import (
 from spektral.data import BatchLoader
 from spektral.layers import ECCConv, GlobalAttnSumPool
 
+from gcnn.datasets import GraphDB
 from gcnn.metrics import pearson, r_squared
 
 
 def train_model(
-    dataset,
-    tf_loss,
-    metrics,
-    channels,
-    n_layers=1,
-    batch_size=32,
-    number_epochs=40,
-    learning_rate=0.001,
-    summary=False,
-    verbose=False,
-):
+    dataset: GraphDB,
+    tf_loss: Callable,
+    metrics: List[Callable],
+    channels: List[int],
+    n_layers: int = 1,
+    batch_size: int = 32,
+    number_epochs: int = 40,
+    learning_rate: float = 0.001,
+    summary: bool = False,
+    verbose: bool = False,
+) -> Tuple:
     """Comment
 
     Args:
-        dataset: EstrogenDB instance
+        dataset: GraphDB instance
         tf_loss: tensorflow-type loss function
         metrics: list of metric functions
         n_layers: number of ECCConv layers in model
@@ -43,8 +48,8 @@ def train_model(
         batch_size: size of mini-batches
         number_epochs: number of epochs
         learning_rate: optimizer learning rate
-        summary (bool): print model summary
-        verbose (bool): print training data
+        summary: print model summary
+        verbose: print training data
 
     Returns:
         trained model and training history
@@ -110,18 +115,15 @@ def evaluate_model(model, tests_set):
 
     # discarding sigma
     pred_values = prediction[::2]
-
-    # experimental affinity values
-    true_values = np.array(
-        [tests_set[i]["y"][2] for i in range(tests_set.n_graphs)]
-    )
+    
+    # experimental affinity values &
     # censured data indexes
-    lefts_indexes = np.array(
-        [tests_set[i]["y"][0] for i in range(tests_set.n_graphs)]
-    )
-    right_indexes = np.array(
-        [tests_set[i]["y"][1] for i in range(tests_set.n_graphs)]
-    )
+    true_values = np.array([
+        tests_set[i]["y"][2] for i in range(tests_set.n_graphs)])
+    lefts_indexes = np.array([
+        tests_set[i]["y"][0] for i in range(tests_set.n_graphs)])
+    right_indexes = np.array([
+        tests_set[i]["y"][1] for i in range(tests_set.n_graphs)])
 
     # non-censored data indexes
     inner_indexes = (1 - right_indexes) * (1 - lefts_indexes)
@@ -134,48 +136,35 @@ def evaluate_model(model, tests_set):
         "mae": 0,
         "mse": 0,
         "pearson": 0,
-        "rsquare": 0,
         "fraction_lefts_outliers": 0,
         "fraction_right_outliers": 0,
     }
 
+    true = true_values[(inner_indexes > 0)].flatten()
+    pred = pred_values[(inner_indexes > 0)].flatten()
+    
     # estimate MEAN ABSOLUTE ERROR
     mae = tf.keras.losses.MeanAbsoluteError()
-    metrics["mae"] = mae(
-        true_values[(inner_indexes > 0)], pred_values[(inner_indexes > 0)]
-    ).numpy()
+    metrics["mae"] = mae(true, pred).numpy()
 
     # estimate MEAN SQUARED ERROR
     mae = tf.keras.losses.MeanSquaredError()
-    metrics["mse"] = mae(
-        true_values[(inner_indexes > 0)], pred_values[(inner_indexes > 0)]
-    ).numpy()
+    metrics["mse"] = mae(true, pred).numpy()
 
     # estimate PEARSON CORRELATION
-    metrics["pearson"] = pearson(
-        true_values[(inner_indexes > 0)], pred_values[(inner_indexes > 0)]
-    )
+    metrics["pearson"] = pearsonr(true, pred)[0]
 
-    # estimate R^2 CORRELATION
-    metrics["rsquared"] = r_squared(
-        true_values[(inner_indexes > 0)], pred_values[(inner_indexes > 0)]
-    )
+    # Number of predicted values
+    # above or below the correct threashold
+    lefts_outliers = tf.nn.relu(
+        pred_values[(lefts_indexes > 0)] - true_values[(lefts_indexes > 0)])
+    right_outliers = tf.nn.relu(
+        true_values[(right_indexes > 0)] - pred_values[(right_indexes > 0)])
 
     # estimate FRACTION of censored values
     # predicted higher than true boundaries
-    lefts_outliers = tf.nn.relu(
-        pred_values[(lefts_indexes > 0)] - true_values[(lefts_indexes > 0)]
-    )
-    right_outliers = tf.nn.relu(
-        true_values[(right_indexes > 0)] - pred_values[(right_indexes > 0)]
-    )
-
-    metrics["fraction_lefts_outliers"] = tf.math.count_nonzero(
-        lefts_outliers
-    ) / sum(lefts_indexes)
-    metrics["fraction_right_outliers"] = tf.math.count_nonzero(
-        right_outliers
-    ) / sum(right_indexes)
+    metrics["fraction_lefts_outliers"] = count_nonzero(lefts_outliers) / sum(lefts_indexes)
+    metrics["fraction_right_outliers"] = count_nonzero(right_outliers) / sum(right_indexes)
 
     return metrics
 
@@ -215,21 +204,30 @@ class MLEDense(Layer):
         self.w = self.add_weight(
             shape=(input_shape[-1], self.units),
             initializer="random_normal",
+            name='final_weight',
             trainable=True,
         )
 
         self.b = self.add_weight(
-            shape=(self.units,), initializer="random_normal", trainable=True
-        )
+            shape=(self.units,), 
+            initializer="random_normal", 
+            name='final_bias',
+            trainable=True)
 
         # pseudo-prior of variance
         init = tf.random_normal_initializer(mean=0.0, stddev=1.0)
 
         # variance of error distribution
         self.sigma = tf.Variable(
-            init(shape=(self.units, self.units)), trainable=True
-        )
+            init(shape=(self.units, self.units)), 
+            name='sigma', 
+            trainable=True)
 
     def call(self, inputs):
         y = tf.matmul(inputs, self.w) + self.b
         return tf.concat([y, self.sigma], axis=0)
+    
+    def get_config(self):
+        config = super(MLEDense, self).get_config()
+        config.update({'units': self.units})
+        return config

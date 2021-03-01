@@ -1,0 +1,2504 @@
+raloxifene
+  Mrv0541 11181423402D          
+
+ 34 38  0  0  0  0            999 V2000
+   -1.9375    1.7313    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.6520    1.3188    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.6520    0.4937    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.9375    0.0812    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.3664    0.0812    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.2230    1.3188    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.4384    1.5737    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.2230    0.4937    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0465    0.9063    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.4384    0.2389    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0
+    0.8715    0.9063    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.3062    1.6074    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.2613    0.1791    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.0859    0.1532    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.5207    0.8543    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.1308    1.5814    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.3453    0.8284    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.1835    2.3583    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.6235    2.5299    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.7355    2.9714    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.0157    4.3726    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.8247    4.2108    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.0891    3.4293    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.5445    2.8096    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.4711    3.7529    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.3693    4.8305    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.1783    4.6687    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.7229    5.2884    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -5.0857    5.7381    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -5.8922    5.5643    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -6.1448    4.7789    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -5.5911    4.1674    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -4.7846    4.3413    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -4.5319    5.1266    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  1  6  2  0  0  0  0
+  2  3  2  0  0  0  0
+  3  4  1  0  0  0  0
+  4  8  2  0  0  0  0
+  3  5  1  0  0  0  0
+  7  6  1  0  0  0  0
+  7  9  2  0  0  0  0
+  8 10  1  0  0  0  0
+ 10  9  1  0  0  0  0
+  6  8  1  0  0  0  0
+  9 11  1  0  0  0  0
+ 12 11  2  0  0  0  0
+ 11 13  1  0  0  0  0
+ 12 16  1  0  0  0  0
+ 13 14  2  0  0  0  0
+ 14 15  1  0  0  0  0
+ 15 16  2  0  0  0  0
+ 15 17  1  0  0  0  0
+  7 18  1  0  0  0  0
+ 18 19  2  0  0  0  0
+ 18 20  1  0  0  0  0
+ 24 20  2  0  0  0  0
+ 20 25  1  0  0  0  0
+ 21 22  1  0  0  0  0
+ 21 25  2  0  0  0  0
+ 22 23  2  0  0  0  0
+ 23 24  1  0  0  0  0
+ 22 26  1  0  0  0  0
+ 26 27  1  0  0  0  0
+ 27 28  1  0  0  0  0
+ 28 34  1  0  0  0  0
+ 33 34  1  0  0  0  0
+ 29 34  1  0  0  0  0
+ 29 30  1  0  0  0  0
+ 30 31  1  0  0  0  0
+ 31 32  1  0  0  0  0
+ 32 33  1  0  0  0  0
+M  END
+> <From> 
+www.bindingDB.org
+
+> <BindingDB Reactant_set_id>
+50320707
+
+> <Ligand InChI>
+InChI=1S/C28H27NO4S/c30-21-8-4-20(5-9-21)28-26(24-13-10-22(31)18-25(24)34-28)27(32)19-6-11-23(12-7-19)33-17-16-29-14-2-1-3-15-29/h4-13,18,30-31H,1-3,14-17H2
+
+> <Ligand InChI Key>
+GZUITABIAKMVPG-UHFFFAOYSA-N
+
+> <BindingDB MonomerID>
+19441
+
+> <BindingDB Ligand Name>
+2-(4-hydroxyphenyl)-3-({4-[2-(piperidin-1-yl)ethoxy]phenyl}carbonyl)-1-benzothiophen-6-ol::CHEMBL81::Evista::Keoxifene::RALOXIFENE HYDROCHLORIDE::Raloxifene::Raloxifene (7)::Raloxifene, 6::[6-hydroxy-2-(4-hydroxyphenyl)-1-benzothiophen-3-yl]-[4-(2-piperidin-1-ylethoxy)phenyl]methanone::cid_11071264
+
+> <Target Name Assigned by Curator or DataSource>
+Estrogen receptor
+
+> <Target Source Organism According to Curator or DataSource>
+
+
+> <Ki (nM)>
+ 0.03
+
+> <IC50 (nM)>
+
+
+> <Kd (nM)>
+
+
+> <EC50 (nM)>
+
+
+> <kon (M-1-s-1)>
+
+
+> <koff (s-1)>
+
+
+> <pH>
+
+
+> <Temp C>
+
+
+> <Curation/DataSource>
+ChEMBL
+
+> <Article DOI>
+10.1021/jm050226i
+
+> <PMID>
+16162002
+
+> <PubChem AID>
+
+
+> <Patent Number>
+
+
+> <Authors>
+Clegg, NJ; Paruthiyil, S; Leitman, DC; Scanlan, TS
+
+> <Institution>
+University of California
+
+> <Link to Ligand in BindingDB>
+http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=19441
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=pol&polymerid=369&target=Estrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r21&monomerid=19441&enzyme=Estrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Ligand HET ID in PDB>
+RAL
+
+> <PDB ID(s) for Ligand-Target Complex>
+1QKN,1ERR,2QXS,2Y05,2JFA
+
+> <PubChem CID>
+5035
+
+> <PubChem SID>
+46519463
+
+> <ChEBI ID of Ligand>
+8772
+
+> <ChEMBL ID of Ligand>
+CHEMBL81
+
+> <DrugBank ID of Ligand>
+DB00481
+
+> <IUPHAR_GRAC ID of Ligand>
+2820
+
+> <KEGG ID of Ligand>
+C07228
+
+> <ZINC ID of Ligand>
+ZINC00538275
+
+> <Number of Protein Chains in Target (bigger than 1 a multichain complex)>
+1
+
+> <BindingDB Target Chain Sequence>
+MTMTLHTKASGMALLHQIQGNELEPLNRPQLKIPLERPLGEVYLDSSKPAVYNYPEGAAYEFNAAAAANAQVYGQTGLPYGPGSEAAAFGSNGLGGFPPLNSVSPSPLMLLHPPPQLSPFLQPHGQQVPYYLENEPSGYTVREAGPPAFYRPNSDNRRQGGRERLASTNDKGSMAMESAKETRYCAVCNDYASGYHYGVWSCEGCKAFFKRSIQGHNDYMCPATNQCTIDKNRRKSCQACRLRKCYEVGMMKGGIRKDRRGGRMLKHKRQRDDGEGRGEVGSAGDMRAANLWPSPLMIKRSKKNSLALSLTADQMVSALLDAEPPILYSEYDPTRPFSEASMMGLLTNLADRELVHMINWAKRVPGFVDLTLHDQVHLLECAWLEILMIGLVWRSMEHPGKLLFAPNLLLDRNQGKCVEGMVEIFDMLLATSSRFRMMNLQGEEFVCLKSIILLNSGVYTFLSSTLKSLEEKDHIHRVLDKITDTLIHLMAKAGLTLQQQHQRLAQLLLILSHIRHMSNKGMEHLYSMKCKNVVPLYDLLLEMLDAHRLHAPTSRGGASVEETDQSHLATAGSTSSHSLQKYYITGEAEGFPATV
+
+> <PDB ID(s) of Target Chain>
+1ERE,1ERR,1G50,1GWQ,1GWR,1HCP,1HCQ,1L2I,1QKU,1R5K,1SJ0,1XP1,1XP6,1XP9,1XPC,1YIM,1YIN,2IOG,2IOK,2OUZ,2YJA,3DT3,3ERD,3ERT,3HLV,3HM1,3L03,3UUC,4AA6,5GS4,5GTR
+
+> <UniProt (SwissProt) Recommended Name of Target Chain>
+Estrogen receptor
+
+> <UniProt (SwissProt) Entry Name of Target Chain>
+ESR1_HUMAN
+
+> <UniProt (SwissProt) Primary ID of Target Chain>
+P03372
+
+> <UniProt (SwissProt) Secondary ID(s) of Target Chain>
+Q13511,Q14276,Q5T5H7,Q6MZQ9,Q9NU51,Q9UDZ7,Q9UIS7
+
+> <UniProt (SwissProt) Alternative ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Submitted Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Entry Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Primary ID of Target Chain>
+G4XH65
+
+> <UniProt (TrEMBL) Secondary ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Alternative ID(s) of Target Chain>
+
+
+$$$$
+4-hydroxytamoxifen
+  Mrv0541 11251415302D          
+
+ 29 31  0  0  0  0            999 V2000
+   -1.4250    1.2812    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.0125    1.9957    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.1875    1.9957    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.2250    2.7102    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.1875    3.4247    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.0125    3.4247    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.4250    2.7102    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.0125    0.5668    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.1875    0.5668    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.2500    1.2812    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.6625    1.9957    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.4875    1.9957    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.2500    2.7102    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.6625    3.4247    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.4875    3.4247    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.9000    2.7102    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.9000    4.1391    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -4.7250    4.1391    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -5.1375    4.8536    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -5.9625    4.8536    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   -6.3750    5.5681    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -6.3750    4.1391    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.6625    0.5668    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.6625   -0.8622    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.2500   -0.1477    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.4875    0.5668    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.9000   -0.1477    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.4875   -0.8622    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.9000   -1.5767    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+ 10  1  2  0  0  0  0
+  1  8  1  0  0  0  0
+  1  2  1  0  0  0  0
+  2  3  2  0  0  0  0
+  2  7  1  0  0  0  0
+  3  4  1  0  0  0  0
+  4  5  2  0  0  0  0
+  5  6  1  0  0  0  0
+  6  7  2  0  0  0  0
+  8  9  1  0  0  0  0
+ 10 11  1  0  0  0  0
+ 12 11  2  0  0  0  0
+ 11 13  1  0  0  0  0
+ 12 16  1  0  0  0  0
+ 13 14  2  0  0  0  0
+ 14 15  1  0  0  0  0
+ 15 16  2  0  0  0  0
+ 15 17  1  0  0  0  0
+ 17 18  1  0  0  0  0
+ 18 19  1  0  0  0  0
+ 19 20  1  0  0  0  0
+ 20 21  1  0  0  0  0
+ 20 22  1  0  0  0  0
+ 10 23  1  0  0  0  0
+ 25 23  2  0  0  0  0
+ 23 26  1  0  0  0  0
+ 28 24  2  0  0  0  0
+ 28 27  1  0  0  0  0
+ 24 25  1  0  0  0  0
+ 26 27  2  0  0  0  0
+ 28 29  1  0  0  0  0
+M  END
+> <From> 
+www.bindingDB.org
+
+> <BindingDB Reactant_set_id>
+50320737
+
+> <Ligand InChI>
+InChI=1S/C26H29NO2/c1-4-25(20-8-6-5-7-9-20)26(21-10-14-23(28)15-11-21)22-12-16-24(17-13-22)29-19-18-27(2)3/h5-17,28H,4,18-19H2,1-3H3/b26-25-
+
+> <Ligand InChI Key>
+TXUZVZSFRXZGTL-QPLCGJKRSA-N
+
+> <BindingDB MonomerID>
+20608
+
+> <BindingDB Ligand Name>
+4-Hydroxytamoxifen::4-Hydroxytamoxifen (9)::4-[(1Z)-1-{4-[2-(dimethylamino)ethoxy]phenyl}-2-phenylbut-1-en-1-yl]phenol::AFIMOXIFENE::CHEMBL489::[3H]4-OHT::cid_449459
+
+> <Target Name Assigned by Curator or DataSource>
+Estrogen receptor
+
+> <Target Source Organism According to Curator or DataSource>
+
+
+> <Ki (nM)>
+ 0.04
+
+> <IC50 (nM)>
+
+
+> <Kd (nM)>
+
+
+> <EC50 (nM)>
+
+
+> <kon (M-1-s-1)>
+
+
+> <koff (s-1)>
+
+
+> <pH>
+
+
+> <Temp C>
+
+
+> <Curation/DataSource>
+ChEMBL
+
+> <Article DOI>
+10.1021/jm050226i
+
+> <PMID>
+16162002
+
+> <PubChem AID>
+
+
+> <Patent Number>
+
+
+> <Authors>
+Clegg, NJ; Paruthiyil, S; Leitman, DC; Scanlan, TS
+
+> <Institution>
+University of California
+
+> <Link to Ligand in BindingDB>
+http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=20608
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=pol&polymerid=369&target=Estrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r21&monomerid=20608&enzyme=Estrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Ligand HET ID in PDB>
+OHT
+
+> <PDB ID(s) for Ligand-Target Complex>
+3ERT,1VJB,4Q50,5W9C,2GPU,2GPV,2FSZ,2BJ4,6V87,2P7Z,1S9Q,2JF9
+
+> <PubChem CID>
+449459
+
+> <PubChem SID>
+49688682
+
+> <ChEBI ID of Ligand>
+44616
+
+> <ChEMBL ID of Ligand>
+CHEMBL489
+
+> <DrugBank ID of Ligand>
+
+
+> <IUPHAR_GRAC ID of Ligand>
+
+
+> <KEGG ID of Ligand>
+C05011
+
+> <ZINC ID of Ligand>
+ZINC00902197
+
+> <Number of Protein Chains in Target (bigger than 1 a multichain complex)>
+1
+
+> <BindingDB Target Chain Sequence>
+MTMTLHTKASGMALLHQIQGNELEPLNRPQLKIPLERPLGEVYLDSSKPAVYNYPEGAAYEFNAAAAANAQVYGQTGLPYGPGSEAAAFGSNGLGGFPPLNSVSPSPLMLLHPPPQLSPFLQPHGQQVPYYLENEPSGYTVREAGPPAFYRPNSDNRRQGGRERLASTNDKGSMAMESAKETRYCAVCNDYASGYHYGVWSCEGCKAFFKRSIQGHNDYMCPATNQCTIDKNRRKSCQACRLRKCYEVGMMKGGIRKDRRGGRMLKHKRQRDDGEGRGEVGSAGDMRAANLWPSPLMIKRSKKNSLALSLTADQMVSALLDAEPPILYSEYDPTRPFSEASMMGLLTNLADRELVHMINWAKRVPGFVDLTLHDQVHLLECAWLEILMIGLVWRSMEHPGKLLFAPNLLLDRNQGKCVEGMVEIFDMLLATSSRFRMMNLQGEEFVCLKSIILLNSGVYTFLSSTLKSLEEKDHIHRVLDKITDTLIHLMAKAGLTLQQQHQRLAQLLLILSHIRHMSNKGMEHLYSMKCKNVVPLYDLLLEMLDAHRLHAPTSRGGASVEETDQSHLATAGSTSSHSLQKYYITGEAEGFPATV
+
+> <PDB ID(s) of Target Chain>
+1ERE,1ERR,1G50,1GWQ,1GWR,1HCP,1HCQ,1L2I,1QKU,1R5K,1SJ0,1XP1,1XP6,1XP9,1XPC,1YIM,1YIN,2IOG,2IOK,2OUZ,2YJA,3DT3,3ERD,3ERT,3HLV,3HM1,3L03,3UUC,4AA6,5GS4,5GTR
+
+> <UniProt (SwissProt) Recommended Name of Target Chain>
+Estrogen receptor
+
+> <UniProt (SwissProt) Entry Name of Target Chain>
+ESR1_HUMAN
+
+> <UniProt (SwissProt) Primary ID of Target Chain>
+P03372
+
+> <UniProt (SwissProt) Secondary ID(s) of Target Chain>
+Q13511,Q14276,Q5T5H7,Q6MZQ9,Q9NU51,Q9UDZ7,Q9UIS7
+
+> <UniProt (SwissProt) Alternative ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Submitted Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Entry Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Primary ID of Target Chain>
+G4XH65
+
+> <UniProt (TrEMBL) Secondary ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Alternative ID(s) of Target Chain>
+
+
+$$$$
+
+  Mrv0541 09072023392D          
+
+ 77 77  0  0  0  0            999 V2000
+    8.0860   -6.7455    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+    7.3713   -6.3331    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+    6.6608   -5.0999    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    7.3713   -5.5081    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.6608   -6.7455    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.6608   -7.5705    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.0860   -5.0999    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+    8.7965   -5.5081    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0
+   10.2259   -5.5081    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    9.5112   -5.0999    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.7965   -6.3331    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.5112   -6.7455    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0
+    9.5112   -4.2750    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   10.2259   -3.8625    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+   11.6511   -3.8625    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   10.9364   -4.2750    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   10.2259   -3.0376    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0
+   10.9364   -2.6293    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.5112   -2.6293    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.7965   -3.0376    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   10.9364   -5.0999    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   11.6511   -5.5081    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+   10.9364   -6.7455    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   11.6511   -6.3331    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   12.3615   -5.0999    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   13.0805   -5.5081    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   13.7910   -5.0999    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   13.0805   -6.3331    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   12.3615   -6.7455    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   12.3615   -7.5705    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0
+   13.7910   -7.5705    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   13.0805   -7.9787    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   11.6511   -7.9787    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   10.9364   -7.5705    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0
+   11.6511  -10.4535    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   11.6511  -11.2785    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   10.9364  -11.6868    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   12.3615  -11.6868    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   13.0805   -8.8079    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   13.7910   -9.2161    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+   15.2161   -9.2161    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   14.5014   -8.8079    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   13.7910  -10.0411    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   13.0805  -10.4535    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   12.3615  -10.0411    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   14.5014   -7.9787    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   15.2161   -7.5705    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+   15.9309   -8.8079    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   15.9309   -7.9787    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   15.2161   -6.7455    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   15.9309   -6.3331    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   16.6455   -6.7455    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   15.9309   -5.5081    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   16.6455   -7.5705    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   17.3560   -7.9787    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+   18.0707   -6.7455    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   18.0707   -7.5705    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   17.3560   -8.8079    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   18.0707   -9.2161    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   18.0707  -10.0411    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   18.7854   -8.8079    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   18.7854   -7.9787    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   19.4959   -7.5705    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+   20.2106   -8.8079    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   20.2106   -7.9787    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   19.4959   -6.7455    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   20.2106   -6.3331    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   20.2106   -5.5081    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   20.9210   -5.0999    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   19.4959   -5.0999    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   20.9210   -7.5705    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+    5.9391   -7.9872    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.9391   -8.8206    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+    5.2174   -9.2372    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.2174  -10.0706    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+    4.4957   -8.8206    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   16.6502   -5.9092    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+  4  7  1  0  0  0  0
+ 10 13  1  0  0  0  0
+ 16 21  1  0  0  0  0
+ 24 29  1  0  0  0  0
+ 32 39  1  0  0  0  0
+ 42 46  1  0  0  0  0
+ 49 54  1  0  0  0  0
+ 57 62  1  0  0  0  0
+ 65 71  1  0  0  0  0
+  1  2  1  0  0  0  0
+  2  4  1  0  0  0  0
+  4  3  2  0  0  0  0
+  2  5  1  1  0  0  0
+  5  6  1  0  0  0  0
+  8  7  1  1  0  0  0
+  8 10  1  0  0  0  0
+ 10  9  2  0  0  0  0
+  8 11  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 14 13  1  1  0  0  0
+ 14 16  1  0  0  0  0
+ 16 15  2  0  0  0  0
+ 14 17  1  0  0  0  0
+ 17 18  1  6  0  0  0
+ 17 19  1  0  0  0  0
+ 19 20  1  0  0  0  0
+ 21 22  1  0  0  0  0
+ 22 24  1  0  0  0  0
+ 24 23  2  0  0  0  0
+ 22 25  1  1  0  0  0
+ 25 26  1  0  0  0  0
+ 26 27  1  0  0  0  0
+ 26 28  1  0  0  0  0
+ 30 29  1  0  0  0  0
+ 30 32  1  1  0  0  0
+ 32 31  2  0  0  0  0
+ 30 33  1  0  0  0  0
+ 33 34  1  0  0  0  0
+ 35 36  1  0  0  0  0
+ 36 37  1  0  0  0  0
+ 36 38  2  0  0  0  0
+ 40 39  1  6  0  0  0
+ 40 42  1  0  0  0  0
+ 42 41  2  0  0  0  0
+ 40 43  1  0  0  0  0
+ 43 44  1  0  0  0  0
+ 44 45  1  0  0  0  0
+ 45 35  1  0  0  0  0
+ 46 47  1  0  0  0  0
+ 47 49  1  0  0  0  0
+ 49 48  2  0  0  0  0
+ 47 50  1  1  0  0  0
+ 50 51  1  0  0  0  0
+ 51 52  1  0  0  0  0
+ 51 53  1  0  0  0  0
+ 54 55  1  0  0  0  0
+ 55 57  1  0  0  0  0
+ 57 56  2  0  0  0  0
+ 55 58  1  6  0  0  0
+ 58 59  1  0  0  0  0
+ 59 60  1  0  0  0  0
+ 59 61  1  0  0  0  0
+ 62 63  1  0  0  0  0
+ 63 65  1  0  0  0  0
+ 65 64  2  0  0  0  0
+ 63 66  1  1  0  0  0
+ 66 67  1  0  0  0  0
+ 67 68  1  0  0  0  0
+ 68 69  2  0  0  0  0
+ 68 70  1  0  0  0  0
+ 12 34  1  0  0  0  0
+  6 72  1  0  0  0  0
+ 72 73  1  0  0  0  0
+ 73 74  1  0  0  0  0
+ 74 75  2  0  0  0  0
+ 74 76  1  0  0  0  0
+ 51 77  1  0  0  0  0
+M  END
+> <From> 
+www.bindingDB.org
+
+> <BindingDB Reactant_set_id>
+51128826
+
+> <Ligand InChI>
+InChI=1S/C48H89N17O10S2/c1-10-26(6)36-45(75)61-31(20-25(4)5)41(71)64-33(22-76-77-23-34(44(74)65-36)63-38(68)27(49)13-11-17-56-46(52)53)43(73)59-29(14-12-18-57-47(54)55)39(69)62-32(21-48(7,8)9)42(72)60-30(19-24(2)3)40(70)58-28(37(51)67)15-16-35(50)66/h24-34,36H,10-23,49H2,1-9H3,(H2,50,66)(H2,51,67)(H,58,70)(H,59,73)(H,60,72)(H,61,75)(H,62,69)(H,63,68)(H,64,71)(H,65,74)(H4,52,53,56)(H4,54,55,57)/t26-,27-,28-,29-,30-,31-,32-,33+,34+,36-/m0/s1
+
+> <Ligand InChI Key>
+JKCIXMFRPFCAET-UCVHAVGFSA-N
+
+> <BindingDB MonomerID>
+50462974
+
+> <BindingDB Ligand Name>
+CHEMBL4240100
+
+> <Target Name Assigned by Curator or DataSource>
+Baculoviral IAP repeat-containing protein 2/Estrogen receptor
+
+> <Target Source Organism According to Curator or DataSource>
+
+
+> <Ki (nM)>
+ 0.070000
+
+> <IC50 (nM)>
+
+
+> <Kd (nM)>
+
+
+> <EC50 (nM)>
+
+
+> <kon (M-1-s-1)>
+
+
+> <koff (s-1)>
+
+
+> <pH>
+
+
+> <Temp C>
+
+
+> <Curation/DataSource>
+ChEMBL
+
+> <Article DOI>
+
+
+> <PMID>
+30025900
+
+> <PubChem AID>
+
+
+> <Patent Number>
+
+
+> <Authors>
+Qin, W; Xie, M; Qin, X; Fang, Q; Yin, F; Li, Z
+
+> <Institution>
+Peking University Shenzhen Graduate School
+
+> <Link to Ligand in BindingDB>
+http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=50462974
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=pol&polymerid=369&target=Baculoviral+IAP+repeat-containing+protein+2%2FEstrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r21&monomerid=50462974&enzyme=Baculoviral+IAP+repeat-containing+protein+2%2FEstrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Ligand HET ID in PDB>
+
+
+> <PDB ID(s) for Ligand-Target Complex>
+
+
+> <PubChem CID>
+
+
+> <PubChem SID>
+
+
+> <ChEBI ID of Ligand>
+
+
+> <ChEMBL ID of Ligand>
+
+
+> <DrugBank ID of Ligand>
+
+
+> <IUPHAR_GRAC ID of Ligand>
+
+
+> <KEGG ID of Ligand>
+
+
+> <ZINC ID of Ligand>
+
+
+> <Number of Protein Chains in Target (bigger than 1 a multichain complex)>
+1
+
+> <BindingDB Target Chain Sequence>
+MTMTLHTKASGMALLHQIQGNELEPLNRPQLKIPLERPLGEVYLDSSKPAVYNYPEGAAYEFNAAAAANAQVYGQTGLPYGPGSEAAAFGSNGLGGFPPLNSVSPSPLMLLHPPPQLSPFLQPHGQQVPYYLENEPSGYTVREAGPPAFYRPNSDNRRQGGRERLASTNDKGSMAMESAKETRYCAVCNDYASGYHYGVWSCEGCKAFFKRSIQGHNDYMCPATNQCTIDKNRRKSCQACRLRKCYEVGMMKGGIRKDRRGGRMLKHKRQRDDGEGRGEVGSAGDMRAANLWPSPLMIKRSKKNSLALSLTADQMVSALLDAEPPILYSEYDPTRPFSEASMMGLLTNLADRELVHMINWAKRVPGFVDLTLHDQVHLLECAWLEILMIGLVWRSMEHPGKLLFAPNLLLDRNQGKCVEGMVEIFDMLLATSSRFRMMNLQGEEFVCLKSIILLNSGVYTFLSSTLKSLEEKDHIHRVLDKITDTLIHLMAKAGLTLQQQHQRLAQLLLILSHIRHMSNKGMEHLYSMKCKNVVPLYDLLLEMLDAHRLHAPTSRGGASVEETDQSHLATAGSTSSHSLQKYYITGEAEGFPATV
+
+> <PDB ID(s) of Target Chain>
+1ERE,1ERR,1G50,1GWQ,1GWR,1HCP,1HCQ,1L2I,1QKU,1R5K,1SJ0,1XP1,1XP6,1XP9,1XPC,1YIM,1YIN,2IOG,2IOK,2OUZ,2YJA,3DT3,3ERD,3ERT,3HLV,3HM1,3L03,3UUC,4AA6,5GS4,5GTR
+
+> <UniProt (SwissProt) Recommended Name of Target Chain>
+Estrogen receptor
+
+> <UniProt (SwissProt) Entry Name of Target Chain>
+ESR1_HUMAN
+
+> <UniProt (SwissProt) Primary ID of Target Chain>
+P03372
+
+> <UniProt (SwissProt) Secondary ID(s) of Target Chain>
+Q13511,Q14276,Q5T5H7,Q6MZQ9,Q9NU51,Q9UDZ7,Q9UIS7
+
+> <UniProt (SwissProt) Alternative ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Submitted Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Entry Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Primary ID of Target Chain>
+G4XH65
+
+> <UniProt (TrEMBL) Secondary ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Alternative ID(s) of Target Chain>
+
+
+$$$$
+
+  Mrv0541 11221402232D          
+
+ 35 39  0  0  0  0            999 V2000
+   -3.5243   -1.4613    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.5256   -2.2885    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.8130   -2.7012    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.8150   -1.0488    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.0972   -1.4573    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.0966   -2.2885    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.3060   -2.5449    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.8179   -1.8720    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.3069   -1.2000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0026   -1.8712    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.4148   -2.5866    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.2386   -2.5865    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.6513   -1.8715    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.2341   -1.1554    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.4116   -1.1591    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -4.2403   -2.6997    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.0532   -0.4157    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.4997    0.2774    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.1210    1.0110    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.5670    1.7036    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.3915    1.6638    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.7680    0.9254    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.3199    0.2358    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.8391    2.3563    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.6625    2.3150    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -4.1101    3.0075    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -4.9337    2.9662    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   -5.3852    3.6600    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -6.2052    3.6209    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -6.5851    2.8886    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -6.1387    2.1942    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -5.3124    2.2321    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.4759   -1.8699    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.8895   -2.5831    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.8867   -1.1549    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+  6  7  1  0  0  0  0
+  9 17  1  0  0  0  0
+  7  8  1  0  0  0  0
+ 17 18  1  0  0  0  0
+  8  9  2  0  0  0  0
+ 18 19  2  0  0  0  0
+  9  5  1  0  0  0  0
+ 19 20  1  0  0  0  0
+  4  1  1  0  0  0  0
+ 20 21  2  0  0  0  0
+  5  6  1  0  0  0  0
+ 21 22  1  0  0  0  0
+ 10 11  2  0  0  0  0
+ 22 23  2  0  0  0  0
+ 23 18  1  0  0  0  0
+ 21 24  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 24 25  1  0  0  0  0
+  2  3  1  0  0  0  0
+ 25 26  1  0  0  0  0
+ 12 13  2  0  0  0  0
+ 26 27  1  0  0  0  0
+ 27 28  1  0  0  0  0
+  3  6  2  0  0  0  0
+ 13 14  1  0  0  0  0
+  1  2  2  0  0  0  0
+ 14 15  2  0  0  0  0
+ 15 10  1  0  0  0  0
+ 27 32  1  0  0  0  0
+ 28 29  1  0  0  0  0
+ 29 30  1  0  0  0  0
+ 30 31  1  0  0  0  0
+ 31 32  1  0  0  0  0
+  8 10  1  0  0  0  0
+ 13 33  1  0  0  0  0
+  5  4  2  0  0  0  0
+ 33 34  1  0  0  0  0
+  2 16  1  0  0  0  0
+ 33 35  1  0  0  0  0
+M  END
+> <From> 
+www.bindingDB.org
+
+> <BindingDB Reactant_set_id>
+50385375
+
+> <Ligand InChI>
+InChI=1S/C30H33NO3S/c1-21(2)22-6-8-23(9-7-22)30-29(27-15-10-24(32)20-28(27)35-30)34-26-13-11-25(12-14-26)33-19-18-31-16-4-3-5-17-31/h6-15,20-21,32H,3-5,16-19H2,1-2H3
+
+> <Ligand InChI Key>
+LSMUQPOCAXNDRJ-UHFFFAOYSA-N
+
+> <BindingDB MonomerID>
+50212159
+
+> <BindingDB Ligand Name>
+2-(4-isopropylphenyl)-3-(4-(2-(piperidin-1-yl)ethoxy)phenoxy)benzo[b]thiophen-6-ol::CHEMBL243970
+
+> <Target Name Assigned by Curator or DataSource>
+Estrogen receptor
+
+> <Target Source Organism According to Curator or DataSource>
+
+
+> <Ki (nM)>
+ 0.091
+
+> <IC50 (nM)>
+
+
+> <Kd (nM)>
+
+
+> <EC50 (nM)>
+
+
+> <kon (M-1-s-1)>
+
+
+> <koff (s-1)>
+
+
+> <pH>
+
+
+> <Temp C>
+
+
+> <Curation/DataSource>
+ChEMBL
+
+> <Article DOI>
+10.1016/j.bmcl.2007.04.044
+
+> <PMID>
+17482463
+
+> <PubChem AID>
+
+
+> <Patent Number>
+
+
+> <Authors>
+Richardson, TI; Frank, SA; Wang, M; Clarke, CA; Jones, SA; Ying, BP; Kohlman, DT; Wallace, OB; Shepherd, TA; Dally, RD; Palkowitz, AD; Geiser, AG; Bryant, HU; Henck, JW; Cohen, IR; Rudmann, DG; McCann, DJ; Coutant, DE; Oldham, SW; Hummel, CW; Fong, KC; Hinklin, R; Lewis, G; Tian, H; Dodge, JA
+
+> <Institution>
+Eli Lilly and Company
+
+> <Link to Ligand in BindingDB>
+http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=50212159
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=pol&polymerid=369&target=Estrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r21&monomerid=50212159&enzyme=Estrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Ligand HET ID in PDB>
+
+
+> <PDB ID(s) for Ligand-Target Complex>
+
+
+> <PubChem CID>
+44427404
+
+> <PubChem SID>
+104088173
+
+> <ChEBI ID of Ligand>
+
+
+> <ChEMBL ID of Ligand>
+CHEMBL243970
+
+> <DrugBank ID of Ligand>
+
+
+> <IUPHAR_GRAC ID of Ligand>
+
+
+> <KEGG ID of Ligand>
+
+
+> <ZINC ID of Ligand>
+ZINC28710084
+
+> <Number of Protein Chains in Target (bigger than 1 a multichain complex)>
+1
+
+> <BindingDB Target Chain Sequence>
+MTMTLHTKASGMALLHQIQGNELEPLNRPQLKIPLERPLGEVYLDSSKPAVYNYPEGAAYEFNAAAAANAQVYGQTGLPYGPGSEAAAFGSNGLGGFPPLNSVSPSPLMLLHPPPQLSPFLQPHGQQVPYYLENEPSGYTVREAGPPAFYRPNSDNRRQGGRERLASTNDKGSMAMESAKETRYCAVCNDYASGYHYGVWSCEGCKAFFKRSIQGHNDYMCPATNQCTIDKNRRKSCQACRLRKCYEVGMMKGGIRKDRRGGRMLKHKRQRDDGEGRGEVGSAGDMRAANLWPSPLMIKRSKKNSLALSLTADQMVSALLDAEPPILYSEYDPTRPFSEASMMGLLTNLADRELVHMINWAKRVPGFVDLTLHDQVHLLECAWLEILMIGLVWRSMEHPGKLLFAPNLLLDRNQGKCVEGMVEIFDMLLATSSRFRMMNLQGEEFVCLKSIILLNSGVYTFLSSTLKSLEEKDHIHRVLDKITDTLIHLMAKAGLTLQQQHQRLAQLLLILSHIRHMSNKGMEHLYSMKCKNVVPLYDLLLEMLDAHRLHAPTSRGGASVEETDQSHLATAGSTSSHSLQKYYITGEAEGFPATV
+
+> <PDB ID(s) of Target Chain>
+1ERE,1ERR,1G50,1GWQ,1GWR,1HCP,1HCQ,1L2I,1QKU,1R5K,1SJ0,1XP1,1XP6,1XP9,1XPC,1YIM,1YIN,2IOG,2IOK,2OUZ,2YJA,3DT3,3ERD,3ERT,3HLV,3HM1,3L03,3UUC,4AA6,5GS4,5GTR
+
+> <UniProt (SwissProt) Recommended Name of Target Chain>
+Estrogen receptor
+
+> <UniProt (SwissProt) Entry Name of Target Chain>
+ESR1_HUMAN
+
+> <UniProt (SwissProt) Primary ID of Target Chain>
+P03372
+
+> <UniProt (SwissProt) Secondary ID(s) of Target Chain>
+Q13511,Q14276,Q5T5H7,Q6MZQ9,Q9NU51,Q9UDZ7,Q9UIS7
+
+> <UniProt (SwissProt) Alternative ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Submitted Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Entry Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Primary ID of Target Chain>
+G4XH65
+
+> <UniProt (TrEMBL) Secondary ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Alternative ID(s) of Target Chain>
+
+
+$$$$
+
+  SciTegic07131802182D
+
+ 35 39  0  0  0  0            999 V2000
+    4.9527  -12.5798    0.0000 C   0  0
+    9.2793  -12.8101    0.0000 C   0  0
+    9.9145  -12.1371    0.0000 C   0  0
+   10.0720  -12.5913    0.0000 C   0  0
+   10.6150  -12.3931    0.0000 C   0  0
+   10.8217  -12.8871    0.0000 C   0  0
+   11.3557  -12.2093    0.0000 C   0  0
+   10.0694  -11.7469    0.0000 C   0  0
+   10.6207  -11.0952    0.0000 C   0  0
+    9.9100  -11.3450    0.0000 C   0  0
+   11.3656  -11.3982    0.0000 C   0  0
+    7.0809  -11.3540    0.0000 C   0  0
+    7.0798  -12.1735    0.0000 C   0  0
+    7.7878  -12.5825    0.0000 C   0  0
+    8.4975  -12.1730    0.0000 C   0  0
+    8.4946  -11.3504    0.0000 C   0  0
+    7.7860  -10.9451    0.0000 C   0  0
+    9.2008  -10.9391    0.0000 C   0  0
+    9.1977  -10.1219    0.0000 C   0  0
+    9.9056   -9.7154    0.0000 C   0  0
+    9.9029   -8.8990    0.0000 C   0  0
+    9.1931   -8.4923    0.0000 C   0  0
+    8.4846   -8.9079    0.0000 C   0  0
+    8.4908   -9.7230    0.0000 C   0  0
+    9.1890   -7.6751    0.0000 O   0  0
+    6.3717  -12.5815    0.0000 C   0  0
+    5.6643  -12.1724    0.0000 C   0  0
+    4.9497  -13.3970    0.0000 O   0  0
+    4.2465  -12.1686    0.0000 N   0  0
+    3.5373  -12.5746    0.0000 C   0  0
+    2.8311  -12.1634    0.0000 C   0  0
+    4.2495  -11.3514    0.0000 C   0  0
+    2.1219  -12.5694    0.0000 O   0  0
+    3.5433  -10.9402    0.0000 C   0  0
+    3.5463  -10.1230    0.0000 O   0  0
+  2  3  1  0
+  2  4  1  0
+  3  5  1  0
+  4  6  1  0
+  5  7  1  0
+  6  7  1  0
+  8  9  1  0
+  4  8  1  0
+  3 10  1  0
+  7 11  1  0
+ 11  9  1  0
+  9 10  1  0
+ 12 13  2  0
+ 13 14  1  0
+ 14 15  2  0
+ 15 16  1  0
+ 16 17  2  0
+ 17 12  1  0
+ 16 18  1  0
+ 18 10  2  0
+ 18 19  1  0
+ 19 20  2  0
+ 20 21  1  0
+ 21 22  2  0
+ 22 23  1  0
+ 23 24  2  0
+ 24 19  1  0
+ 22 25  1  0
+ 13 26  1  0
+ 26 27  2  0
+ 27  1  1  0
+  1 28  2  0
+  1 29  1  0
+ 29 30  1  0
+ 30 31  1  0
+ 29 32  1  0
+ 31 33  1  0
+ 32 34  1  0
+ 34 35  1  0
+M  END
+> <From> 
+www.bindingDB.org
+
+> <BindingDB Reactant_set_id>
+50746063
+
+> <Ligand InChI>
+InChI=1S/C30H35NO4/c32-13-11-31(12-14-33)28(35)10-3-20-1-4-23(5-2-20)29(24-6-8-27(34)9-7-24)30-25-16-21-15-22(18-25)19-26(30)17-21/h1-10,21-22,25-26,32-34H,11-19H2/b10-3+,30-29-
+
+> <Ligand InChI Key>
+PBAICRXMQVKVMT-OWOWUIIOSA-N
+
+> <BindingDB MonomerID>
+50238727
+
+> <BindingDB Ligand Name>
+CHEMBL4065838
+
+> <Target Name Assigned by Curator or DataSource>
+Baculoviral IAP repeat-containing protein 2/Estrogen receptor
+
+> <Target Source Organism According to Curator or DataSource>
+
+
+> <Ki (nM)>
+ <0.130000
+
+> <IC50 (nM)>
+
+
+> <Kd (nM)>
+
+
+> <EC50 (nM)>
+
+
+> <kon (M-1-s-1)>
+
+
+> <koff (s-1)>
+
+
+> <pH>
+
+
+> <Temp C>
+
+
+> <Curation/DataSource>
+ChEMBL
+
+> <Article DOI>
+10.1021/acs.jmedchem.7b00585
+
+> <PMID>
+28657320
+
+> <PubChem AID>
+
+
+> <Patent Number>
+
+
+> <Authors>
+Min, J; Guillen, VS; Sharma, A; Zhao, Y; Ziegler, Y; Gong, P; Mayne, CG; Srinivasan, S; Kim, SH; Carlson, KE; Nettles, KW; Katzenellenbogen, BS; Katzenellenbogen, JA
+
+> <Institution>
+The Scripps Research Institute
+
+> <Link to Ligand in BindingDB>
+http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=50238727
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=pol&polymerid=369&target=Baculoviral+IAP+repeat-containing+protein+2%2FEstrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r21&monomerid=50238727&enzyme=Baculoviral+IAP+repeat-containing+protein+2%2FEstrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Ligand HET ID in PDB>
+
+
+> <PDB ID(s) for Ligand-Target Complex>
+
+
+> <PubChem CID>
+44449739
+
+> <PubChem SID>
+85716471
+
+> <ChEBI ID of Ligand>
+
+
+> <ChEMBL ID of Ligand>
+CHEMBL4065838
+
+> <DrugBank ID of Ligand>
+
+
+> <IUPHAR_GRAC ID of Ligand>
+
+
+> <KEGG ID of Ligand>
+
+
+> <ZINC ID of Ligand>
+
+
+> <Number of Protein Chains in Target (bigger than 1 a multichain complex)>
+1
+
+> <BindingDB Target Chain Sequence>
+MTMTLHTKASGMALLHQIQGNELEPLNRPQLKIPLERPLGEVYLDSSKPAVYNYPEGAAYEFNAAAAANAQVYGQTGLPYGPGSEAAAFGSNGLGGFPPLNSVSPSPLMLLHPPPQLSPFLQPHGQQVPYYLENEPSGYTVREAGPPAFYRPNSDNRRQGGRERLASTNDKGSMAMESAKETRYCAVCNDYASGYHYGVWSCEGCKAFFKRSIQGHNDYMCPATNQCTIDKNRRKSCQACRLRKCYEVGMMKGGIRKDRRGGRMLKHKRQRDDGEGRGEVGSAGDMRAANLWPSPLMIKRSKKNSLALSLTADQMVSALLDAEPPILYSEYDPTRPFSEASMMGLLTNLADRELVHMINWAKRVPGFVDLTLHDQVHLLECAWLEILMIGLVWRSMEHPGKLLFAPNLLLDRNQGKCVEGMVEIFDMLLATSSRFRMMNLQGEEFVCLKSIILLNSGVYTFLSSTLKSLEEKDHIHRVLDKITDTLIHLMAKAGLTLQQQHQRLAQLLLILSHIRHMSNKGMEHLYSMKCKNVVPLYDLLLEMLDAHRLHAPTSRGGASVEETDQSHLATAGSTSSHSLQKYYITGEAEGFPATV
+
+> <PDB ID(s) of Target Chain>
+1ERE,1ERR,1G50,1GWQ,1GWR,1HCP,1HCQ,1L2I,1QKU,1R5K,1SJ0,1XP1,1XP6,1XP9,1XPC,1YIM,1YIN,2IOG,2IOK,2OUZ,2YJA,3DT3,3ERD,3ERT,3HLV,3HM1,3L03,3UUC,4AA6,5GS4,5GTR
+
+> <UniProt (SwissProt) Recommended Name of Target Chain>
+Estrogen receptor
+
+> <UniProt (SwissProt) Entry Name of Target Chain>
+ESR1_HUMAN
+
+> <UniProt (SwissProt) Primary ID of Target Chain>
+P03372
+
+> <UniProt (SwissProt) Secondary ID(s) of Target Chain>
+Q13511,Q14276,Q5T5H7,Q6MZQ9,Q9NU51,Q9UDZ7,Q9UIS7
+
+> <UniProt (SwissProt) Alternative ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Submitted Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Entry Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Primary ID of Target Chain>
+G4XH65
+
+> <UniProt (TrEMBL) Secondary ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Alternative ID(s) of Target Chain>
+
+
+$$$$
+
+  Mrv0541 11211414252D          
+
+ 21 23  0  0  0  0            999 V2000
+    0.5804    0.7599    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.3027    0.3465    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.3027   -0.4802    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.1336    0.3465    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.5804    1.5866    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.5615   -0.4802    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+    2.0084    0.7641    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.1336   -0.4802    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.8476   -0.8935    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.5804   -0.8935    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.2797   -0.8935    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    1.2944    1.9999    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.1336    1.9916    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.0084    1.5866    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.7306    0.3507    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.4446    0.7641    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.7181    2.0041    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.1461    2.8141    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.2944    2.8266    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.4363    1.5991    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.5762    3.2400    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+  2  1  2  0  0  0  0
+  3  2  1  0  0  0  0
+  4  1  1  0  0  0  0
+  5  1  1  0  0  0  0
+  6  9  1  0  0  0  0
+  7  2  1  0  0  0  0
+  8  4  2  0  0  0  0
+  9  8  1  0  0  0  0
+ 10  8  1  0  0  0  0
+ 11  6  2  0  0  0  0
+ 12  5  2  0  0  0  0
+ 13  5  1  0  0  0  0
+ 14  7  2  0  0  0  0
+ 15  7  1  0  0  0  0
+ 16 15  2  0  0  0  0
+ 17 14  1  0  0  0  0
+ 18 13  2  0  0  0  0
+ 19 12  1  0  0  0  0
+ 20 16  1  0  0  0  0
+ 21 18  1  0  0  0  0
+  3 10  2  0  0  0  0
+ 21 19  2  0  0  0  0
+ 20 17  2  0  0  0  0
+M  END
+> <From> 
+www.bindingDB.org
+
+> <BindingDB Reactant_set_id>
+50242821
+
+> <Ligand InChI>
+InChI=1S/C19H15NO/c21-20-14-15-11-12-18(16-7-3-1-4-8-16)19(13-15)17-9-5-2-6-10-17/h1-13H,14H2
+
+> <Ligand InChI Key>
+MLBZDTAIIVFHLO-UHFFFAOYSA-N
+
+> <BindingDB MonomerID>
+50133070
+
+> <BindingDB Ligand Name>
+CHEMBL335465::[1,1';2',1'']Terphenyl-4'-carbaldehyde oxime
+
+> <Target Name Assigned by Curator or DataSource>
+Estrogen receptor
+
+> <Target Source Organism According to Curator or DataSource>
+
+
+> <Ki (nM)>
+ 0.15
+
+> <IC50 (nM)>
+
+
+> <Kd (nM)>
+
+
+> <EC50 (nM)>
+
+
+> <kon (M-1-s-1)>
+
+
+> <koff (s-1)>
+
+
+> <pH>
+
+
+> <Temp C>
+
+
+> <Curation/DataSource>
+ChEMBL
+
+> <Article DOI>
+10.1021/jm0308390
+
+> <PMID>
+12954056
+
+> <PubChem AID>
+
+
+> <Patent Number>
+
+
+> <Authors>
+Minutolo, F; Antonello, M; Bertini, S; Ortore, G; Placanica, G; Rapposelli, S; Sheng, S; Carlson, KE; Katzenellenbogen, BS; Katzenellenbogen, JA; Macchia, M
+
+> <Institution>
+Universit&#224; di Pisa
+
+> <Link to Ligand in BindingDB>
+http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=50133070
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=pol&polymerid=369&target=Estrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r21&monomerid=50133070&enzyme=Estrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Ligand HET ID in PDB>
+
+
+> <PDB ID(s) for Ligand-Target Complex>
+
+
+> <PubChem CID>
+91485748
+
+> <PubChem SID>
+104024027
+
+> <ChEBI ID of Ligand>
+
+
+> <ChEMBL ID of Ligand>
+CHEMBL335465
+
+> <DrugBank ID of Ligand>
+
+
+> <IUPHAR_GRAC ID of Ligand>
+
+
+> <KEGG ID of Ligand>
+
+
+> <ZINC ID of Ligand>
+ZINC13526878
+
+> <Number of Protein Chains in Target (bigger than 1 a multichain complex)>
+1
+
+> <BindingDB Target Chain Sequence>
+MTMTLHTKASGMALLHQIQGNELEPLNRPQLKIPLERPLGEVYLDSSKPAVYNYPEGAAYEFNAAAAANAQVYGQTGLPYGPGSEAAAFGSNGLGGFPPLNSVSPSPLMLLHPPPQLSPFLQPHGQQVPYYLENEPSGYTVREAGPPAFYRPNSDNRRQGGRERLASTNDKGSMAMESAKETRYCAVCNDYASGYHYGVWSCEGCKAFFKRSIQGHNDYMCPATNQCTIDKNRRKSCQACRLRKCYEVGMMKGGIRKDRRGGRMLKHKRQRDDGEGRGEVGSAGDMRAANLWPSPLMIKRSKKNSLALSLTADQMVSALLDAEPPILYSEYDPTRPFSEASMMGLLTNLADRELVHMINWAKRVPGFVDLTLHDQVHLLECAWLEILMIGLVWRSMEHPGKLLFAPNLLLDRNQGKCVEGMVEIFDMLLATSSRFRMMNLQGEEFVCLKSIILLNSGVYTFLSSTLKSLEEKDHIHRVLDKITDTLIHLMAKAGLTLQQQHQRLAQLLLILSHIRHMSNKGMEHLYSMKCKNVVPLYDLLLEMLDAHRLHAPTSRGGASVEETDQSHLATAGSTSSHSLQKYYITGEAEGFPATV
+
+> <PDB ID(s) of Target Chain>
+1ERE,1ERR,1G50,1GWQ,1GWR,1HCP,1HCQ,1L2I,1QKU,1R5K,1SJ0,1XP1,1XP6,1XP9,1XPC,1YIM,1YIN,2IOG,2IOK,2OUZ,2YJA,3DT3,3ERD,3ERT,3HLV,3HM1,3L03,3UUC,4AA6,5GS4,5GTR
+
+> <UniProt (SwissProt) Recommended Name of Target Chain>
+Estrogen receptor
+
+> <UniProt (SwissProt) Entry Name of Target Chain>
+ESR1_HUMAN
+
+> <UniProt (SwissProt) Primary ID of Target Chain>
+P03372
+
+> <UniProt (SwissProt) Secondary ID(s) of Target Chain>
+Q13511,Q14276,Q5T5H7,Q6MZQ9,Q9NU51,Q9UDZ7,Q9UIS7
+
+> <UniProt (SwissProt) Alternative ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Submitted Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Entry Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Primary ID of Target Chain>
+G4XH65
+
+> <UniProt (TrEMBL) Secondary ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Alternative ID(s) of Target Chain>
+
+
+$$$$
+17beta-estradiol (E2)
+  Mrv0541 11181423342D          
+
+ 23 26  0  0  1  0            999 V2000
+    8.8291   -8.3726    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+    8.8291   -9.1899    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+    8.1048   -9.5985    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0
+    7.3989   -9.1899    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0
+    6.6931   -9.5985    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.6931  -10.4158    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.1048   -7.9454    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.3989   -8.3726    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.1048  -10.4158    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.6093   -9.4313    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.9873   -9.1899    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.6093   -8.0940    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+    7.3989  -10.8429    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.9873  -10.8429    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   10.0922   -8.7813    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.2629  -10.4158    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.2629   -9.5985    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.8291   -7.5182    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.8321   -7.2953    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    4.5200  -10.8615    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    8.8172  -10.0146    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    6.6842   -8.7778    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    9.1662   -9.9429    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  1  7  1  0  0  0  0
+  1 12  1  0  0  0  0
+  1 18  1  1  0  0  0
+  2  3  1  0  0  0  0
+  2 10  1  0  0  0  0
+  2 23  1  6  0  0  0
+  3  9  1  0  0  0  0
+  3  4  1  0  0  0  0
+  3 21  1  1  0  0  0
+  4  8  1  0  0  0  0
+  4  5  1  0  0  0  0
+  4 22  1  6  0  0  0
+  6  5  2  0  0  0  0
+ 11  5  1  0  0  0  0
+ 14  6  1  0  0  0  0
+ 13  6  1  0  0  0  0
+  8  7  1  0  0  0  0
+ 13  9  1  0  0  0  0
+ 15 10  1  0  0  0  0
+ 17 11  2  0  0  0  0
+ 12 15  1  0  0  0  0
+ 12 19  1  1  0  0  0
+ 16 14  2  0  0  0  0
+ 17 16  1  0  0  0  0
+ 20 16  1  0  0  0  0
+M  END
+> <From> 
+www.bindingDB.org
+
+> <BindingDB Reactant_set_id>
+50589666
+
+> <Ligand InChI>
+InChI=1S/C18H24O2/c1-18-9-8-14-13-5-3-12(19)10-11(13)2-4-15(14)16(18)6-7-17(18)20/h3,5,10,14-17,19-20H,2,4,6-9H2,1H3/t14-,15-,16+,17+,18+/m1/s1
+
+> <Ligand InChI Key>
+VOXZDWNPVJITMN-ZBRFXRBCSA-N
+
+> <BindingDB MonomerID>
+17292
+
+> <BindingDB Ligand Name>
+(1S,10R,11S,14S,15S)-15-methyltetracyclo[8.7.0.0^{2,7}.0^{11,15}]heptadeca-2,4,6-triene-5,14-diol::17 beta-Estradiol::17&#945;-ethinylestradiol::17beta-estradiol (E2)::CHEMBL135::CS336::ESTRADIOL::Estradiol-17 alpha::Ovocyclin::US9034854, E2::US9040509, E2::US9422324, E2::US9561238, E2::[2,4,6,7-3H]-17beta-estradiol::[2,4,6,7-3H]-E2::[3H]-estradiol::[3H]]estradiol
+
+> <Target Name Assigned by Curator or DataSource>
+Estrogen receptor
+
+> <Target Source Organism According to Curator or DataSource>
+
+
+> <Ki (nM)>
+ >0.16
+
+> <IC50 (nM)>
+
+
+> <Kd (nM)>
+
+
+> <EC50 (nM)>
+
+
+> <kon (M-1-s-1)>
+
+
+> <koff (s-1)>
+
+
+> <pH>
+
+
+> <Temp C>
+
+
+> <Curation/DataSource>
+ChEMBL
+
+> <Article DOI>
+10.1016/j.bmc.2010.06.039
+
+> <PMID>
+20621492
+
+> <PubChem AID>
+
+
+> <Patent Number>
+
+
+> <Authors>
+Rivera-Guevara, C; Perez-Alvarez, V; Garcia-Becerra, R; Ordaz-Rosado, D; Morales-Rios, MS; Hernandez-Gallegos, E; Cooney, AJ; Bravo-Gomez, ME; Larrea, F; Camacho, J
+
+> <Institution>
+Instituto Polit&#233;cnico Nacional 2508
+
+> <Link to Ligand in BindingDB>
+http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=17292
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=pol&polymerid=369&target=Estrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r21&monomerid=17292&enzyme=Estrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Ligand HET ID in PDB>
+EST
+
+> <PDB ID(s) for Ligand-Target Complex>
+4JVL,5WGD,2YJA,1G50,5TOA,1JNN,1AQU,5DXG,5DXE,5DXB,5DX3,1QKU,1QKT,2D06,4J24,6OYV,1FDU,1FDT,1FDW,1FDS,5GTR,3OLL,3OLS,5GS4,1E6W,1LHU,1A27,5WGQ,3UUD,6PYF,1PCG,6IWL,1A52,2J7X,5HYR,1IOL,4J26,1GWR,1JGL,1ERE,6PIT,2OCF,6KEP,6KEO,6CBZ,4PXM
+
+> <PubChem CID>
+5757
+
+> <PubChem SID>
+46517470
+
+> <ChEBI ID of Ligand>
+23965
+
+> <ChEMBL ID of Ligand>
+CHEMBL135
+
+> <DrugBank ID of Ligand>
+DB00783
+
+> <IUPHAR_GRAC ID of Ligand>
+1012
+
+> <KEGG ID of Ligand>
+C00951
+
+> <ZINC ID of Ligand>
+ZINC13520815
+
+> <Number of Protein Chains in Target (bigger than 1 a multichain complex)>
+1
+
+> <BindingDB Target Chain Sequence>
+MTMTLHTKASGMALLHQIQGNELEPLNRPQLKIPLERPLGEVYLDSSKPAVYNYPEGAAYEFNAAAAANAQVYGQTGLPYGPGSEAAAFGSNGLGGFPPLNSVSPSPLMLLHPPPQLSPFLQPHGQQVPYYLENEPSGYTVREAGPPAFYRPNSDNRRQGGRERLASTNDKGSMAMESAKETRYCAVCNDYASGYHYGVWSCEGCKAFFKRSIQGHNDYMCPATNQCTIDKNRRKSCQACRLRKCYEVGMMKGGIRKDRRGGRMLKHKRQRDDGEGRGEVGSAGDMRAANLWPSPLMIKRSKKNSLALSLTADQMVSALLDAEPPILYSEYDPTRPFSEASMMGLLTNLADRELVHMINWAKRVPGFVDLTLHDQVHLLECAWLEILMIGLVWRSMEHPGKLLFAPNLLLDRNQGKCVEGMVEIFDMLLATSSRFRMMNLQGEEFVCLKSIILLNSGVYTFLSSTLKSLEEKDHIHRVLDKITDTLIHLMAKAGLTLQQQHQRLAQLLLILSHIRHMSNKGMEHLYSMKCKNVVPLYDLLLEMLDAHRLHAPTSRGGASVEETDQSHLATAGSTSSHSLQKYYITGEAEGFPATV
+
+> <PDB ID(s) of Target Chain>
+1ERE,1ERR,1G50,1GWQ,1GWR,1HCP,1HCQ,1L2I,1QKU,1R5K,1SJ0,1XP1,1XP6,1XP9,1XPC,1YIM,1YIN,2IOG,2IOK,2OUZ,2YJA,3DT3,3ERD,3ERT,3HLV,3HM1,3L03,3UUC,4AA6,5GS4,5GTR
+
+> <UniProt (SwissProt) Recommended Name of Target Chain>
+Estrogen receptor
+
+> <UniProt (SwissProt) Entry Name of Target Chain>
+ESR1_HUMAN
+
+> <UniProt (SwissProt) Primary ID of Target Chain>
+P03372
+
+> <UniProt (SwissProt) Secondary ID(s) of Target Chain>
+Q13511,Q14276,Q5T5H7,Q6MZQ9,Q9NU51,Q9UDZ7,Q9UIS7
+
+> <UniProt (SwissProt) Alternative ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Submitted Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Entry Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Primary ID of Target Chain>
+G4XH65
+
+> <UniProt (TrEMBL) Secondary ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Alternative ID(s) of Target Chain>
+
+
+$$$$
+
+  Mrv0541 11241411572D          
+
+ 35 39  0  0  0  0            999 V2000
+   19.2875  -14.7000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   19.2875  -15.5250    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   19.9995  -15.9333    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0
+   20.7115  -15.5250    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+   20.7115  -14.7000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   19.9995  -14.2833    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+   20.2083  -15.0792    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0
+   21.0333  -15.0792    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   18.5718  -14.2896    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   18.5736  -15.9385    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   21.4254  -15.9385    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0
+   22.1405  -15.5271    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   20.8375  -16.5208    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   21.8333  -16.6500    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   22.8543  -15.9406    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   22.8502  -16.7636    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   23.5632  -17.1770    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   24.2793  -16.7655    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   24.2778  -15.9362    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   23.5642  -15.5265    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   17.8592  -15.5258    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   17.1458  -15.9387    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   17.1466  -16.7646    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   17.8667  -17.1759    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   18.5771  -16.7606    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   18.5732  -13.4656    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   17.8583  -13.0553    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   17.1441  -13.4699    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   17.1492  -14.2992    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   17.8646  -14.7058    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   16.4279  -13.0605    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   16.4333  -17.1790    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   19.2936  -17.1697    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   19.2875  -13.0528    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   23.5614  -14.7015    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0
+ 16 17  2  0  0  0  0
+  7  8  2  0  0  0  0
+ 17 18  1  0  0  0  0
+  6  1  1  6  0  0  0
+ 18 19  2  0  0  0  0
+  1  9  1  0  0  0  0
+ 19 20  1  0  0  0  0
+ 20 15  2  0  0  0  0
+  3  2  1  6  0  0  0
+ 10 21  2  0  0  0  0
+  2 10  1  0  0  0  0
+ 21 22  1  0  0  0  0
+  3  4  1  0  0  0  0
+ 22 23  2  0  0  0  0
+  4 11  1  6  0  0  0
+ 23 24  1  0  0  0  0
+  4  5  1  0  0  0  0
+ 24 25  2  0  0  0  0
+ 25 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+  9 26  2  0  0  0  0
+  6  5  1  0  0  0  0
+ 26 27  1  0  0  0  0
+ 11 13  2  0  0  0  0
+ 27 28  2  0  0  0  0
+ 28 29  1  0  0  0  0
+ 11 14  2  0  0  0  0
+ 29 30  2  0  0  0  0
+ 30  9  1  0  0  0  0
+  6  7  1  0  0  0  0
+ 28 31  1  0  0  0  0
+ 12 15  1  0  0  0  0
+ 23 32  1  0  0  0  0
+  3  7  1  0  0  0  0
+ 25 33  1  0  0  0  0
+ 15 16  1  0  0  0  0
+ 26 34  1  0  0  0  0
+  1  2  2  0  0  0  0
+ 20 35  1  0  0  0  0
+M  END
+> <From> 
+www.bindingDB.org
+
+> <BindingDB Reactant_set_id>
+50933680
+
+> <Ligand InChI>
+InChI=1/C26H23ClO6S2/c1-14-11-16(28)7-9-18(14)24-22-13-23(35(31,32)33-21-6-4-3-5-20(21)27)26(34(22)30)25(24)19-10-8-17(29)12-15(19)2/h3-12,22-23,26,28-29H,13H2,1-2H3/t22-,23-,26+,34?/s2
+
+> <Ligand InChI Key>
+LQNFPLOXTCFXDP-IMZHJLFBNA-N
+
+> <BindingDB MonomerID>
+50383073
+
+> <BindingDB Ligand Name>
+CHEMBL2031521
+
+> <Target Name Assigned by Curator or DataSource>
+Estrogen receptor
+
+> <Target Source Organism According to Curator or DataSource>
+
+
+> <Ki (nM)>
+ >2800
+
+> <IC50 (nM)>
+
+
+> <Kd (nM)>
+
+
+> <EC50 (nM)>
+ 2.8
+
+> <kon (M-1-s-1)>
+
+
+> <koff (s-1)>
+
+
+> <pH>
+
+
+> <Temp C>
+
+
+> <Curation/DataSource>
+ChEMBL
+
+> <Article DOI>
+10.1021/jm201556r
+
+> <PMID>
+22283328
+
+> <PubChem AID>
+
+
+> <Patent Number>
+
+
+> <Authors>
+Wang, P; Min, J; Nwachukwu, JC; Cavett, V; Carlson, KE; Guo, P; Zhu, M; Zheng, Y; Dong, C; Katzenellenbogen, JA; Nettles, KW; Zhou, HB
+
+> <Institution>
+Wuhan University
+
+> <Link to Ligand in BindingDB>
+http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=50383073
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=pol&polymerid=369&target=Estrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r21&monomerid=50383073&enzyme=Estrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Ligand HET ID in PDB>
+
+
+> <PDB ID(s) for Ligand-Target Complex>
+
+
+> <PubChem CID>
+70681621
+
+> <PubChem SID>
+160862156
+
+> <ChEBI ID of Ligand>
+
+
+> <ChEMBL ID of Ligand>
+CHEMBL2031521
+
+> <DrugBank ID of Ligand>
+
+
+> <IUPHAR_GRAC ID of Ligand>
+
+
+> <KEGG ID of Ligand>
+
+
+> <ZINC ID of Ligand>
+ZINC84669411
+
+> <Number of Protein Chains in Target (bigger than 1 a multichain complex)>
+1
+
+> <BindingDB Target Chain Sequence>
+MTMTLHTKASGMALLHQIQGNELEPLNRPQLKIPLERPLGEVYLDSSKPAVYNYPEGAAYEFNAAAAANAQVYGQTGLPYGPGSEAAAFGSNGLGGFPPLNSVSPSPLMLLHPPPQLSPFLQPHGQQVPYYLENEPSGYTVREAGPPAFYRPNSDNRRQGGRERLASTNDKGSMAMESAKETRYCAVCNDYASGYHYGVWSCEGCKAFFKRSIQGHNDYMCPATNQCTIDKNRRKSCQACRLRKCYEVGMMKGGIRKDRRGGRMLKHKRQRDDGEGRGEVGSAGDMRAANLWPSPLMIKRSKKNSLALSLTADQMVSALLDAEPPILYSEYDPTRPFSEASMMGLLTNLADRELVHMINWAKRVPGFVDLTLHDQVHLLECAWLEILMIGLVWRSMEHPGKLLFAPNLLLDRNQGKCVEGMVEIFDMLLATSSRFRMMNLQGEEFVCLKSIILLNSGVYTFLSSTLKSLEEKDHIHRVLDKITDTLIHLMAKAGLTLQQQHQRLAQLLLILSHIRHMSNKGMEHLYSMKCKNVVPLYDLLLEMLDAHRLHAPTSRGGASVEETDQSHLATAGSTSSHSLQKYYITGEAEGFPATV
+
+> <PDB ID(s) of Target Chain>
+1ERE,1ERR,1G50,1GWQ,1GWR,1HCP,1HCQ,1L2I,1QKU,1R5K,1SJ0,1XP1,1XP6,1XP9,1XPC,1YIM,1YIN,2IOG,2IOK,2OUZ,2YJA,3DT3,3ERD,3ERT,3HLV,3HM1,3L03,3UUC,4AA6,5GS4,5GTR
+
+> <UniProt (SwissProt) Recommended Name of Target Chain>
+Estrogen receptor
+
+> <UniProt (SwissProt) Entry Name of Target Chain>
+ESR1_HUMAN
+
+> <UniProt (SwissProt) Primary ID of Target Chain>
+P03372
+
+> <UniProt (SwissProt) Secondary ID(s) of Target Chain>
+Q13511,Q14276,Q5T5H7,Q6MZQ9,Q9NU51,Q9UDZ7,Q9UIS7
+
+> <UniProt (SwissProt) Alternative ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Submitted Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Entry Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Primary ID of Target Chain>
+G4XH65
+
+> <UniProt (TrEMBL) Secondary ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Alternative ID(s) of Target Chain>
+
+
+$$$$
+
+  Mrv0541 11241411572D          
+
+ 35 39  0  0  0  0            999 V2000
+    8.3215  -14.5429    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.3215  -15.3680    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.0337  -15.7763    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0
+    9.7457  -15.3680    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+    9.7457  -14.5429    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.0337  -14.1262    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+    9.2425  -14.9220    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0
+   10.0675  -14.9220    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    7.6058  -14.1325    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.6076  -15.7815    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   10.4596  -15.7815    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0
+   11.1747  -15.3700    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    9.8716  -16.3639    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   10.8676  -16.4931    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   11.8887  -15.7836    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   11.8845  -16.6066    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   12.5977  -17.0201    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   13.3137  -16.6086    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   13.3123  -15.7792    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   12.5986  -15.3695    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.8932  -15.3688    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.1797  -15.7816    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.1804  -16.6076    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.9006  -17.0189    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.6111  -16.6037    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.6071  -13.3084    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.8923  -12.8980    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.1779  -13.3127    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.1830  -14.1420    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.8985  -14.5486    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.4617  -12.9032    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    5.4671  -17.0221    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    8.3276  -17.0128    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.3215  -12.8956    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   12.5958  -14.5444    0.0000 F   0  0  0  0  0  0  0  0  0  0  0  0
+ 16 17  2  0  0  0  0
+  7  8  2  0  0  0  0
+ 17 18  1  0  0  0  0
+  6  1  1  6  0  0  0
+ 18 19  2  0  0  0  0
+  1  9  1  0  0  0  0
+ 19 20  1  0  0  0  0
+ 20 15  2  0  0  0  0
+  3  2  1  6  0  0  0
+ 10 21  2  0  0  0  0
+  2 10  1  0  0  0  0
+ 21 22  1  0  0  0  0
+  3  4  1  0  0  0  0
+ 22 23  2  0  0  0  0
+  4 11  1  6  0  0  0
+ 23 24  1  0  0  0  0
+  4  5  1  0  0  0  0
+ 24 25  2  0  0  0  0
+ 25 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+  9 26  2  0  0  0  0
+  6  5  1  0  0  0  0
+ 26 27  1  0  0  0  0
+ 11 13  2  0  0  0  0
+ 27 28  2  0  0  0  0
+ 28 29  1  0  0  0  0
+ 11 14  2  0  0  0  0
+ 29 30  2  0  0  0  0
+ 30  9  1  0  0  0  0
+  6  7  1  0  0  0  0
+ 28 31  1  0  0  0  0
+ 12 15  1  0  0  0  0
+ 23 32  1  0  0  0  0
+  3  7  1  0  0  0  0
+ 25 33  1  0  0  0  0
+ 15 16  1  0  0  0  0
+ 26 34  1  0  0  0  0
+  1  2  2  0  0  0  0
+ 20 35  1  0  0  0  0
+M  END
+> <From> 
+www.bindingDB.org
+
+> <BindingDB Reactant_set_id>
+50933681
+
+> <Ligand InChI>
+InChI=1/C26H23FO6S2/c1-14-11-16(28)7-9-18(14)24-22-13-23(35(31,32)33-21-6-4-3-5-20(21)27)26(34(22)30)25(24)19-10-8-17(29)12-15(19)2/h3-12,22-23,26,28-29H,13H2,1-2H3/t22-,23-,26+,34?/s2
+
+> <Ligand InChI Key>
+AGUBZHXQTXTWBX-IMZHJLFBNA-N
+
+> <BindingDB MonomerID>
+50383074
+
+> <BindingDB Ligand Name>
+CHEMBL2031520
+
+> <Target Name Assigned by Curator or DataSource>
+Estrogen receptor
+
+> <Target Source Organism According to Curator or DataSource>
+
+
+> <Ki (nM)>
+ <2.2
+
+> <IC50 (nM)>
+
+
+> <Kd (nM)>
+
+
+> <EC50 (nM)>
+ 2.2
+
+> <kon (M-1-s-1)>
+
+
+> <koff (s-1)>
+
+
+> <pH>
+
+
+> <Temp C>
+
+
+> <Curation/DataSource>
+ChEMBL
+
+> <Article DOI>
+10.1021/jm201556r
+
+> <PMID>
+22283328
+
+> <PubChem AID>
+
+
+> <Patent Number>
+
+
+> <Authors>
+Wang, P; Min, J; Nwachukwu, JC; Cavett, V; Carlson, KE; Guo, P; Zhu, M; Zheng, Y; Dong, C; Katzenellenbogen, JA; Nettles, KW; Zhou, HB
+
+> <Institution>
+Wuhan University
+
+> <Link to Ligand in BindingDB>
+http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=50383074
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=pol&polymerid=369&target=Estrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r21&monomerid=50383074&enzyme=Estrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Ligand HET ID in PDB>
+
+
+> <PDB ID(s) for Ligand-Target Complex>
+
+
+> <PubChem CID>
+70685893
+
+> <PubChem SID>
+160862157
+
+> <ChEBI ID of Ligand>
+
+
+> <ChEMBL ID of Ligand>
+CHEMBL2031520
+
+> <DrugBank ID of Ligand>
+
+
+> <IUPHAR_GRAC ID of Ligand>
+
+
+> <KEGG ID of Ligand>
+
+
+> <ZINC ID of Ligand>
+ZINC84670287
+
+> <Number of Protein Chains in Target (bigger than 1 a multichain complex)>
+1
+
+> <BindingDB Target Chain Sequence>
+MTMTLHTKASGMALLHQIQGNELEPLNRPQLKIPLERPLGEVYLDSSKPAVYNYPEGAAYEFNAAAAANAQVYGQTGLPYGPGSEAAAFGSNGLGGFPPLNSVSPSPLMLLHPPPQLSPFLQPHGQQVPYYLENEPSGYTVREAGPPAFYRPNSDNRRQGGRERLASTNDKGSMAMESAKETRYCAVCNDYASGYHYGVWSCEGCKAFFKRSIQGHNDYMCPATNQCTIDKNRRKSCQACRLRKCYEVGMMKGGIRKDRRGGRMLKHKRQRDDGEGRGEVGSAGDMRAANLWPSPLMIKRSKKNSLALSLTADQMVSALLDAEPPILYSEYDPTRPFSEASMMGLLTNLADRELVHMINWAKRVPGFVDLTLHDQVHLLECAWLEILMIGLVWRSMEHPGKLLFAPNLLLDRNQGKCVEGMVEIFDMLLATSSRFRMMNLQGEEFVCLKSIILLNSGVYTFLSSTLKSLEEKDHIHRVLDKITDTLIHLMAKAGLTLQQQHQRLAQLLLILSHIRHMSNKGMEHLYSMKCKNVVPLYDLLLEMLDAHRLHAPTSRGGASVEETDQSHLATAGSTSSHSLQKYYITGEAEGFPATV
+
+> <PDB ID(s) of Target Chain>
+1ERE,1ERR,1G50,1GWQ,1GWR,1HCP,1HCQ,1L2I,1QKU,1R5K,1SJ0,1XP1,1XP6,1XP9,1XPC,1YIM,1YIN,2IOG,2IOK,2OUZ,2YJA,3DT3,3ERD,3ERT,3HLV,3HM1,3L03,3UUC,4AA6,5GS4,5GTR
+
+> <UniProt (SwissProt) Recommended Name of Target Chain>
+Estrogen receptor
+
+> <UniProt (SwissProt) Entry Name of Target Chain>
+ESR1_HUMAN
+
+> <UniProt (SwissProt) Primary ID of Target Chain>
+P03372
+
+> <UniProt (SwissProt) Secondary ID(s) of Target Chain>
+Q13511,Q14276,Q5T5H7,Q6MZQ9,Q9NU51,Q9UDZ7,Q9UIS7
+
+> <UniProt (SwissProt) Alternative ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Submitted Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Entry Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Primary ID of Target Chain>
+G4XH65
+
+> <UniProt (TrEMBL) Secondary ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Alternative ID(s) of Target Chain>
+
+
+$$$$
+
+  Mrv0541 11241411572D          
+
+ 36 40  0  0  0  0            999 V2000
+   -1.8421  -13.5814    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.8421  -14.4066    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.1298  -14.8149    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0
+   -0.4176  -14.4066    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+   -0.4176  -13.5814    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.1298  -13.1647    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+   -0.9210  -13.9607    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.0958  -13.9607    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.5577  -13.1710    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.5559  -14.8201    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.2962  -14.8201    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0
+    1.0115  -14.4086    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.2917  -15.4026    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    0.7044  -15.5318    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    1.7254  -14.8222    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.7212  -15.6453    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.4345  -16.0588    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.1507  -15.6473    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.1493  -14.8178    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.4354  -14.4081    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.2705  -14.4074    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.9839  -14.8202    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.9832  -15.6463    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.2631  -16.0576    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.5524  -15.6424    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.5564  -12.3468    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.2714  -11.9364    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.9857  -12.3511    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.9806  -13.1805    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.2652  -13.5871    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -4.7021  -11.9416    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -4.6967  -16.0608    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.8360  -16.0515    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.8421  -11.9340    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.8615  -16.0580    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    4.5762  -15.6456    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+  7  8  2  0  0  0  0
+ 17 18  1  0  0  0  0
+  6  1  1  6  0  0  0
+ 18 19  2  0  0  0  0
+  1  9  1  0  0  0  0
+ 19 20  1  0  0  0  0
+ 20 15  2  0  0  0  0
+  3  2  1  6  0  0  0
+ 10 21  2  0  0  0  0
+  2 10  1  0  0  0  0
+ 21 22  1  0  0  0  0
+  3  4  1  0  0  0  0
+ 22 23  2  0  0  0  0
+  4 11  1  6  0  0  0
+ 23 24  1  0  0  0  0
+  4  5  1  0  0  0  0
+ 24 25  2  0  0  0  0
+ 25 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+  9 26  2  0  0  0  0
+  6  5  1  0  0  0  0
+ 26 27  1  0  0  0  0
+ 11 13  2  0  0  0  0
+ 27 28  2  0  0  0  0
+ 28 29  1  0  0  0  0
+ 11 14  2  0  0  0  0
+ 29 30  2  0  0  0  0
+ 30  9  1  0  0  0  0
+  6  7  1  0  0  0  0
+ 28 31  1  0  0  0  0
+ 12 15  1  0  0  0  0
+ 23 32  1  0  0  0  0
+  3  7  1  0  0  0  0
+ 25 33  1  0  0  0  0
+ 15 16  1  0  0  0  0
+ 26 34  1  0  0  0  0
+  1  2  2  0  0  0  0
+ 16 17  2  0  0  0  0
+ 35 36  1  0  0  0  0
+ 18 35  1  0  0  0  0
+M  END
+> <From> 
+www.bindingDB.org
+
+> <BindingDB Reactant_set_id>
+50933682
+
+> <Ligand InChI>
+InChI=1/C27H26O7S2/c1-15-12-17(28)4-10-21(15)25-23-14-24(36(31,32)34-20-8-6-19(33-3)7-9-20)27(35(23)30)26(25)22-11-5-18(29)13-16(22)2/h4-13,23-24,27-29H,14H2,1-3H3/t23-,24-,27+,35?/s2
+
+> <Ligand InChI Key>
+LTXMKVUIMJCXAP-MTHYGKEXNA-N
+
+> <BindingDB MonomerID>
+50383075
+
+> <BindingDB Ligand Name>
+CHEMBL2031519
+
+> <Target Name Assigned by Curator or DataSource>
+Estrogen receptor
+
+> <Target Source Organism According to Curator or DataSource>
+
+
+> <Ki (nM)>
+ 210
+
+> <IC50 (nM)>
+
+
+> <Kd (nM)>
+
+
+> <EC50 (nM)>
+ 210
+
+> <kon (M-1-s-1)>
+
+
+> <koff (s-1)>
+
+
+> <pH>
+
+
+> <Temp C>
+
+
+> <Curation/DataSource>
+ChEMBL
+
+> <Article DOI>
+10.1021/jm201556r
+
+> <PMID>
+22283328
+
+> <PubChem AID>
+
+
+> <Patent Number>
+
+
+> <Authors>
+Wang, P; Min, J; Nwachukwu, JC; Cavett, V; Carlson, KE; Guo, P; Zhu, M; Zheng, Y; Dong, C; Katzenellenbogen, JA; Nettles, KW; Zhou, HB
+
+> <Institution>
+Wuhan University
+
+> <Link to Ligand in BindingDB>
+http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=50383075
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=pol&polymerid=369&target=Estrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r21&monomerid=50383075&enzyme=Estrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Ligand HET ID in PDB>
+
+
+> <PDB ID(s) for Ligand-Target Complex>
+
+
+> <PubChem CID>
+70694260
+
+> <PubChem SID>
+160862158
+
+> <ChEBI ID of Ligand>
+
+
+> <ChEMBL ID of Ligand>
+CHEMBL2031519
+
+> <DrugBank ID of Ligand>
+
+
+> <IUPHAR_GRAC ID of Ligand>
+
+
+> <KEGG ID of Ligand>
+
+
+> <ZINC ID of Ligand>
+ZINC84653425
+
+> <Number of Protein Chains in Target (bigger than 1 a multichain complex)>
+1
+
+> <BindingDB Target Chain Sequence>
+MTMTLHTKASGMALLHQIQGNELEPLNRPQLKIPLERPLGEVYLDSSKPAVYNYPEGAAYEFNAAAAANAQVYGQTGLPYGPGSEAAAFGSNGLGGFPPLNSVSPSPLMLLHPPPQLSPFLQPHGQQVPYYLENEPSGYTVREAGPPAFYRPNSDNRRQGGRERLASTNDKGSMAMESAKETRYCAVCNDYASGYHYGVWSCEGCKAFFKRSIQGHNDYMCPATNQCTIDKNRRKSCQACRLRKCYEVGMMKGGIRKDRRGGRMLKHKRQRDDGEGRGEVGSAGDMRAANLWPSPLMIKRSKKNSLALSLTADQMVSALLDAEPPILYSEYDPTRPFSEASMMGLLTNLADRELVHMINWAKRVPGFVDLTLHDQVHLLECAWLEILMIGLVWRSMEHPGKLLFAPNLLLDRNQGKCVEGMVEIFDMLLATSSRFRMMNLQGEEFVCLKSIILLNSGVYTFLSSTLKSLEEKDHIHRVLDKITDTLIHLMAKAGLTLQQQHQRLAQLLLILSHIRHMSNKGMEHLYSMKCKNVVPLYDLLLEMLDAHRLHAPTSRGGASVEETDQSHLATAGSTSSHSLQKYYITGEAEGFPATV
+
+> <PDB ID(s) of Target Chain>
+1ERE,1ERR,1G50,1GWQ,1GWR,1HCP,1HCQ,1L2I,1QKU,1R5K,1SJ0,1XP1,1XP6,1XP9,1XPC,1YIM,1YIN,2IOG,2IOK,2OUZ,2YJA,3DT3,3ERD,3ERT,3HLV,3HM1,3L03,3UUC,4AA6,5GS4,5GTR
+
+> <UniProt (SwissProt) Recommended Name of Target Chain>
+Estrogen receptor
+
+> <UniProt (SwissProt) Entry Name of Target Chain>
+ESR1_HUMAN
+
+> <UniProt (SwissProt) Primary ID of Target Chain>
+P03372
+
+> <UniProt (SwissProt) Secondary ID(s) of Target Chain>
+Q13511,Q14276,Q5T5H7,Q6MZQ9,Q9NU51,Q9UDZ7,Q9UIS7
+
+> <UniProt (SwissProt) Alternative ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Submitted Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Entry Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Primary ID of Target Chain>
+G4XH65
+
+> <UniProt (TrEMBL) Secondary ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Alternative ID(s) of Target Chain>
+
+
+$$$$
+
+  Mrv0541 11241411572D          
+
+ 34 38  0  0  0  0            999 V2000
+   20.5542   -7.0542    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   20.5542   -7.8792    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   21.2662   -8.2875    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0
+   21.9782   -7.8792    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+   21.9782   -7.0542    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   21.2662   -6.6375    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0
+   21.4750   -7.4333    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0
+   22.3000   -7.4333    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   19.8385   -6.6438    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   19.8403   -8.2927    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   22.6921   -8.2927    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0
+   23.4071   -7.8812    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   22.1042   -8.8750    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   23.1000   -9.0042    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   24.1210   -8.2948    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   24.1169   -9.1177    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   24.8299   -9.5312    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   25.5459   -9.1197    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   25.5445   -8.2904    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   24.8309   -7.8807    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   19.1259   -7.8800    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   18.4125   -8.2928    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   18.4133   -9.1187    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   19.1334   -9.5300    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   19.8438   -9.1148    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   19.8398   -5.8198    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   19.1250   -5.4094    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   18.4108   -5.8241    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   18.4158   -6.6533    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   19.1313   -7.0599    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   17.6945   -5.4146    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   17.6999   -9.5332    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   20.5602   -9.5239    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   20.5541   -5.4070    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0  0  0  0
+ 16 17  2  0  0  0  0
+  7  8  2  0  0  0  0
+ 17 18  1  0  0  0  0
+  6  1  1  6  0  0  0
+ 18 19  2  0  0  0  0
+  1  9  1  0  0  0  0
+ 19 20  1  0  0  0  0
+ 20 15  2  0  0  0  0
+  3  2  1  6  0  0  0
+ 10 21  2  0  0  0  0
+  2 10  1  0  0  0  0
+ 21 22  1  0  0  0  0
+  3  4  1  0  0  0  0
+ 22 23  2  0  0  0  0
+  4 11  1  6  0  0  0
+ 23 24  1  0  0  0  0
+  4  5  1  0  0  0  0
+ 24 25  2  0  0  0  0
+ 25 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+  9 26  2  0  0  0  0
+  6  5  1  0  0  0  0
+ 26 27  1  0  0  0  0
+ 11 13  2  0  0  0  0
+ 27 28  2  0  0  0  0
+ 28 29  1  0  0  0  0
+ 11 14  2  0  0  0  0
+ 29 30  2  0  0  0  0
+ 30  9  1  0  0  0  0
+  6  7  1  0  0  0  0
+ 28 31  1  0  0  0  0
+ 12 15  1  0  0  0  0
+ 23 32  1  0  0  0  0
+  3  7  1  0  0  0  0
+ 25 33  1  0  0  0  0
+ 15 16  1  0  0  0  0
+ 26 34  1  0  0  0  0
+M  END
+> <From> 
+www.bindingDB.org
+
+> <BindingDB Reactant_set_id>
+50933683
+
+> <Ligand InChI>
+InChI=1/C26H24O6S2/c1-15-12-17(27)8-10-20(15)24-22-14-23(34(30,31)32-19-6-4-3-5-7-19)26(33(22)29)25(24)21-11-9-18(28)13-16(21)2/h3-13,22-23,26-28H,14H2,1-2H3/t22-,23-,26+,33?/s2
+
+> <Ligand InChI Key>
+WTJIWNQLQUCGTK-WJJHLWMGNA-N
+
+> <BindingDB MonomerID>
+50383076
+
+> <BindingDB Ligand Name>
+CHEMBL2031518
+
+> <Target Name Assigned by Curator or DataSource>
+Estrogen receptor
+
+> <Target Source Organism According to Curator or DataSource>
+
+
+> <Ki (nM)>
+ 0.14
+
+> <IC50 (nM)>
+
+
+> <Kd (nM)>
+
+
+> <EC50 (nM)>
+ 0.14
+
+> <kon (M-1-s-1)>
+
+
+> <koff (s-1)>
+
+
+> <pH>
+
+
+> <Temp C>
+
+
+> <Curation/DataSource>
+ChEMBL
+
+> <Article DOI>
+10.1021/jm201556r
+
+> <PMID>
+22283328
+
+> <PubChem AID>
+
+
+> <Patent Number>
+
+
+> <Authors>
+Wang, P; Min, J; Nwachukwu, JC; Cavett, V; Carlson, KE; Guo, P; Zhu, M; Zheng, Y; Dong, C; Katzenellenbogen, JA; Nettles, KW; Zhou, HB
+
+> <Institution>
+Wuhan University
+
+> <Link to Ligand in BindingDB>
+http://www.bindingdb.org/bind/chemsearch/marvin/MolStructure.jsp?monomerid=50383076
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=pol&polymerid=369&target=Estrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Link to Ligand-Target Pair in BindingDB>
+http://www.bindingdb.org/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r21&monomerid=50383076&enzyme=Estrogen+receptor&column=ki&startPg=0&Increment=50&submit=Search
+
+> <Ligand HET ID in PDB>
+5FV
+
+> <PDB ID(s) for Ligand-Target Complex>
+5DUG
+
+> <PubChem CID>
+70692196
+
+> <PubChem SID>
+160862159
+
+> <ChEBI ID of Ligand>
+
+
+> <ChEMBL ID of Ligand>
+CHEMBL2031518
+
+> <DrugBank ID of Ligand>
+
+
+> <IUPHAR_GRAC ID of Ligand>
+
+
+> <KEGG ID of Ligand>
+
+
+> <ZINC ID of Ligand>
+ZINC84653423
+
+> <Number of Protein Chains in Target (bigger than 1 a multichain complex)>
+1
+
+> <BindingDB Target Chain Sequence>
+MTMTLHTKASGMALLHQIQGNELEPLNRPQLKIPLERPLGEVYLDSSKPAVYNYPEGAAYEFNAAAAANAQVYGQTGLPYGPGSEAAAFGSNGLGGFPPLNSVSPSPLMLLHPPPQLSPFLQPHGQQVPYYLENEPSGYTVREAGPPAFYRPNSDNRRQGGRERLASTNDKGSMAMESAKETRYCAVCNDYASGYHYGVWSCEGCKAFFKRSIQGHNDYMCPATNQCTIDKNRRKSCQACRLRKCYEVGMMKGGIRKDRRGGRMLKHKRQRDDGEGRGEVGSAGDMRAANLWPSPLMIKRSKKNSLALSLTADQMVSALLDAEPPILYSEYDPTRPFSEASMMGLLTNLADRELVHMINWAKRVPGFVDLTLHDQVHLLECAWLEILMIGLVWRSMEHPGKLLFAPNLLLDRNQGKCVEGMVEIFDMLLATSSRFRMMNLQGEEFVCLKSIILLNSGVYTFLSSTLKSLEEKDHIHRVLDKITDTLIHLMAKAGLTLQQQHQRLAQLLLILSHIRHMSNKGMEHLYSMKCKNVVPLYDLLLEMLDAHRLHAPTSRGGASVEETDQSHLATAGSTSSHSLQKYYITGEAEGFPATV
+
+> <PDB ID(s) of Target Chain>
+1ERE,1ERR,1G50,1GWQ,1GWR,1HCP,1HCQ,1L2I,1QKU,1R5K,1SJ0,1XP1,1XP6,1XP9,1XPC,1YIM,1YIN,2IOG,2IOK,2OUZ,2YJA,3DT3,3ERD,3ERT,3HLV,3HM1,3L03,3UUC,4AA6,5GS4,5GTR
+
+> <UniProt (SwissProt) Recommended Name of Target Chain>
+Estrogen receptor
+
+> <UniProt (SwissProt) Entry Name of Target Chain>
+ESR1_HUMAN
+
+> <UniProt (SwissProt) Primary ID of Target Chain>
+P03372
+
+> <UniProt (SwissProt) Secondary ID(s) of Target Chain>
+Q13511,Q14276,Q5T5H7,Q6MZQ9,Q9NU51,Q9UDZ7,Q9UIS7
+
+> <UniProt (SwissProt) Alternative ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Submitted Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Entry Name of Target Chain>
+
+
+> <UniProt (TrEMBL) Primary ID of Target Chain>
+G4XH65
+
+> <UniProt (TrEMBL) Secondary ID(s) of Target Chain>
+
+
+> <UniProt (TrEMBL) Alternative ID(s) of Target Chain>
+

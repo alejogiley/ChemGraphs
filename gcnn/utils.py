@@ -1,3 +1,4 @@
+import random
 import numpy as np
 import tensorflow as tf
 
@@ -16,6 +17,7 @@ def str_is_float(s: str) -> bool:
 
     try:
         import unicodedata
+
         unicodedata.numeric(s)
         return True
 
@@ -27,17 +29,21 @@ def str_is_float(s: str) -> bool:
 
 def symmetrize(matrix):
     """Symmetrize multidimensional matrix"""
-    return matrix \
-        + np.transpose(matrix, (1, 0, 2)) \
-        - np.diag(matrix.diagonal())
+    return matrix + np.transpose(matrix, (1, 0, 2)) - np.diag(matrix.diagonal())
 
 
-def onehot_encoding(x: np.array, categories: List[str]) -> np.ndarray:
+def onehot_encoding(index: int, num_classes: int) -> np.ndarray:
     """Generate one-hot encoded vector from categorical data"""
-    maps = dict([(k, v) for k, v in zip(categories, enumerate(categories))])
-    return to_categorical(maps[x], num_classes=len(categories))
+    return to_categorical(index, num_classes=num_classes)
 
 
 def sigma(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     """Returns variance of error distribution"""
     return tf.abs(y_pred[-1])
+
+
+def set_random_seed(seed):
+    """Control reproducibility"""
+    random.seed(seed)
+    np.random.seed(seed)
+    tf.random.set_seed(seed)

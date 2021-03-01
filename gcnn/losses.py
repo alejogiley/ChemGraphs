@@ -105,9 +105,7 @@ def maxlike_mse_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
 
     # calculate loss
     loss = tf.reduce_sum(
-        tf.math.log(2 * sigma * np.pi)
-        + tf.square(true - pred) / sigma
-        * inner_indexes
+        tf.math.log(2 * sigma * np.pi) + tf.square(true - pred) / sigma * inner_indexes
     )
 
     return loss

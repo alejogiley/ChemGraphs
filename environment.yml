@@ -19,3 +19,6 @@ dependencies:
     - tensorflow_probability
     - coverage
     - coveralls
+    - black
+    - mypy
+    - pylint

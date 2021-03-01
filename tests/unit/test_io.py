@@ -14,7 +14,7 @@ from spektral.data.dataset import Dataset
 from spektral.data.graph import Graph
 from spektral.layers import ECCConv, GlobalSumPool
 
-from gcnn.io import save_model, save_history
+from gcnn.io import save_gcnn, save_history
 
 
 class TestSaveHistory(tf.test.TestCase):
@@ -42,8 +42,7 @@ class TestSaveHistory(tf.test.TestCase):
                 ]
 
         # initialize
-        loader = BatchLoader(
-            TestDataset(), batch_size=1, epochs=1, shuffle=False)
+        loader = BatchLoader(TestDataset(), batch_size=1, epochs=1, shuffle=False)
 
         # dummy model
         nodes = Input(shape=(None, 1))
@@ -58,8 +57,7 @@ class TestSaveHistory(tf.test.TestCase):
         model.compile(optimizer=Adam(lr=0.1), loss="mse")
 
         # train model
-        self.history = model.fit(
-            loader.load(), verbose=0, steps_per_epoch=1)
+        self.history = model.fit(loader.load(), verbose=0, steps_per_epoch=1)
 
     def tearDown(self):
         # delete temp directory
@@ -74,26 +72,26 @@ class TestSaveHistory(tf.test.TestCase):
         """check error wrong output path"""
         with self.assertRaises(IOError):
             save_history(self.history, pl.Path(r"/path/to/file"))
-            
+
     def test_file_content(self):
         """check saved history content"""
         save_history(self.history, self.tmpdat)
-        with open(self.tmpdat, 'r') as file:
+        with open(self.tmpdat, "r") as file:
             lastline = file.readlines()[-1]
         self.assertEqual(lastline, "3.158142328262329\n")
 
 
 class TestSaveModel(tf.test.TestCase):
     """Check save_model routine"""
-    
+
     def setUp(self):
         super(TestSaveModel, self).setUp()
-        
+
         # temporary directory
         self.tmpdir = tempfile.mkdtemp()
         # SavedModel model path
         self.tmpdat = os.path.join(self.tmpdir, "model")
- 
+
     def tearDown(self):
         # delete temp directory
         shutil.rmtree(self.tmpdir)
@@ -109,16 +107,16 @@ class TestSaveModel(tf.test.TestCase):
         final = Dense(1, "tanh")(messg)
         # create model
         model = Model(inputs=[nodes, adjcs, edges], outputs=final)
-        
-        save_model(model, self.tmpdat)
+
+        save_gcnn(model, self.tmpdat)
         self.assertTrue(pl.Path(self.tmpdat).is_dir())
 
     def test_wrong_model(self):
         """check error for empty model"""
         model = Model()
-        with self.assertRaises(ValueError):
-            save_model(model, self.tmpdat)
-	
+        with self.assertRaises(IOError):
+            save_gcnn(model, self.tmpdat)
 
-if __name__ == '__main__':
-	tf.test.main()
+
+if __name__ == "__main__":
+    tf.test.main()

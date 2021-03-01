@@ -16,13 +16,15 @@ def r_squared(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
         correlation metric
 
     """
-    # Estimators∏
-    true = y_true[:, 2]
+    # Predictions
     pred = y_pred[:-1, 0]
 
     ##################################
     # Censored values
     ##################################
+    
+    # Target affinities
+    true = y_true[:, 2]
 
     # Get indicators censoring
     lefts_indexes = y_true[:, 0]
@@ -55,13 +57,17 @@ def pearson(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
         relationship metric
 
     """
-    # Estimators
-    true = y_true[:, 2]
+    # Predictions
+    print(y_pred)
     pred = y_pred[:-1, 0]
 
     ##################################
     # Censored values
     ##################################
+    
+    # Target affinities
+    print(y_true)
+    true = y_true[:, 2]
 
     lefts_indexes = y_true[:, 0]
     right_indexes = y_true[:, 1]
