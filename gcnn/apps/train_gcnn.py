@@ -1,15 +1,14 @@
 #!/usr/bin/env python -W ignore
 
 import argparse
-import joblib
 
 from spektral.layers import ECCConv
 from spektral.transforms import LayerPreprocess
 
-from gcnn.io import save_history, save_gcnn, save_metrics
+from gcnn.io import load_dataset, save_history, save_gcnn, save_metrics
 from gcnn.models import train_model, evaluate_model
 from gcnn.datasets import split_dataset, transform_datasets
-from gcnn.utils import sigma, set_random_seed
+from gcnn.utils import set_random_seed
 from gcnn.metrics import r_squared
 from gcnn.losses import (
     mse_loss,
@@ -28,7 +27,7 @@ def main(args):
     ##########################################################################
 
     # Load dataset
-    dataset = joblib.load(args.data_path)
+    dataset = load_dataset(args.data_path)
 
     # Transform the adjacency matrix
     # according to ECCConv
@@ -54,7 +53,7 @@ def main(args):
     model, history = train_model(
         dataset=train_set,
         tf_loss=loss_types[args.loss_function],
-        metrics=[r_squared, sigma],
+        metrics=[r_squared],
         n_layers=args.n_layers,
         channels=args.channels,
         batch_size=args.batch_size,

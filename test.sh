@@ -29,6 +29,7 @@ fi
 
 python -m pip install -e .[develop]
 python setup.py nosetests --no-skip || error=1
+python setup.py cram || error=1
 
 if [[ $error -ne 1 ]]; then
 	echo "Checking code style with black..."
@@ -40,7 +41,7 @@ if [[ $error -ne 1 ]]; then
 	echo "Success!"
 
 	# echo "Checking code style with pylint..."
-	# python -m pylint "${SRC_DIR}"/gcnn/ "${SRC_DIR}"/test/*.py
+	# python -m pylint "${SRC_DIR}"/gcnn "${SRC_DIR}"/tests/*.py
 	# echo "Success!"
 fi
 

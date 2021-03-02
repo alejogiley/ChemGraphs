@@ -58,7 +58,6 @@ def pearson(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
 
     """
     # Predictions
-    print(y_pred)
     pred = y_pred[:-1, 0]
 
     ##################################
@@ -66,7 +65,6 @@ def pearson(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     ##################################
 
     # Target affinities
-    print(y_true)
     true = y_true[:, 2]
 
     lefts_indexes = y_true[:, 0]

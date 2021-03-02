@@ -16,52 +16,37 @@ class GraphDB(Dataset):
 
     def __init__(
         self,
-        dpath=None,
         nodes=None,
         edges=None,
         adjcs=None,
         feats=None,
-        fname=None,
         **kwargs,
     ):
         self.nodes = nodes
         self.edges = edges
         self.adjcs = adjcs
         self.feats = feats
-        # dataset name
-        self.fname = fname
-        # dataset to load
-        self.dpath = dpath
 
         super().__init__(**kwargs)
 
-    @Dataset.path.getter
-    def path(self):
-        path = os.path.join(self.dpath, self.fname + ".npz")
-        return "" if not os.path.exists(path) else path
-
     def read(self):
-        # load Graph objects
-        data = np.load(os.path.join(self.dpath, self.fname + ".npz"), allow_pickle=True)
-
-        # graphs
+        # create Graphs
         output = [
             self.make_graph(
-                node=data["x"][i],
-                adjc=data["a"][i],
-                edge=data["e"][i],
-                feat=data["y"][i],
+                node=self.data["x"][i],
+                adjc=self.data["a"][i],
+                edge=self.data["e"][i],
+                feat=self.data["y"][i],
             )
-            for i, _ in enumerate(data["y"])
-            if data["y"][i][-1] > 0.0
+            for i, _ in enumerate(self.data["y"])
+            if self.data["y"][i][-1] > 0.0
         ]
 
         return output
 
     def download(self):
         # save graph arrays into directory
-        filename = os.path.join(self.dpath, self.fname)
-        np.savez_compressed(filename, x=self.nodes, a=self.adjcs, e=self.edges, y=self.feats)
+        self.data = { 'x': self.nodes, 'a': self.adjcs, 'e': self.edges, 'y': self.feats }
 
     @staticmethod
     def make_graph(node, adjc, edge, feat):

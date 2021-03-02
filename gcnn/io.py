@@ -1,17 +1,28 @@
+from typing import Dict
+
 import os
 import joblib
-
 import pandas as pd
 
-from typing import Dict
 from tensorflow.keras.models import save_model
+
+
+def load_dataset(file_path: str):
+    """Load GraphDB dataset"""
+    try:
+        with open(file_path, 'rb') as file:
+            dataset = joblib.load(file)
+        return dataset
+    except Exception as err:
+        raise IOError("Unable to open data file: {}".format(str(err)))
 
 
 def save_dataset(dataset, data_path: str, file_name: str):
     """Save Graph dataset"""
-    path = os.path.join(data_path, file_name + ".gz")
+    file_path = os.path.join(data_path, file_name + ".lz4")
     try:
-        joblib.dump(dataset, path, compress=("gzip", 6), protocol=5)
+        with open(file_path, 'wb') as file:
+            joblib.dump(dataset, file, compress=("lz4", 6))
     except Exception as err:
         raise IOError("Unable to save dataset: {}".format(str(err)))
 

@@ -1,11 +1,12 @@
 from __future__ import annotations
 
+from typing import Tuple, Literal, List, Any
+
 import numpy as np
 
 from rdkit import Chem
 from rdkit.Chem import AllChem
 from rdkit.Chem.rdchem import Mol
-from typing import Tuple, Literal, List, Any
 
 from gcnn.utils import onehot_encoding, str_is_float, symmetrize
 

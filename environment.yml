@@ -12,6 +12,8 @@ dependencies:
   - flake8
   - rdkit
   - pip:
+    - lz4
+    - cram
     - keras>=2.4.0
     - spektral==1.0.4
     - tensorflow

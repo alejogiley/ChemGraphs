@@ -24,5 +24,6 @@ install:
 script: 
   - nosetests --with-coverage 
   - coverage run --source=gcnn setup.py test
+  - python setup.py cram
 after_success:
   - coveralls

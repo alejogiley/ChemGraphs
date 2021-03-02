@@ -1,12 +1,11 @@
+from typing import Tuple, List, Callable
+
 import numpy as np
 import tensorflow as tf
 
 from scipy.stats import pearsonr
-from typing import Tuple, List, Callable
-
 from tensorflow.keras.models import Model
 from tensorflow.keras.optimizers import Adam
-from tensorflow.math import count_nonzero
 from tensorflow.keras.layers import (
     BatchNormalization,
     Dense,
@@ -162,8 +161,8 @@ def evaluate_model(model, tests_set):
 
     # estimate FRACTION of censored values
     # predicted higher than true boundaries
-    metrics["fraction_lefts_outliers"] = count_nonzero(lefts_outliers) / sum(lefts_indexes)
-    metrics["fraction_right_outliers"] = count_nonzero(right_outliers) / sum(right_indexes)
+    metrics["fraction_lefts_outliers"] = tf.math.count_nonzero(lefts_outliers) / sum(lefts_indexes)
+    metrics["fraction_right_outliers"] = tf.math.count_nonzero(right_outliers) / sum(right_indexes)
 
     return metrics
 
@@ -200,21 +199,22 @@ class MLEDense(Layer):
 
     def build(self, input_shape):
 
+        # pseudo-prior of variance
+        init = tf.random_normal_initializer(mean=0.0, stddev=1.0)
+
+        # weight
         self.w = self.add_weight(
             shape=(input_shape[-1], self.units),
             initializer="random_normal",
             name='final_weight',
-            trainable=True,
-        )
+            trainable=True)
 
+        # bias
         self.b = self.add_weight(
             shape=(self.units,),
             initializer="random_normal",
             name='final_bias',
             trainable=True)
-
-        # pseudo-prior of variance
-        init = tf.random_normal_initializer(mean=0.0, stddev=1.0)
 
         # variance of error distribution
         self.sigma = tf.Variable(
@@ -225,7 +225,7 @@ class MLEDense(Layer):
     def call(self, inputs):
         y = tf.matmul(inputs, self.w) + self.b
         return tf.concat([y, self.sigma], axis=0)
-    
+
     def get_config(self):
         config = super(MLEDense, self).get_config()
         config.update({'units': self.units})

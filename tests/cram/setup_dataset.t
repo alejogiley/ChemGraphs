@@ -5,9 +5,12 @@ Prepare Graph Dataset
 # Test GraphDB dataset
 
   $ setup_dataset.py --binding files/data.sdf --data_path ${CRAMTMP} --file_name "temp" --metric_type "Ki"
-  $ zdiff files/data.gz ${CRAMTMP}/temp.gz
+  $ python scripts/compare_data.py files/data.lz4 ${CRAMTMP}/temp.lz4
+  Success! Datasets have no differences
 
-# Test BindingDB dataset
+# Test wrong number of graphs
 
-  $ setup_dataset.py --binding files/data.sdf --data_path ${CRAMTMP} --file_name "temp" --metric_type "Ki"
-  $ diff files/data.npz ${CRAMTMP}/temp.npz
+  $ setup_dataset.py --binding files/data.sdf --data_path ${CRAMTMP} --file_name "temp" --metric_type "IC50"
+  $ python scripts/compare_data.py files/data.lz4 ${CRAMTMP}/temp.lz4 2>err
+  Error! Datasets do not have same number of graphs
+  [1]

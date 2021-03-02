@@ -22,8 +22,6 @@ def main(args):
         edges=edges,
         adjcs=adjcs,
         feats=labels,
-        fname=args.file_name,
-        dpath=args.data_path,
     )
 
     # Save Graph dataset

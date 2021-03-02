@@ -36,11 +36,6 @@ def onehot_encoding(index: int, num_classes: int) -> np.ndarray:
     return to_categorical(index, num_classes=num_classes)
 
 
-def sigma(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
-    """Returns variance of error distribution"""
-    return tf.abs(y_pred[-1])
-
-
 def set_random_seed(seed):
     """Control reproducibility"""
     random.seed(seed)
