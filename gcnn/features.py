@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-from typing import Tuple, Literal, List, Any
+from typing import Tuple, List, Any
+from typing_extensions import Literal
 
 import numpy as np
 
