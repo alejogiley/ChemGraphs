@@ -20,6 +20,7 @@ dependencies:
     - tensorflow
     - tensorflow-addons
     - tensorflow_probability
+    - typing_extensions
     - coverage
     - coveralls
     - black
