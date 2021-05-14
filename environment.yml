@@ -11,6 +11,7 @@ dependencies:
   - nose>=1.0
   - flake8
   - rdkit
+  - pip
   - pip:
     - lz4
     - cram
