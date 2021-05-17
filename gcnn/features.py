@@ -133,6 +133,14 @@ def get_labels(mol: Mol, metric: METRICS = "IC50 (nM)") -> np.ndarray:
     return np.array([lefts, right, metrics])
 
 
+def standarize_molecule(mol: Mol) -> Mol:
+    """Stripping salts from the molecule and returning parent"""
+    from rdkit.Chem.MolStandardize import rdMolStandardize
+    remove = rdMolStandardize.FragmentRemover()
+    parent = remove.remove(mol)
+    return Chem.SanitizeMol(parent)
+
+
 def data_features(
     path: str,
     affinity: str = "IC50",
@@ -154,7 +162,7 @@ def data_features(
     suppl = Chem.SDMolSupplier(path, sanitize=True, strictParsing=True)
 
     # read all molecules besides ones with errors into a list
-    molecules = [mol for mol in suppl if mol is not None]
+    molecules = [standarize_molecule(mol) for mol in suppl if mol is not None]
 
     # Get nodes
     x = [get_nodes(mol) for mol in molecules]
