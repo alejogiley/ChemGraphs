@@ -80,7 +80,7 @@ target/
 # IPython
 profile_default/
 ipython_config.py
-*/playground.ipynb
+#*/playground.ipynb
 #*.ipynb
 
 # pyenv
@@ -111,6 +111,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.old_env_files
+arm64_tensorflow.yml
 apple_tensorflow.yml
 
 # Spyder project settings

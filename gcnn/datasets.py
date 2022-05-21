@@ -5,14 +5,108 @@ import itertools
 import numpy as np
 import scipy.sparse as sp
 
-from typing import Tuple
-from spektral.data import Dataset, Graph
-from sklearn.preprocessing import QuantileTransformer
+import tensorflow as tf
+import tensorflow_datasets as tfds
 
 
-class GraphDB(Dataset):
-    """Dataset from BindingDB"""
+class Graph:
+    """A container to represent a graph structure
+    
+    Copied from the oficial Spektral implementation
+    https://github.com/danielegrattarola/spektral/tree/master
+    ommiting all data instance verification and defaults
+    when data is ommited on the constructor 
 
+    """
+    def __init__(
+        self,
+        node=None,
+        edge=None,
+        adjc=None,
+        feat=None,
+        **kwargs,
+    ):
+        self.node = node
+        self.edge = edge
+        self.adjc = adjc
+        self.feat = feat
+
+    def numpy(self):
+        return tuple(
+            ret for ret in [
+                self.node, 
+                self.adjc, 
+                self.edge, 
+                self.feat
+            ] if ret is not None)
+
+    def get(self, *keys):
+        return tuple(
+            self[key] 
+            for key in keys 
+            if self[key] is not None
+        )
+
+    def __setitem__(self, key, value):
+        setattr(self, key, value)
+
+    def __getitem__(self, key):
+        return getattr(self, key, None)
+
+    def __contains__(self, key):
+        return key in self.keys
+
+    def __repr__(self):
+        out = "Graph(n_nodes={}, n_node_features={}, n_edge_features={}, n_labels={})"
+        return out.format(
+            self.n_nodes, 
+            self.n_node_features, 
+            self.n_edge_features, 
+            self.n_labels
+        )
+
+    @property
+    def n_nodes(self):
+        if self.node is not None:
+            return self.node.shape[-2]
+        elif self.adjc is not None:
+            return self.adjc.shape[-1]
+        else:
+            return None
+
+    @property
+    def n_edges(self):
+        if isinstance(self.adjc, np.ndarray):
+            return np.count_nonzero(self.adjc)
+        else:
+            return None
+
+    @property
+    def n_node_features(self):
+        if self.node is not None:
+            return self.node.shape[-1]
+        else:
+            return None
+
+    @property
+    def n_edge_features(self):
+        if self.edges is not None:
+            return self.edges.shape[-1]
+        else:
+            return None
+
+    @property
+    def n_labels(self):
+        if self.feats is not None:
+            shp = np.shape(self.feats)
+            return 1 if len(shp) == 0 else shp[-1]
+        else:
+            return None
+
+
+class GraphDB:
+    """Database for Molecular Graphs"""
+    
     def __init__(
         self,
         nodes=None,
@@ -21,34 +115,32 @@ class GraphDB(Dataset):
         feats=None,
         **kwargs,
     ):
-        self.nodes = nodes
-        self.edges = edges
-        self.adjcs = adjcs
-        self.feats = feats
+        self.graphs = self.read(nodes, edges, adjcs, feats)
 
-        super().__init__(**kwargs)
-
-    def read(self):
-        # create Graphs
-        output = [
+    def read(self, nodes, edges, adjcs, feat):
+        return [
             self.make_graph(
-                node=self.data["x"][i],
-                adjc=self.data["a"][i],
-                edge=self.data["e"][i],
-                feat=self.data["y"][i],
+                node=nodes[i],
+                adjc=adjcs[i],
+                edge=edges[i],
+                feat=feats[i],
             )
-            for i, _ in enumerate(self.data["y"])
-            if self.data["y"][i][-1] > 0.0
+            for i, _ in enumerate(feats)
+            # if binding affinity metrics
+            # is not available ignore ligand
+            if feats[i][-1] > 0.0
         ]
+    def __len__(self):
+        return len(self.graphs)
 
-        return output
-
-    def download(self):
-        # save graph arrays into directory
-        self.data = { 'x': self.nodes, 'a': self.adjcs, 'e': self.edges, 'y': self.feats }
+    @property
+    def n_graphs(self):
+        return self.__len__()
 
     @staticmethod
     def make_graph(node, adjc, edge, feat):
+        """Create a Graph instance"""
+
         # The node features
         x = node.astype(float)
 
@@ -62,8 +154,7 @@ class GraphDB(Dataset):
 
         # The labels
         y = feat.astype(float)
-        # transform IC50 values
-        # into pIC50
+        # transform IC50 values into pIC50
         y[-1] = np.log10(y[-1])
 
         # The edge features
@@ -72,7 +163,7 @@ class GraphDB(Dataset):
         assert e.shape[0] == len(node)
         assert e.shape[1] == len(node)
 
-        return Graph(x=x, a=a, e=e, y=y)
+        return Graph(node=x, adjc=a, edge=e, feat=y)
 
 
 def split_dataset(dataset: GraphDB, ratio=0.9) -> Tuple:
@@ -100,66 +191,3 @@ def split_dataset(dataset: GraphDB, ratio=0.9) -> Tuple:
     tests = dataset[subsets[1]]
 
     return train, tests
-
-
-def apply_transformation(reference: np.ndarray, dataset: np.ndarray) -> np.ndarray:
-    """Feature transformation
-
-    Transform features to follow a uniform or a normal distribution
-    see: https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.QuantileTransformer.html
-
-    Args:
-        reference: feature set to fit transformation
-        dataset: feature set to apply transformation
-
-    Returns:
-         np.ndarray: transformed feature set
-
-    """
-    scaler = QuantileTransformer(output_distribution="normal")
-    return scaler.fit(reference).transform(dataset)
-
-
-def transform_datasets(train_set: GraphDB, tests_set: GraphDB) -> Tuple:
-    """Preprocessing of node features in Graph dataset
-
-    Args:
-        train_set: subset of graph dataset used for training
-        tests_set: subset of graph dataset used for testing
-
-    Returns:
-        datasets with transformed node features
-
-    """
-    new_train_set = train_set
-    new_tests_set = tests_set
-
-    # number of node features
-    n_features = train_set[0]["x"].shape[1]
-
-    for index in range(n_features):
-        # get train data for each feature
-        # to fit transformation on
-        train = [train_set[i]["x"][:, index] for i in range(train_set.n_graphs)]
-        train = list(itertools.chain(*train))
-        train = np.array(train).reshape(-1, 1)
-
-        for k in range(train_set.n_graphs):
-            # reshape node data for sklearn
-            data = train_set[k]["x"][:, index]
-            data = data.reshape(-1, 1)
-            # apply transformation
-            scaled_data = apply_transformation(train, data).reshape(-1)
-            # replace node features in array
-            new_train_set[k]["x"][:, index] = scaled_data
-
-        for k in range(tests_set.n_graphs):
-            # reshape node data for sklearn
-            data = tests_set[k]["x"][:, index]
-            data = data.reshape(-1, 1)
-            # apply transformation
-            scaled_data = apply_transformation(train, data).reshape(-1)
-            # replace node features in array
-            new_tests_set[k]["x"][:, index] = scaled_data
-
-    return new_train_set, new_tests_set

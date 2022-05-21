@@ -1,13 +1,13 @@
 name: chemgraph
 channels:
   - conda-forge
-  - rdkit
+  - anaconda
 dependencies:
-  - python>=3.6, <3.9
   - numpy>=1.19
   - scipy>=1.6
   - pandas>=1.1
   - networkx
+  - tensorflow==2.4.1
   - nose>=1.0
   - flake8
   - rdkit
@@ -15,11 +15,10 @@ dependencies:
   - pip:
     - lz4
     - cram
-    - keras>=2.4.0
-    - spektral==1.0.4
-    - tensorflow==2.4
-    - tensorflow-addons
-    - tensorflow_probability
+    - tensorflow-datasets
+    - jaxlib==0.1.60
+    - jax==0.2.10
+    - tfp-nightly[jax]
     - typing_extensions
     - coverage
     - coveralls
