@@ -138,7 +138,8 @@ def standarize_molecule(mol: Mol) -> Mol:
     from rdkit.Chem.MolStandardize import rdMolStandardize
     remove = rdMolStandardize.FragmentRemover()
     parent = remove.remove(mol)
-    return Chem.SanitizeMol(parent)
+    Chem.SanitizeMol(parent)
+    return parent
 
 
 def data_features(
