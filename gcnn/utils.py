@@ -2,7 +2,7 @@ import random
 import numpy as np
 import tensorflow as tf
 
-from keras.utils import to_categorical
+from tensorflow.keras.utils import to_categorical
 
 
 def str_is_float(s: str) -> bool:

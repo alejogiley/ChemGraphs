@@ -40,9 +40,9 @@ if [[ $error -ne 1 ]]; then
 	mypy --ignore-missing-imports gcnn
 	echo "Success!"
 
-	# echo "Checking code style with pylint..."
-	# python -m pylint "${SRC_DIR}"/gcnn "${SRC_DIR}"/tests/*.py
-	# echo "Success!"
+	echo "Checking code style with pylint..."
+	python -m pylint "${SRC_DIR}"/gcnn "${SRC_DIR}"/tests/*.py
+	echo "Success!"
 fi
 
 exit $error

@@ -250,10 +250,8 @@ def maxlike_tobit_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     ##################################
 
     # logarithm of likelihood
-    logp = (
-        tf.reduce_sum(inner_prob * inner_indexes)
-        + tf.reduce_sum(lefts_prob * lefts_indexes)
+    logp = tf.reduce_sum(inner_prob * inner_indexes) \
+        + tf.reduce_sum(lefts_prob * lefts_indexes) \
         + tf.reduce_sum(right_prob * right_indexes)
-    )
 
     return -logp
