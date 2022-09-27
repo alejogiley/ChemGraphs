@@ -4,7 +4,7 @@ export TF_CPP_MIN_LOG_LEVEL='3'
 
 set -ex
 
-NAME="chemgraph"
+NAME="ChemGraph"
 SRC_DIR=${SRC_DIR:-$(pwd)}
 CONDA_BASE=$(conda info --base)
 ENVS=$(conda info --envs 2>&1)

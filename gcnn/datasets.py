@@ -1,49 +1,67 @@
 from __future__ import annotations
 
-import itertools
-
 import numpy as np
 import scipy.sparse as sp
-
-import tensorflow as tf
-import tensorflow_datasets as tfds
+from typing import Tuple, List
 
 
 class Graph:
     """A container to represent a graph structure
-    
+
     Copied from the oficial Spektral implementation
     https://github.com/danielegrattarola/spektral/tree/master
     ommiting all data instance verification and defaults
     when data is ommited on the constructor 
 
     """
+
     def __init__(
         self,
-        node=None,
-        edge=None,
-        adjc=None,
-        feat=None,
-        **kwargs,
+        nodes: np.ndarray = None,
+        edges: np.ndarray = None,
+        adjcs: np.ndarray = None,
+        feats: np.ndarray = None,
     ):
-        self.node = node
-        self.edge = edge
-        self.adjc = adjc
-        self.feat = feat
+        """"
+        Initialize the Graph object
 
-    def numpy(self):
-        return tuple(
-            ret for ret in [
-                self.node, 
-                self.adjc, 
-                self.edge, 
-                self.feat
-            ] if ret is not None)
+        Parameters
+        ----------
+        nodes: np.ndarray
+            Node features of shape [n_nodes, n_node_features].
+        edges: np.ndarray
+            Edge features of shape [n_edges, n_edge_features].
+        adjcs: np.ndarray
+            Adjacency matrix of shape [n_nodes, n_nodes].
+        feats: np.ndarray
+            Node labels of shape [n_nodes, n_labels].
 
-    def get(self, *keys):
+        Returns
+        -------
+        Graph
+            A Graph object.
+
+        """
+        self.nodes = nodes
+        self.edges = edges
+        self.adjcs = adjcs
+        self.feats = feats
+
+    def numpy(self) -> Tuple[np.ndarray]:
+        """Converts the graph to numpy arrays."""
         return tuple(
-            self[key] 
-            for key in keys 
+            x for x in [
+                self.nodes,
+                self.adjcs,
+                self.edges,
+                self.feats
+            ] if x is not None)
+
+    def get(self, *keys) -> Tuple:
+        """Returns the values of the specified keys."""
+        return tuple(
+            self[key]
+            for key in keys
             if self[key] is not None
         )
 
@@ -59,44 +77,49 @@ class Graph:
     def __repr__(self):
         out = "Graph(n_nodes={}, n_node_features={}, n_edge_features={}, n_labels={})"
         return out.format(
-            self.n_nodes, 
-            self.n_node_features, 
-            self.n_edge_features, 
+            self.n_nodes,
+            self.n_node_features,
+            self.n_edge_features,
             self.n_labels
         )
 
     @property
-    def n_nodes(self):
-        if self.node is not None:
-            return self.node.shape[-2]
-        elif self.adjc is not None:
-            return self.adjc.shape[-1]
+    def n_nodes(self) -> int:
+        """Number of nodes in the graph."""
+        if self.nodes is not None:
+            return self.nodes.shape[-2]
+        elif self.adjcs is not None:
+            return self.adjcs.shape[-1]
         else:
             return None
 
     @property
-    def n_edges(self):
-        if isinstance(self.adjc, np.ndarray):
+    def n_edges(self) -> int:
+        """Number of edges in the graph."""
+        if isinstance(self.adjcs, np.ndarray):
             return np.count_nonzero(self.adjc)
         else:
             return None
 
     @property
-    def n_node_features(self):
-        if self.node is not None:
-            return self.node.shape[-1]
+    def n_node_features(self) -> int:
+        """Number of features per node."""
+        if self.nodes is not None:
+            return self.nodes.shape[-1]
         else:
             return None
 
     @property
-    def n_edge_features(self):
+    def n_edge_features(self) -> int:
+        """Number of features per edge."""
         if self.edges is not None:
             return self.edges.shape[-1]
         else:
             return None
 
     @property
-    def n_labels(self):
+    def n_labels(self) -> int:
+        """Number of labels per node."""
         if self.feats is not None:
             shp = np.shape(self.feats)
             return 1 if len(shp) == 0 else shp[-1]
@@ -106,18 +129,42 @@ class Graph:
 
 class GraphDB:
     """Database for Molecular Graphs"""
-    
+
     def __init__(
         self,
         nodes=None,
         edges=None,
         adjcs=None,
         feats=None,
-        **kwargs,
     ):
+        """"
+        Initialize the GraphDB object
+
+        Parameters
+        ----------
+        nodes: np.ndarray
+            Node features of shape [n_nodes, n_node_features].
+        edges: np.ndarray
+            Edge features of shape [n_edges, n_edge_features].
+        adjcs: np.ndarray
+            Adjacency matrix of shape [n_nodes, n_nodes].
+        feats: np.ndarray
+            Node labels of shape [n_nodes, n_labels].
+
+        Returns
+        -------
+        GraphDB
+
+        """
+        self.nodes = nodes
+        self.edges = edges
+        self.adjcs = adjcs
+        self.feats = feats
+
         self.graphs = self.read(nodes, edges, adjcs, feats)
 
-    def read(self, nodes, edges, adjcs, feat):
+    def read(self, nodes, edges, adjcs, feats) -> List[Graph]:
+        """Reads the data and returns a list of Graph objects."""
         return [
             self.make_graph(
                 node=nodes[i],
@@ -130,15 +177,16 @@ class GraphDB:
             # is not available ignore ligand
             if feats[i][-1] > 0.0
         ]
-    def __len__(self):
+
+    def __len__(self) -> int:
         return len(self.graphs)
 
     @property
-    def n_graphs(self):
+    def n_graphs(self) -> int:
         return self.__len__()
 
     @staticmethod
-    def make_graph(node, adjc, edge, feat):
+    def make_graph(node, adjc, edge, feat) -> Graph:
         """Create a Graph instance"""
 
         # The node features
@@ -154,7 +202,7 @@ class GraphDB:
 
         # The labels
         y = feat.astype(float)
-        # transform IC50 values into pIC50
+        # e.g. transform IC50 values into pIC50
         y[-1] = np.log10(y[-1])
 
         # The edge features
@@ -163,18 +211,18 @@ class GraphDB:
         assert e.shape[0] == len(node)
         assert e.shape[1] == len(node)
 
-        return Graph(node=x, adjc=a, edge=e, feat=y)
+        return Graph(nodes=x, adjcs=a, edges=e, feats=y)
 
 
 def split_dataset(dataset: GraphDB, ratio=0.9) -> Tuple:
     """Split Dataset into Train and Tests sets
 
     Args:
-        dataset: graph dataset
-        ratio: split ratio of train / tests
+        dataset (GraphDB): Dataset to be split
+        ratio (float, optional): Ratio of the train set. Defaults to 0.9.
 
     Returns:
-        train and tests subsets
+        Tuple: Train and Test sets
 
     """
     # randomize indexes

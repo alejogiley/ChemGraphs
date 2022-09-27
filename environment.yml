@@ -243,3 +243,4 @@ dependencies:
     - typeguard==2.13.3
     - typing-extensions==3.7.4.3
     - yapf==0.32.0
+    - latex==0.7.0

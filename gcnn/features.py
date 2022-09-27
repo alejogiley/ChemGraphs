@@ -83,14 +83,14 @@ def get_labels(mol: Mol, metric: METRICS = "IC50 (nM)") -> np.ndarray:
     Target variable is reported as a vector of 3 dimensions, the first 2 indicate
     whether the metric is censored and the last dimension reports the experimental
     binding affinity, or the censored boundary. When the input metric type, e.g. IC50
-    are not reported for a molecule the target metric is assigned 0.
+    are not reported for a molecule the target metric is assigned NaN.
 
     Args:
         mol: rdkit Mol object
         metric: type of affinity metric
 
     Returns:
-        array of target variables
+        array of target variables: (left censored label, left censored label, score value)
 
     """
     # read potency metric
@@ -128,7 +128,7 @@ def get_labels(mol: Mol, metric: METRICS = "IC50 (nM)") -> np.ndarray:
         lefts = 0
         right = 0
 
-        metrics = 0.0
+        metrics = np.nan
 
     return np.array([lefts, right, metrics])
 
@@ -149,14 +149,11 @@ def data_features(
     """Calculate graph features from BindingDB Dataset
 
     Args:
-        path: path to dataset
-        affinity: target metric type
+        path: path to BindingDB dataset
+        affinity: type of affinity metric
 
     Returns:
-        x: node features
-        a: adjacency matrices
-        e: edges features
-        y: labels features
+        list of node features, list of edge features, list of target variables,
 
     """
     # create instance of sdf reader
@@ -176,7 +173,7 @@ def data_features(
 
     # Labels: (rank, IC50s)
     # this metric is less reliable than e.g. Kd as
-    # it depends on the of the substrates used in
+    # it depends on the of the [substrates] used in
     # the essay and it is cell type dependent.
     y = [get_labels(mol, metric=affinity + " (nM)") for mol in molecules]
 

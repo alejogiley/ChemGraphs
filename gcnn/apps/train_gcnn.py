@@ -7,7 +7,7 @@ from spektral.transforms import LayerPreprocess
 
 from gcnn.io import load_dataset, save_history, save_gcnn, save_metrics
 from gcnn.models import train_model, evaluate_model
-from gcnn.datasets import split_dataset, transform_datasets
+from gcnn.datasets import split_dataset
 from gcnn.utils import set_random_seed
 from gcnn.metrics import r_squared
 from gcnn.losses import (
