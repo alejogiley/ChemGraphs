@@ -31,7 +31,7 @@ conda env create -f environment.yml
 conda activate ChemGraph
 ```
 
-To install the package locally, you can use pip:
+To download and install the latest version from github:
 
 ```bash
 git clone https://github.com/alejogiley/ChemGraphs.git
