@@ -34,6 +34,8 @@ conda activate ChemGraph
 To install the package locally, you can use pip:
 
 ```bash
+git clone https://github.com/alejogiley/ChemGraphs.git
+cd ChemGraphs
 pip install .
 ```
 
