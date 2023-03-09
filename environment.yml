@@ -212,6 +212,7 @@ dependencies:
     - docopt==0.6.2
     - future==0.18.2
     - googleapis-common-protos==1.53.0
+    - hypothesis==6.68.2
     - isort==5.9.2
     - jax==0.2.10
     - jaxlib==0.1.60

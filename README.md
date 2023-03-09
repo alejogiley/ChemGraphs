@@ -5,3 +5,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 Predicting inhibitory response of estrogen receptor modulators using Graph convolutional networks trained on censored data.
+
+## Background
+
+Bioactivity assays are typically performed over a limited range of compound concentrations, IC50 or EC50 values may be reported as being above or below a maximum or minimum concentration, so that the measurements are censored.

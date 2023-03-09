@@ -17,6 +17,7 @@ class TestTrainModel(tf.test.TestCase):
 
         # simple dataset
         class TestDataset(Dataset):
+
             def read(self):
                 return [
                     Graph(

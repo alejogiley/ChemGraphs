@@ -23,6 +23,7 @@ from spektral.layers import ECCConv, GlobalAttnSumPool
 from gcnn.datasets import GraphDB
 
 
+@tf.autograph.experimental.do_not_convert
 def train_model(
     dataset: GraphDB,
     tf_loss: Callable,
@@ -102,6 +103,7 @@ def train_model(
     return model, history
 
 
+@tf.autograph.experimental.do_not_convert
 def evaluate_model(model, tests_set):
 
     # Loader returns batches of graphs
@@ -116,12 +118,12 @@ def evaluate_model(model, tests_set):
 
     # experimental affinity values &
     # censured data indexes
-    true_values = np.array([
-        tests_set[i]["y"][2] for i in range(tests_set.n_graphs)])
-    lefts_indexes = np.array([
-        tests_set[i]["y"][0] for i in range(tests_set.n_graphs)])
-    right_indexes = np.array([
-        tests_set[i]["y"][1] for i in range(tests_set.n_graphs)])
+    true_values = np.array(
+        [tests_set[i]["y"][2] for i in range(tests_set.n_graphs)])
+    lefts_indexes = np.array(
+        [tests_set[i]["y"][0] for i in range(tests_set.n_graphs)])
+    right_indexes = np.array(
+        [tests_set[i]["y"][1] for i in range(tests_set.n_graphs)])
 
     # non-censored data indexes
     inner_indexes = (1 - right_indexes) * (1 - lefts_indexes)
@@ -154,19 +156,22 @@ def evaluate_model(model, tests_set):
 
     # Number of predicted values
     # above or below the correct threashold
-    lefts_outliers = tf.nn.relu(
-        pred_values[(lefts_indexes > 0)] - true_values[(lefts_indexes > 0)])
-    right_outliers = tf.nn.relu(
-        true_values[(right_indexes > 0)] - pred_values[(right_indexes > 0)])
+    lefts_outliers = tf.nn.relu(pred_values[(lefts_indexes > 0)] -
+                                true_values[(lefts_indexes > 0)])
+    right_outliers = tf.nn.relu(true_values[(right_indexes > 0)] -
+                                pred_values[(right_indexes > 0)])
 
     # estimate FRACTION of censored values
     # predicted higher than true boundaries
-    metrics["fraction_lefts_outliers"] = tf.math.count_nonzero(lefts_outliers) / sum(lefts_indexes)
-    metrics["fraction_right_outliers"] = tf.math.count_nonzero(right_outliers) / sum(right_indexes)
+    metrics["fraction_lefts_outliers"] = tf.math.count_nonzero(
+        lefts_outliers) / sum(lefts_indexes)
+    metrics["fraction_right_outliers"] = tf.math.count_nonzero(
+        right_outliers) / sum(right_indexes)
 
     return metrics
 
 
+@tf.autograph.experimental.do_not_convert
 def create_gcnn(nodes_shape, edges_shape, channels, n_layers):
 
     X = Input(shape=(None, nodes_shape))
@@ -193,6 +198,7 @@ def create_gcnn(nodes_shape, edges_shape, channels, n_layers):
 
 
 class MLEDense(Layer):
+
     def __init__(self, units=1):
         super(MLEDense, self).__init__()
         self.units = units
@@ -203,24 +209,21 @@ class MLEDense(Layer):
         init = tf.random_normal_initializer(mean=0.0, stddev=1.0)
 
         # weight
-        self.w = self.add_weight(
-            shape=(input_shape[-1], self.units),
-            initializer="random_normal",
-            name='final_weight',
-            trainable=True)
+        self.w = self.add_weight(shape=(input_shape[-1], self.units),
+                                 initializer="random_normal",
+                                 name='final_weight',
+                                 trainable=True)
 
         # bias
-        self.b = self.add_weight(
-            shape=(self.units,),
-            initializer="random_normal",
-            name='final_bias',
-            trainable=True)
+        self.b = self.add_weight(shape=(self.units, ),
+                                 initializer="random_normal",
+                                 name='final_bias',
+                                 trainable=True)
 
         # variance of error distribution
-        self.sigma = tf.Variable(
-            init(shape=(self.units, self.units)),
-            name='sigma',
-            trainable=True)
+        self.sigma = tf.Variable(init(shape=(self.units, self.units)),
+                                 name='sigma',
+                                 trainable=True)
 
     def call(self, inputs):
         y = tf.matmul(inputs, self.w) + self.b

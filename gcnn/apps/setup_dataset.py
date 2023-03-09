@@ -14,7 +14,8 @@ def main(args):
     ##########################################################################
 
     # read BindingDB and get graph features for each molecule
-    nodes, adjcs, edges, labels = data_features(args.bindingdb, affinity=args.metric_type)
+    nodes, adjcs, edges, labels = data_features(args.bindingdb,
+                                                affinity=args.metric_type)
 
     # create Graph dataset
     dataset = GraphDB(
@@ -37,14 +38,22 @@ def parse_arguments():
     ##########################################################################
     parser = argparse.ArgumentParser(
         prog="setup_dataset",
-        formatter_class=lambda prog: argparse.HelpFormatter(prog, width=120, max_help_position=40),
-        description="Setup a Spektral Dataset from BindingDB binding affinities",
+        formatter_class=lambda prog: argparse.HelpFormatter(
+            prog, width=120, max_help_position=40),
+        description=
+        "Setup a Spektral Dataset from BindingDB binding affinities",
         epilog='"Engage" (J.L. Picard)',
     )
 
-    parser.add_argument("--bindingdb", required=True, help="BindingDB SDF file path")
-    parser.add_argument("--data_path", required=True, help="Output datasets directory path")
-    parser.add_argument("--file_name", required=True, help="Name output Graph database")
+    parser.add_argument("--bindingdb",
+                        required=True,
+                        help="BindingDB SDF file path")
+    parser.add_argument("--data_path",
+                        required=True,
+                        help="Output datasets directory path")
+    parser.add_argument("--file_name",
+                        required=True,
+                        help="Name output Graph database")
 
     parser.add_argument(
         "--metric_type",

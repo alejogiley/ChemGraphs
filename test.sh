@@ -1,6 +1,7 @@
 #! /usr/bin/env bash
 
 export TF_CPP_MIN_LOG_LEVEL='3'
+export AUTOGRAPH_VERBOSITY='0'
 
 set -ex
 
@@ -14,9 +15,9 @@ if [[ -z $CONDA_DEFAULT_ENV ]]; then
 	export PATH="$CONDA_BASE/bin:$PATH"
 	source "$CONDA_BASE/etc/profile.d/conda.sh"
 
+# Check if Chemgraph enviroment is 
+# available otherwise create enviroment
 elif [[ $CONDA_DEFAULT_ENV != *$NAME* ]]; then
-	# Check if Chemgraph enviroment is available
-	# otherwise create enviroment
 	if [[ $ENVS == *$NAME* ]]; then
 		echo "Activating $NAME enviroment"
 		source activate $NAME
@@ -28,7 +29,7 @@ elif [[ $CONDA_DEFAULT_ENV != *$NAME* ]]; then
 fi
 
 python -m pip install -e .[develop]
-python setup.py nosetests --no-skip || error=1
+python setup.py nosetests --no-skip --nologcapture || error=1
 python setup.py cram || error=1
 
 if [[ $error -ne 1 ]]; then

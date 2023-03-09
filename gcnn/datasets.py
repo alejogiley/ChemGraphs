@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import numpy as np
 import scipy.sparse as sp
+
 from typing import Tuple, List
+from spektral.data import Dataset
 
 
 class Graph:
@@ -30,7 +32,7 @@ class Graph:
         nodes: np.ndarray
             Node features of shape [n_nodes, n_node_features].
         edges: np.ndarray
-            Edge features of shape [n_edges, n_edge_features].
+            Edge features of shape [n_nodes, n_nodes, n_edge_features].
         adjcs: np.ndarray
             Adjacency matrix of shape [n_nodes, n_nodes].
         feats: np.ndarray
@@ -49,21 +51,13 @@ class Graph:
 
     def numpy(self) -> Tuple[np.ndarray]:
         """Converts the graph to numpy arrays."""
-        return tuple(
-            x for x in [
-                self.nodes,
-                self.adjcs,
-                self.edges,
-                self.feats
-            ] if x is not None)
+        return tuple(x
+                     for x in [self.nodes, self.adjcs, self.edges, self.feats]
+                     if x is not None)
 
     def get(self, *keys) -> Tuple:
-        """Returns the values of the specified keys."""
-        return tuple(
-            self[key]
-            for key in keys
-            if self[key] is not None
-        )
+        """Returns the specified attributes as a tuple."""
+        return tuple(self[key] for key in keys if self[key] is not None)
 
     def __setitem__(self, key, value):
         setattr(self, key, value)
@@ -76,12 +70,8 @@ class Graph:
 
     def __repr__(self):
         out = "Graph(n_nodes={}, n_node_features={}, n_edge_features={}, n_labels={})"
-        return out.format(
-            self.n_nodes,
-            self.n_node_features,
-            self.n_edge_features,
-            self.n_labels
-        )
+        return out.format(self.n_nodes, self.n_node_features,
+                          self.n_edge_features, self.n_labels)
 
     @property
     def n_nodes(self) -> int:
@@ -127,8 +117,13 @@ class Graph:
             return None
 
 
-class GraphDB:
-    """Database for Molecular Graphs"""
+class GraphDB(Dataset):
+    """Database for Molecular Graphs 
+    
+    Copied from the oficial Spektral implementation
+    https://github.com/danielegrattarola/spektral
+    
+    """
 
     def __init__(
         self,
@@ -171,8 +166,7 @@ class GraphDB:
                 adjc=adjcs[i],
                 edge=edges[i],
                 feat=feats[i],
-            )
-            for i, _ in enumerate(feats)
+            ) for i, _ in enumerate(feats)
             # if binding affinity metrics
             # is not available ignore ligand
             if feats[i][-1] > 0.0

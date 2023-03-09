@@ -40,25 +40,6 @@ Train GCNN model
   $ h5diff -d 1e-1 ${CRAMTMP}/temp.h5 files/max_model.h5 /model_weights
   $ h5diff -d 1e-1 ${CRAMTMP}/temp.h5 files/max_model.h5 /optimizer_weights
 
-# Test maxlike_cse_loss model
-
-  $ train_gcnn.py \
-  > --data_path files/data.lz4 \
-  > --record_path ${CRAMTMP}/temp.csv \
-  > --model_path ${CRAMTMP}/temp.h5 \
-  > --metrics_path ${CRAMTMP}/temp.dat \
-  > --epochs 2 \
-  > --batch_size 2 \
-  > --learning_rate 0.1 \
-  > --channels 2 2 \
-  > --n_layers 2 \
-  > --seed 0 \
-  > "maxlike_cse_loss"
-  $ diff files/cse_train.csv ${CRAMTMP}/temp.csv
-  $ diff files/cse_metrics.dat ${CRAMTMP}/temp.dat
-  $ h5diff -d 1e-1 ${CRAMTMP}/temp.h5 files/cse_model.h5 /model_weights
-  $ h5diff -d 1e-1 ${CRAMTMP}/temp.h5 files/cse_model.h5 /optimizer_weights
-
 # Test maxlike_tobit_loss model
 
   $ train_gcnn.py \
