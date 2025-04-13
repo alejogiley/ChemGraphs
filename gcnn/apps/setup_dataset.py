@@ -8,7 +8,6 @@ from gcnn.features import data_features
 
 
 def main(args):
-
     ##########################################################################
     # Prepare Graph Dataset
     ##########################################################################
@@ -18,21 +17,15 @@ def main(args):
                                                 affinity=args.metric_type)
 
     # create Graph dataset
-    dataset = GraphDB(
-        nodes=nodes,
-        edges=edges,
-        adjcs=adjcs,
-        feats=labels,
-    )
+    dataset = GraphDB(nodes=nodes, edges=edges, adjcs=adjcs, feats=labels)
 
     # Save Graph dataset
     save_dataset(dataset, args.data_path, args.file_name)
 
-    return 0
+    return None
 
 
 def parse_arguments():
-
     ##########################################################################
     # Parse input arguments
     ##########################################################################
@@ -68,6 +61,5 @@ def parse_arguments():
 
 
 if __name__ == "__main__":
-
     arguments = parse_arguments()
     main(arguments)

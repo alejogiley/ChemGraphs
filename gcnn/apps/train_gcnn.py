@@ -18,7 +18,6 @@ from gcnn.losses import (
 
 
 def main(args):
-
     set_random_seed(args.seed)
 
     ##########################################################################
@@ -28,7 +27,8 @@ def main(args):
     # Load dataset
     dataset = load_dataset(args.data_path)
 
-    # Transform the adjacency matrix according to ECCConv
+    # Transform the adjacency matrix
+    # according to ECCConv layer
     dataset.apply(LayerPreprocess(ECCConv))
 
     # Splitting data into train/tests
@@ -73,7 +73,6 @@ def main(args):
 
 
 def parse_arguments():
-
     ##########################################################################
     # Parse input arguments
     ##########################################################################
@@ -91,8 +90,10 @@ Loss function for regression:
 
     def get_choices():
         return [
-            "mse_loss", "maxlike_mse_loss", "maxlike_cse_loss",
-            "maxlike_tobit_loss"
+            "mse_loss",
+            "maxlike_mse_loss",
+            "maxlike_cse_loss",
+            "maxlike_tobit_loss",
         ]
 
     parser = argparse.ArgumentParser(

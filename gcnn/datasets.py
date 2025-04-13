@@ -1,150 +1,43 @@
 from __future__ import annotations
 
+import copy
 import numpy as np
 import scipy.sparse as sp
 
 from typing import Tuple, List
 from spektral.data import Dataset
-
-
-class Graph:
-    """A container to represent a graph structure
-
-    Copied from the oficial Spektral implementation
-    https://github.com/danielegrattarola/spektral/tree/master
-    ommiting all data instance verification and defaults
-    when data is ommited on the constructor 
-
-    """
-
-    def __init__(
-        self,
-        nodes: np.ndarray = None,
-        edges: np.ndarray = None,
-        adjcs: np.ndarray = None,
-        feats: np.ndarray = None,
-    ):
-        """"
-        Initialize the Graph object
-
-        Parameters
-        ----------
-        nodes: np.ndarray
-            Node features of shape [n_nodes, n_node_features].
-        edges: np.ndarray
-            Edge features of shape [n_nodes, n_nodes, n_edge_features].
-        adjcs: np.ndarray
-            Adjacency matrix of shape [n_nodes, n_nodes].
-        feats: np.ndarray
-            Node labels of shape [n_nodes, n_labels].
-
-        Returns
-        -------
-        Graph
-            A Graph object.
-
-        """
-        self.nodes = nodes
-        self.edges = edges
-        self.adjcs = adjcs
-        self.feats = feats
-
-    def numpy(self) -> Tuple[np.ndarray]:
-        """Converts the graph to numpy arrays."""
-        return tuple(x
-                     for x in [self.nodes, self.adjcs, self.edges, self.feats]
-                     if x is not None)
-
-    def get(self, *keys) -> Tuple:
-        """Returns the specified attributes as a tuple."""
-        return tuple(self[key] for key in keys if self[key] is not None)
-
-    def __setitem__(self, key, value):
-        setattr(self, key, value)
-
-    def __getitem__(self, key):
-        return getattr(self, key, None)
-
-    def __contains__(self, key):
-        return key in self.keys
-
-    def __repr__(self):
-        out = "Graph(n_nodes={}, n_node_features={}, n_edge_features={}, n_labels={})"
-        return out.format(self.n_nodes, self.n_node_features,
-                          self.n_edge_features, self.n_labels)
-
-    @property
-    def n_nodes(self) -> int:
-        """Number of nodes in the graph."""
-        if self.nodes is not None:
-            return self.nodes.shape[-2]
-        elif self.adjcs is not None:
-            return self.adjcs.shape[-1]
-        else:
-            return None
-
-    @property
-    def n_edges(self) -> int:
-        """Number of edges in the graph."""
-        if isinstance(self.adjcs, np.ndarray):
-            return np.count_nonzero(self.adjc)
-        else:
-            return None
-
-    @property
-    def n_node_features(self) -> int:
-        """Number of features per node."""
-        if self.nodes is not None:
-            return self.nodes.shape[-1]
-        else:
-            return None
-
-    @property
-    def n_edge_features(self) -> int:
-        """Number of features per edge."""
-        if self.edges is not None:
-            return self.edges.shape[-1]
-        else:
-            return None
-
-    @property
-    def n_labels(self) -> int:
-        """Number of labels per node."""
-        if self.feats is not None:
-            shp = np.shape(self.feats)
-            return 1 if len(shp) == 0 else shp[-1]
-        else:
-            return None
+from spektral.data.graph import Graph
 
 
 class GraphDB(Dataset):
-    """Database for Molecular Graphs 
-    
-    Copied from the oficial Spektral implementation
-    https://github.com/danielegrattarola/spektral
-    
+    """Database for Molecular Graphs
+
+    Modified from the oficial Spektral implementation
+    https://github.com/danielegrattarola/spektral/blob/master/spektral/data/dataset.py
+
     """
 
     def __init__(
         self,
-        nodes=None,
-        edges=None,
-        adjcs=None,
-        feats=None,
+        nodes: List[np.ndarray] = None,
+        edges: List[np.ndarray] = None,
+        adjcs: List[np.ndarray] = None,
+        feats: List[np.ndarray] = None,
+        **kwargs,
     ):
-        """"
+        """ "
         Initialize the GraphDB object
 
         Parameters
         ----------
-        nodes: np.ndarray
+        nodes: list[np.ndarray]
             Node features of shape [n_nodes, n_node_features].
-        edges: np.ndarray
+        edges: list[np.ndarray]
             Edge features of shape [n_edges, n_edge_features].
-        adjcs: np.ndarray
-            Adjacency matrix of shape [n_nodes, n_nodes].
-        feats: np.ndarray
-            Node labels of shape [n_nodes, n_labels].
+        adjcs: list[np.ndarray]
+            Adjacency matrices each of shape [n_nodes, n_nodes].
+        feats: list[np.ndarray]
+            Target labels of shape [n_labels,].
 
         Returns
         -------
@@ -156,9 +49,9 @@ class GraphDB(Dataset):
         self.adjcs = adjcs
         self.feats = feats
 
-        self.graphs = self.read(nodes, edges, adjcs, feats)
+        super().__init__(**kwargs)
 
-    def read(self, nodes, edges, adjcs, feats) -> List[Graph]:
+    def read(self) -> List[Graph]:
         """Reads the data and returns a list of Graph objects."""
         return [
             self.make_graph(
@@ -167,22 +60,87 @@ class GraphDB(Dataset):
                 edge=edges[i],
                 feat=feats[i],
             ) for i, _ in enumerate(feats)
+                node=self.nodes[i],
+                adjc=self.adjcs[i],
+                edge=self.edges[i],
+                feat=self.feats[i],
+            )
+            for i, _ in enumerate(self.feats)
             # if binding affinity metrics
             # is not available ignore ligand
-            if feats[i][-1] > 0.0
+            if self.feats[i][-1] > 0.0
         ]
+
+    def apply(self, transform: callable):
+        """Applies a transformation to the graphs in the database."""
+        if not callable(transform):
+            raise ValueError("`transform` must be callable")
+        for i in range(self.n_graphs):
+            self.graphs[i] = transform(self.graphs[i])
 
     def __len__(self) -> int:
         return len(self.graphs)
+
+    def __getitem__(self, key: int | slice | list | np.ndarray | bool) -> GraphDB:
+        """Return a graph or a subset of graphs from the dataset.
+
+        This method supports indexing with integers, slices, lists, and arrays
+        of integers (and booleans). In all cases, it returns a subset of the
+        graphs in the dataset.
+
+        Args:
+            key (int, slice, list, array, bool): Index.
+
+        Returns:
+            :obj:`Dataset`: A new :obj:`Dataset` object with the selected graphs.
+
+        """
+        # Copy the dataset
+        dataset = copy.copy(self)
+
+        if not (np.issubdtype(type(key), np.integer) or isinstance(key, (slice, list, tuple, np.ndarray))):
+            # If key is not an integer or a slice, raise an error
+            raise ValueError("Unsupported key type: {}".format(type(key)))
+
+        # Single graph selection ##########################################
+
+        if np.issubdtype(type(key), np.integer):
+            return self.graphs[int(key)]
+
+        # Slice or list of graphs selection ###############################
+
+        if isinstance(key, slice):
+            # Get the start, stop, and step from the slice
+            dataset.graphs = self.graphs[key]
+
+        else:
+            # If key is a list or array of integers, return the corresponding graphs
+            dataset.graphs = [self.graphs[i] for i in key]
+
+        return dataset
 
     @property
     def n_graphs(self) -> int:
         return self.__len__()
 
     @staticmethod
-    def make_graph(node, adjc, edge, feat) -> Graph:
-        """Create a Graph instance"""
+    def make_graph(node: np.ndarray, adjc: np.ndarray, edge: np.ndarray, feat: np.ndarray) -> Graph:
+        """Create a Graph instance
 
+        Args:
+        node: np.ndarray
+            Node features of shape [n_nodes, n_node_features].
+        edge: np.ndarray
+            Edge features of shape [n_edges, n_edge_features].
+        adjc: np.ndarray
+            Adjacency matrix of shape [n_nodes, n_nodes].
+        feat: np.ndarray
+            Target labels of shape [n_labels,].
+
+        Returns:
+        Graph instance
+
+        """
         # The node features
         x = node.astype(float)
 
@@ -190,9 +148,6 @@ class GraphDB(Dataset):
         # convert to scipy.sparse matrix
         a = adjc.astype(np.int8)
         a = sp.csr_matrix(a)
-        # check shape (n_nodes, n_nodes)
-        assert a.shape[0] == len(node)
-        assert a.shape[1] == len(node)
 
         # The labels
         y = feat.astype(float)
@@ -201,14 +156,11 @@ class GraphDB(Dataset):
 
         # The edge features
         e = edge.astype(np.int8)
-        # check shape (n_nodes, n_nodes, ..)
-        assert e.shape[0] == len(node)
-        assert e.shape[1] == len(node)
 
-        return Graph(nodes=x, adjcs=a, edges=e, feats=y)
+        return Graph(x=x, a=a, e=e, y=y)
 
 
-def split_dataset(dataset: GraphDB, ratio=0.9) -> Tuple:
+def split_dataset(dataset: GraphDB, ratio: float = 0.9) -> Tuple:
     """Split Dataset into Train and Tests sets
 
     Args:
@@ -233,3 +185,31 @@ def split_dataset(dataset: GraphDB, ratio=0.9) -> Tuple:
     tests = dataset[subsets[1]]
 
     return train, tests
+
+
+class LayerPreprocess(object):
+    """
+    Applies the `preprocess` function of a convolutional Layer to the adjacency matrix.
+    taken from https://github.com/danielegrattarola/spektral/blob/master/spektral/transforms/layer_preprocess.py#L1
+    """
+
+    def __init__(self, layer_class: callable):
+        """ "
+        Initialize the LayerPreprocess object
+
+        Parameters
+        ----------
+        layer_class: Layer
+            Layer class to be used for preprocessing the adjacency matrix.
+
+        Returns
+        -------
+        LayerPreprocess
+
+        """
+        self.layer_class = layer_class
+
+    def __call__(self, graph):
+        if graph.adjcs is not None and hasattr(self.layer_class, "preprocess"):
+            graph.adjcs = self.layer_class.preprocess(graph.adjcs)
+        return graph

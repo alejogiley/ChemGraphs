@@ -3,6 +3,7 @@ import tensorflow as tf
 import tensorflow_probability as tfp
 
 
+@tf.autograph.experimental.do_not_convert
 def mse_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     """Mean Squared Error (MSE) for censored data
 
@@ -22,13 +23,13 @@ def mse_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
 
     """
     # Predictions
-    pred = y_pred[:-1, 0]
+    pred = y_pred[:, 0]
 
     # Variance of error distribution
-    sigma = tf.square(y_pred[-1:])
+    # sigma = tf.square(y_pred[:, 1])
 
     # clip sigma values
-    sigma = tf.clip_by_value(sigma, clip_value_min=1e-9, clip_value_max=1e9)
+    # sigma = tf.clip_by_value(sigma, clip_value_min=1e-9, clip_value_max=1e9)
 
     ##################################
     # Censored values
@@ -51,11 +52,13 @@ def mse_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     ##################################
 
     # calculate loss
-    loss = tf.reduce_sum(tf.square(true - pred) * inner_indexes)
+    loss = tf.reduce_sum(
+        tf.square(true - pred) * inner_indexes) / tf.reduce_sum(inner_indexes)
 
     return loss
 
 
+@tf.autograph.experimental.do_not_convert
 def maxlike_mse_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     """Maximum-likelihood MSE for censored data
 
@@ -75,10 +78,10 @@ def maxlike_mse_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
 
     """
     # Predictions
-    pred = y_pred[:-1, 0]
+    pred = y_pred[:, 0]
 
     # Variance of error distribution
-    sigma = tf.square(y_pred[-1:])
+    sigma = tf.square(y_pred[:, 1])
 
     # clip sigma values
     sigma = tf.clip_by_value(sigma, clip_value_min=1e-9, clip_value_max=1e9)
@@ -105,12 +108,13 @@ def maxlike_mse_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
 
     # calculate loss
     loss = tf.reduce_sum(
-        tf.math.log(2 * sigma * np.pi) + tf.square(true - pred) / sigma * inner_indexes
-    )
+        tf.math.log(2 * sigma * np.pi) + inner_indexes *
+        tf.square(true - pred) / sigma) / tf.reduce_sum(inner_indexes)
 
     return loss
 
 
+@tf.autograph.experimental.do_not_convert
 def maxlike_cse_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     """Censored maximum-likelihood MSE for censored data
 
@@ -132,10 +136,10 @@ def maxlike_cse_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     ##################################
 
     # Predictions
-    pred = y_pred[:-1, 0]
+    pred = y_pred[:, 0]
 
     # Variance of error distribution
-    sigma = tf.square(y_pred[-1:])
+    sigma = tf.square(y_pred[:, 1])
 
     # Clip values, avoid overflow
     # or sigma = 0 and then log-nan
@@ -166,17 +170,16 @@ def maxlike_cse_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     ##################################
 
     # calculate loss
-    loss = (
-        (tf.square(delta_inner) / sigma) * inner_indexes
-        + (tf.square(delta_lefts) / sigma) * lefts_indexes
-        + (tf.square(delta_right) / sigma) * right_indexes
-    )
+    loss = ((tf.square(delta_inner) / sigma) * inner_indexes +
+            (tf.square(delta_lefts) / sigma) * lefts_indexes +
+            (tf.square(delta_right) / sigma) * right_indexes)
 
     loss = tf.reduce_sum(loss + tf.math.log(2 * sigma * np.pi))
 
     return loss
 
 
+@tf.autograph.experimental.do_not_convert
 def maxlike_tobit_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     """Maximum-likelihood error for a Tobit model
 
@@ -250,8 +253,8 @@ def maxlike_tobit_loss(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     ##################################
 
     # logarithm of likelihood
-    logp = tf.reduce_sum(inner_prob * inner_indexes) \
-        + tf.reduce_sum(lefts_prob * lefts_indexes) \
-        + tf.reduce_sum(right_prob * right_indexes)
+    logp = (tf.reduce_sum(inner_prob * inner_indexes) +
+            tf.reduce_sum(lefts_prob * lefts_indexes) +
+            tf.reduce_sum(right_prob * right_indexes))
 
     return -logp

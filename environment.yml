@@ -212,10 +212,10 @@ dependencies:
     - docopt==0.6.2
     - future==0.18.2
     - googleapis-common-protos==1.53.0
-    - hypothesis==6.68.2
+    - hypothesis==6.82.0
     - isort==5.9.2
     - jax==0.2.10
-    - jaxlib==0.1.60
+    - jaxlib==0.1.63
     - joblib==1.1.0
     - keras==2.7.0
     - lazy-object-proxy==1.6.0

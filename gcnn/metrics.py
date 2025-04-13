@@ -1,6 +1,7 @@
 import tensorflow as tf
 
 
+@tf.autograph.experimental.do_not_convert
 def r_squared(y_true: tf.Tensor, y_pred: tf.Tensor) -> tf.Tensor:
     """Estimate R-square metric
 

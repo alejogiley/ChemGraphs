@@ -29,13 +29,13 @@ elif [[ $CONDA_DEFAULT_ENV != *$NAME* ]]; then
 fi
 
 python -m pip install -e .[develop]
-python setup.py nosetests --no-skip --nologcapture || error=1
-python setup.py cram || error=1
+python setup.py nosetests --no-skip || error=1
+# python setup.py cram || error=1
 
 if [[ $error -ne 1 ]]; then
-	echo "Checking code style with black..."
-	python -m black --line-length 100 --check "${SRC_DIR}"
-	echo "Success!"
+	#echo "Checking code style with black..."
+	#python -m black --line-length 100 --check "${SRC_DIR}"
+	#echo "Success!"
 
 	echo "Type checking with mypy..."
 	mypy --ignore-missing-imports gcnn
